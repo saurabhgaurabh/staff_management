@@ -21,41 +21,18 @@ function HomeStack({navigation}) {
   
   
   
-    useEffect(() => {
-  
-      if (loginData) {
-        if (loginData.token) {
-          navigation.navigate(navigationStrings.TABROUTES)
-        }
-        else {
-          navigation.navigate('LoginScreen');
-        }
-      } else {
-        navigation.navigate('LoginScreen');
-      }
-    }, [])
-  
-
-    // useEffect(() => {
-    //     const backAction = () => {
-    //       Alert.alert("Hold on!", "Are you sure you want to Exit App?", [
-    //         {
-    //           text: "Cancel",
-    //           onPress: () => null,
-    //           style: "cancel"
-    //         },
-    //         { text: "YES", onPress: () => BackHandler.exitApp() }
-    //       ]);
-    //       return true;
-    //     };
-    
-    //     const backHandler = BackHandler.addEventListener(
-    //       "hardwareBackPress",
-    //       backAction
-    //     );
-    
-    //     return () => backHandler.remove();
-    //   }, []);
+    // useEffect(() => {  
+    //   if (loginData) {
+    //     if (loginData.token) {
+    //       navigation.navigate(navigationStrings.TABROUTES)
+    //     }
+    //     else {
+    //       navigation.navigate('LoginScreen');
+    //     }
+    //   } else {
+    //     navigation.navigate('LoginScreen');
+    //   }
+    // }, [])
     
     return (
         <Stack.Navigator screenOptions={{ headerShown: true }}> 
@@ -77,7 +54,6 @@ function HomeStack({navigation}) {
             <Stack.Screen name={navigationStrings.OUTSTANDINGPAYBLE} component={OutstandingPayble} options={{ title: 'Outstanding Receivable' }} />
             <Stack.Screen name={navigationStrings.TOTAL_SALE} component={TotalSale} options={{ title: 'Total Sale' }} />
             <Stack.Screen name={navigationStrings.TARGET} component={TargetScreen} options={{ title: 'Target' }} />
-            {/* <Stack.Screen name={navigationStrings.ROUTEPLANS} component={RoutePlan} options={{ title: 'Roots Plans' }} /> */}
         </Stack.Navigator>
     )
 }
