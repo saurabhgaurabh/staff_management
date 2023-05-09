@@ -25,5 +25,6 @@ export default{
     icDeleteItem: require('../assets/images/delete.png'),
     icfavForRemove: require('../assets/images/favForRemove.png'),
     icforDummy_image: require('../assets/images/images_dummy_bg.png'),
-    icback: require('../assets/images/back.webp')
+    icback: require('../assets/images/back.webp'),
+    iclogin_back: require('../assets/images/background.jpg'),
 }

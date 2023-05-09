@@ -29,10 +29,10 @@ const SplashRoute = () => {
   return (
     <NavigationContainer >
       <Stack.Navigator screenOptions={{presentation: 'modal', headerShown: false }}>
+        <Stack.Screen name={navigationStrings.LOGIN} component={LoginScreen} />
         <Stack.Screen name={navigationStrings.TABROUTES} component={TabRoutes} />
         {/* <Stack.Screen name={navigationStrings.Routes} component={Routes} /> */}
         <Stack.Screen name={navigationStrings.SIGNUP} component={SignUpScreen} />
-        <Stack.Screen name={navigationStrings.LOGIN} component={LoginScreen} />
         <Stack.Screen name={navigationStrings.FORGETPASSWORD} component={ForgetPassword} />
         <Stack.Screen name={navigationStrings.OTPSCREEN} component={OTPScreen} />
         <Stack.Screen name={navigationStrings.NEWPASSWORD} component={NewPasswordScreen} />

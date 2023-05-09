@@ -40,7 +40,8 @@ const NewPasswordScreen = (props) => {
 
                     dispatch(loginFetchDataForProfile(result))
                 }
-                navigation.navigate(navigationStrings.Routes);
+                navigation.navigate(navigationStrings.TABROUTES);
+                // navigation.navigate(navigationStrings.Routes);
             } catch (error) {
                 console.log(error)
             }

@@ -14,26 +14,26 @@ function TabRoutes() {
     const navigation = useNavigation();
     const Tab = createBottomTabNavigator();
     
-    useEffect(() => {
-        const backAction = () => {
-            Alert.alert("Hold on!", "Are you sure you want to Exit App?", [
-                {
-                    text: "Cancel",
-                    onPress: () => null,
-                    style: "cancel"
-                },
-                { text: "YES", onPress: () => BackHandler.exitApp() }
-            ]);
-            return true;
-        };
+    // useEffect(() => {
+    //     const backAction = () => {
+    //         Alert.alert("Hold on!", "Are you sure you want to Exit App?", [
+    //             {
+    //                 text: "Cancel",
+    //                 onPress: () => null,
+    //                 style: "cancel"
+    //             },
+    //             { text: "YES", onPress: () => BackHandler.exitApp() }
+    //         ]);
+    //         return true;
+    //     };
 
-        const backHandler = BackHandler.addEventListener(
-            "hardwareBackPress",
-            backAction
-        );
+    //     const backHandler = BackHandler.addEventListener(
+    //         "hardwareBackPress",
+    //         backAction
+    //     );
 
-        return () => backHandler.remove();
-    }, []);
+    //     return () => backHandler.remove();
+    // }, []);
 
     return (
         <Tab.Navigator
