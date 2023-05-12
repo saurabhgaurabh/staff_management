@@ -3,6 +3,57 @@ import { BackgroundImage } from "react-native-elements/dist/config";
 
 
 const styles = StyleSheet.create({
+    //////////////////////   intro page properties /  / /////////
+    background: {
+        flex: 1,
+        resizeMode: 'cover',
+        // Opacity: 0.4
+    },
+    overlay: {
+        flex: 1,
+        // backgroundColor: 'rgba(0,0,0,0.4)',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    subtitle: {
+        fontSize: 16,
+        color: '#fff',
+        textAlign: 'center',
+        marginBottom: 40,
+    },
+    inputContainer: {
+        width: '80%',
+    },
+    input: {
+        backgroundColor: '#fff',
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 4,
+        padding: 10,
+        marginBottom: 10,
+        opacity: 0.2
+    },
+    button: {
+        backgroundColor: '#3b5998',
+        borderRadius: 4,
+        padding: 10,
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: '#fff',
+        fontWeight: 'bold',
+    },
+    upper_txt: {
+        justifyContent: 'space-evenly',
+        paddingTop: 10,
+        alignItems: 'center'
+    },
+    sub_upper_txt:{
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: 'white'
+    },
+    ////////////// Intro Page Properties //////////////////////
     list_mainstyle: {
         flexDirection: 'column',
         width: '100%',

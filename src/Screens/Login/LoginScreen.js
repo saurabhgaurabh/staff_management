@@ -14,7 +14,7 @@
 
 // const LoginScreen = () => {
 //     const navigation = useNavigation();
- 
+
 //     const signupsubmit = () => {
 //         navigation.navigate(navigationStrings.SIGNUP)
 //     }
@@ -48,19 +48,19 @@
 //         return () => backHandler.remove();
 //     }, []);
 
-   
-   
+
+
 //     return (
 //         <View >
 //             <View style={styles.mainContainer}>
 //                 <View style={styles.forgerPasswordCss}><Text style={{ color: 'white' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
-               
+
 //             </View>
 //             <View style={styles.inputfields}>
 
 
-             
-              
+
+
 
 //                 <View style={styles.loginEvents} >
 //                     <TouchableOpacity onPress={gotoDashboard} style={styles.submitbuttonforlogin}>
@@ -69,7 +69,7 @@
 //                     <TouchableOpacity onPress={signupsubmit} style={styles.submitbuttonforlogin}>
 //                         <Text style={styles.submitbuttontext} >Sign Up</Text>
 //                     </TouchableOpacity>
-                  
+
 //                 </View>
 //             </View>
 //         </View>
@@ -206,7 +206,7 @@
 //         paddingTop: 240,
 //         justifyContent: 'space-around',
 //     },
-  
+
 //     loginEvents: {
 //         display: 'flex',
 //         justifyContent: 'center',
@@ -218,11 +218,11 @@
 // })
 
 // export default LoginScreen
-
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, ImageBackground, TextInput, TouchableOpacity , Image} from 'react-native';
-
+import { StyleSheet, View, Text, ImageBackground, TextInput, TouchableOpacity, Image, Animated } from 'react-native';
 import imagePath from '../../constants/imagePath';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import styles from '../MainStyle';
 
 const LoginScreen = () => {
   const [username, setUsername] = useState('');
@@ -231,10 +231,13 @@ const LoginScreen = () => {
   const handleContinue = () => {
     // Handle continue logic here
   };
+
   return (
     <ImageBackground source={imagePath.iclogin_back} style={styles.background}>
+      <SafeAreaView style={styles.upper_txt}>
+        <Text style={styles.sub_upper_txt}>Welcome To eStudy</Text>
+      </SafeAreaView>
       <View style={styles.overlay}>
-        <Text style={styles.title}>Welcome to eStudy app!</Text>
         <Text style={styles.subtitle}>Please enter your details below to continue:</Text>
         <View style={styles.inputContainer}>
           <TextInput placeholder="Username" style={styles.input} value={username} onChangeText={setUsername} />
@@ -248,51 +251,7 @@ const LoginScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-    background: {
-      flex: 1,
-      resizeMode: 'cover',
-    //   shadowOpacity: 1
-    },
-    overlay: {
-      flex: 1,
-      backgroundColor: 'rgba(0,0,0,0.4)',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    title: {
-      fontSize: 24,
-      fontWeight: 'bold',
-      color: '#fff',
-      marginBottom: 20,
-    },
-    subtitle: {
-      fontSize: 16,
-      color: '#fff',
-      textAlign: 'center',
-      marginBottom: 40,
-    },
-    inputContainer: {
-      width: '80%',
-    },
-    input: {
-      backgroundColor: '#fff',
-      borderWidth: 1,
-      borderColor: '#ccc',
-      borderRadius: 4,
-      padding: 10,
-      marginBottom: 10,
-      opacity: 0.7
-    },
-    button: {
-      backgroundColor: '#3b5998',
-      borderRadius: 4,
-      padding: 10,
-      alignItems: 'center',
-    },
-    buttonText: {
-      color: '#fff',
-      fontWeight: 'bold',
-    },
-  });
+// const styles = StyleSheet.create({
+
+//   });
 export default LoginScreen;
