@@ -28,4 +28,6 @@ export default{
     icback: require('../assets/images/back.webp'),
     iclogin_back: require('../assets/images/background.jpg'),
     icgoogle: require('../assets/images/Google-Symbol.png'),
+    icfirstss: require('../assets/images/ft_screen.jpg'),
+    icui: require('../assets/images/UI.jpg'),
 }

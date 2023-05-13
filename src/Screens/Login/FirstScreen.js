@@ -17,7 +17,7 @@ const FirstScreen = () => {
     }
     return (
         // <View>
-        <ImageBackground source={imagePath.iclogin_back} style={styles.background}>
+        <ImageBackground source={imagePath.icui} style={styles.background}>
             <SafeAreaView style={styles.upper_txt}>
                 <Text style={styles.sub_upper_txt}>Welcome To eStudy !</Text>
                 <Text style={styles.subtitle}>Type here something related to screen</Text>
@@ -38,7 +38,7 @@ const FirstScreen = () => {
                         <View style={styles.cont_with_goolge_logo}>
                             <Image source={imagePath.icfacebook} style={styles.goole_properties} />
                         </View>
-                        <View style={styles.cont_with_goolge}>
+                        <View style={styles.cont_with_fb}>
                             <Text style={styles.networking_txt}>Continue With Facebook</Text>
                         </View>
                     </View>

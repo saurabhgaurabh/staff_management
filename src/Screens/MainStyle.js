@@ -62,10 +62,11 @@ const styles = StyleSheet.create({
     },
     sign_in_property: {
         fontWeight: 'bold',
-        color: 'blue'
+        color: 'white'
     },
     cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' },
-    cont_with_goolge: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
+    cont_with_fb: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
+    cont_with_goolge: { flexDirection: 'column', backgroundColor: '#FF3D3D', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
     cont_with_new_acc: { flexDirection: 'column', backgroundColor: '#32CD32', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%',},
     goole_properties:{height: '70%', width: '45%'},
     networking_container:{flexDirection: 'row', backgroundColor: '#98FB98', width: '100%', borderRadius: 10,},
@@ -81,7 +82,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         alignContent: 'center',
-        // backgroundColor: 'red',
         alignItems: 'center',
     },
     list_imagestyle_subCss: {
