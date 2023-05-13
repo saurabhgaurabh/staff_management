@@ -66,8 +66,9 @@ const styles = StyleSheet.create({
     },
     cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' },
     cont_with_goolge: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
+    cont_with_new_acc: { flexDirection: 'column', backgroundColor: '#32CD32', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%',},
     goole_properties:{height: '70%', width: '45%'},
-    networking_container:{flexDirection: 'row', backgroundColor: '#fff', width: '100%', borderRadius: 10,},
+    networking_container:{flexDirection: 'row', backgroundColor: '#98FB98', width: '100%', borderRadius: 10,},
     networking_txt:{fontSize: 17,color: '#fff', fontWeight: 'bold'},
     ////////////// Intro Page Properties //////////////////////
     list_mainstyle: {

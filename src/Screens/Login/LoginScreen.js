@@ -8,6 +8,7 @@ import { TextInput } from 'react-native-paper';
 import { loginFetchDataForProfile, profileUpdate } from '../../redux/MyLoginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { ServerUrl } from '../../Helper/Helper';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -48,10 +49,28 @@ const LoginScreen = () => {
         return () => backHandler.remove();
     }, []);
 
+    function handleBackButtonClick() {
+      navigation.goBack();
+      return true;
+  }
+
+  React.useEffect(() => {
+      BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
+      return () => {
+          BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
+      };
+  },[]);
 
 
     return (
         <View >
+           <View style={styles.topHeadingCss}>
+                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 10 }} >
+                            <TouchableOpacity onPress={handleBackButtonClick} >
+                                <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
+                            </TouchableOpacity>
+                        </SafeAreaView>
+                    </View>
             <View style={styles.mainContainer}>
                 <View style={styles.forgerPasswordCss}><Text style={{ color: 'white' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
 

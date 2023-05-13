@@ -30,4 +30,5 @@ export {default as OutstandingPayble} from './OutstandingPayble/OutstandingPaybl
 export {default as TargetScreen} from './Target/TargetScreen';
 export {default as TotalSale} from './TotalSale/TotalSale';
 export {default as RoutePlan} from './RoutePlan/RoutePlan';
+export {default as FirstScreen} from './Login/FirstScreen';
 //SubScreen's of Home Page Ends's from here
