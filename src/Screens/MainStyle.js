@@ -11,18 +11,23 @@ const styles = StyleSheet.create({
     },
     overlay: {
         flex: 1,
-        // backgroundColor: 'rgba(0,0,0,0.4)',
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: 'column',
+        alignContent: 'center',
     },
     subtitle: {
         fontSize: 16,
         color: '#fff',
-        textAlign: 'center',
-        marginBottom: 40,
     },
     inputContainer: {
-        width: '80%',
+        display: 'flex',
+        width: '90%',
+        alignContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        padding: 10
     },
     input: {
         backgroundColor: '#fff',
@@ -33,32 +38,42 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         opacity: 0.2
     },
-    button: {
-        backgroundColor: '#3b5998',
-        borderRadius: 4,
-        padding: 10,
-        alignItems: 'center',
-    },
-    buttonText: {
-        color: '#fff',
-        fontWeight: 'bold',
-    },
     upper_txt: {
-        justifyContent: 'space-evenly',
         paddingTop: 10,
-        alignItems: 'center'
+        paddingHorizontal: 15,
     },
-    sub_upper_txt:{
+    sub_upper_txt: {
         fontSize: 30,
         fontWeight: 'bold',
         color: 'white'
     },
+    main_screen_footer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignContent: 'center',
+        bottom: 10,
+    },
+    main_screen_footer_division: {
+        flexDirection: 'column',
+    },
+    summary_property: {
+        fontWeight: 'bold',
+        color: 'white'
+    },
+    sign_in_property: {
+        fontWeight: 'bold',
+        color: 'blue'
+    },
+    cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' },
+    cont_with_goolge: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
+    goole_properties:{height: '70%', width: '45%'},
+    networking_container:{flexDirection: 'row', backgroundColor: '#fff', width: '100%', borderRadius: 10,},
+    networking_txt:{fontSize: 17,color: '#fff', fontWeight: 'bold'},
     ////////////// Intro Page Properties //////////////////////
     list_mainstyle: {
         flexDirection: 'column',
         width: '100%',
         paddingHorizontal: 5,
-        // backgroundColor: 'red'
     },
     list_imagestyle: {
         flexDirection: 'row',

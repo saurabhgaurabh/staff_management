@@ -10,7 +10,7 @@ export default{
     iciconsmenu: require('../assets/images/iconsmenu.png'),
     ingotoLogin: require('../assets/images/gotoLogin.png'),
     insignup: require('../assets/images/signup.png'),
-    icfacebook: require('../assets/images/fbooknew.png'),
+    icfacebook: require('../assets/images/facebookk.png'),
     icinstagram: require('../assets/images/linkedin.png'),
     ictwiter: require('../assets/images/twitter.png'),
     icleadchain_logo: require('../assets/images/leadchain_logo.png'),
@@ -27,4 +27,5 @@ export default{
     icforDummy_image: require('../assets/images/images_dummy_bg.png'),
     icback: require('../assets/images/back.webp'),
     iclogin_back: require('../assets/images/background.jpg'),
+    icgoogle: require('../assets/images/Google-Symbol.png'),
 }
