@@ -7,7 +7,6 @@ export const MyCartSlice = createSlice({
         cardProduct: [],
      }, 
     reducers: {
-
         addProductToMyCart:(state,action)=>{
             state.cardProduct.push(...action.payload)
         }

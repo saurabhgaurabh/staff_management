@@ -9,6 +9,7 @@ import { loginFetchDataForProfile, profileUpdate } from '../../redux/MyLoginSlic
 import { useDispatch, useSelector } from 'react-redux';
 import { ServerUrl } from '../../Helper/Helper';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import styles from '../MainStyle';
 
 
 
@@ -22,12 +23,12 @@ const LoginScreen = () => {
     const passwordforgetsubmit = () => {
         navigation.navigate(navigationStrings.FORGETPASSWORD)
     }
-    const gotoDashboard = ()=>{
+    const gotoDashboard = () => {
         navigation.navigate(navigationStrings.TABROUTES)
     }
 
 
-  // here if press back from login then it works...
+    // here if press back from login then it works...
     useEffect(() => {
         const backAction = () => {
             Alert.alert("Hold on!", "Are you sure you want to Exit Login ?", [
@@ -50,32 +51,34 @@ const LoginScreen = () => {
     }, []);
 
     function handleBackButtonClick() {
-      navigation.goBack();
-      return true;
-  }
+        navigation.goBack();
+        return true;
+    }
 
-  React.useEffect(() => {
-      BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
-      return () => {
-          BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
-      };
-  },[]);
+    React.useEffect(() => {
+        BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
+        return () => {
+            BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
+        };
+    }, []);
 
 
     return (
-        <View >
-           <View style={styles.topHeadingCss}>
-                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 10 }} >
-                            <TouchableOpacity onPress={handleBackButtonClick} >
-                                <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
-                            </TouchableOpacity>
-                        </SafeAreaView>
-                    </View>
-            <View style={styles.mainContainer}>
+        <View style={styles.mainbackground}>
+            <View 
+            // style={styles.topHeadingCss}
+            >
+                <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 10 }} >
+                    <TouchableOpacity onPress={handleBackButtonClick} >
+                        <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
+                    </TouchableOpacity>
+                </SafeAreaView>
+            </View>
+            {/* <View style={styles.mainContainer}>
                 <View style={styles.forgerPasswordCss}><Text style={{ color: 'white' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
 
-            </View>
-            <View style={styles.inputfields}>
+            </View> */}
+            {/* <View style={styles.inputfields}>
                 <View style={styles.loginEvents} >
                     <TouchableOpacity onPress={gotoDashboard} style={styles.submitbuttonforlogin}>
                         <Text style={styles.submitbuttontext}>Login</Text>
@@ -85,151 +88,151 @@ const LoginScreen = () => {
                     </TouchableOpacity>
 
                 </View>
-            </View>
+            </View> */}
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-    socialIconStyle: {
-        height: 45,
-        width: 55,
-        borderRadius: 50,
-        margin: 10
-    },
-    mainContainer: {
-        paddingTop: 10,
-        backgroundColor: '#0288D1',
-        borderBottomEndRadius: 200,
-    },
-    mainheading: {
-        paddingTop: 99,
-        paddingLeft: 25,
-        fontSize: 29,
-        color: 'white'
-    },
-    mainsubheading: {
-        paddingLeft: 25,
-        color: 'white'
-    },
-    label: {
-        color: '#9CA4A1',
-        fontSize: 18,
-        paddingLeft: 25,
-    },
-    inputfields: {
-        paddingTop: 60,
-    },
-    forgerPasswordCss: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-        paddingLeft: 230
-    },
-    input: {
-        margin: 12,
-        backgroundColor: 'white',
-        borderRadius: 10,
-    },
-    submitbutton: {
-        backgroundColor: '#3EB489',
-        padding: 5,
-        margin: 15,
-        height: 45,
-        borderTopEndRadius: 15,
-        borderBottomEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-        alignItems: 'center'
-    },
-    submitbuttonforlogin: {
-        backgroundColor: '#0288D1',
-        padding: 5,
-        margin: 5,
-        height: '105%',
-        borderTopEndRadius: 10,
-        borderBottomEndRadius: 10,
-        borderTopStartRadius: 10,
-        borderBottomStartRadius: 10,
-        alignItems: 'center',
-    },
-    submitbuttontext: {
-        color: 'white',
-        fontSize: 20,
-        alignItems: 'center',
-        alignContent: 'center',
-        alignSelf: 'center',
-        paddingTop: 5
-    },
-    submitbuttontextforforget: {
-        color: 'white',
-        fontSize: 20,
-        alignItems: 'center',
-        alignContent: 'center',
-        paddingRight: 10,
-        marginLeftl: 12,
-        paddingHorizontal: 5,
-        paddingBottom: 6
-    },
-    submitbuttontextforsubmit: {
-        color: 'white',
-        fontSize: 20,
-        alignItems: 'center',
-        alignContent: 'center',
-        paddingRight: 10,
-        marginLeftl: 12,
-        paddingTop: 10,
-        marginHorizontal: 9,
-        paddingBottom: 5
+// const styles = StyleSheet.create({
+//     socialIconStyle: {
+//         height: 45,
+//         width: 55,
+//         borderRadius: 50,
+//         margin: 10
+//     },
+//     mainContainer: {
+//         paddingTop: 10,
+//         backgroundColor: '#0288D1',
+//         borderBottomEndRadius: 200,
+//     },
+//     mainheading: {
+//         paddingTop: 99,
+//         paddingLeft: 25,
+//         fontSize: 29,
+//         color: 'white'
+//     },
+//     mainsubheading: {
+//         paddingLeft: 25,
+//         color: 'white'
+//     },
+//     label: {
+//         color: '#9CA4A1',
+//         fontSize: 18,
+//         paddingLeft: 25,
+//     },
+//     inputfields: {
+//         paddingTop: 60,
+//     },
+//     forgerPasswordCss: {
+//         display: 'flex',
+//         justifyContent: 'flex-end',
+//         paddingLeft: 230
+//     },
+//     input: {
+//         margin: 12,
+//         backgroundColor: 'white',
+//         borderRadius: 10,
+//     },
+//     submitbutton: {
+//         backgroundColor: '#3EB489',
+//         padding: 5,
+//         margin: 15,
+//         height: 45,
+//         borderTopEndRadius: 15,
+//         borderBottomEndRadius: 15,
+//         borderTopStartRadius: 15,
+//         borderBottomStartRadius: 15,
+//         alignItems: 'center'
+//     },
+//     submitbuttonforlogin: {
+//         backgroundColor: '#0288D1',
+//         padding: 5,
+//         margin: 5,
+//         height: '105%',
+//         borderTopEndRadius: 10,
+//         borderBottomEndRadius: 10,
+//         borderTopStartRadius: 10,
+//         borderBottomStartRadius: 10,
+//         alignItems: 'center',
+//     },
+//     submitbuttontext: {
+//         color: 'white',
+//         fontSize: 20,
+//         alignItems: 'center',
+//         alignContent: 'center',
+//         alignSelf: 'center',
+//         paddingTop: 5
+//     },
+//     submitbuttontextforforget: {
+//         color: 'white',
+//         fontSize: 20,
+//         alignItems: 'center',
+//         alignContent: 'center',
+//         paddingRight: 10,
+//         marginLeftl: 12,
+//         paddingHorizontal: 5,
+//         paddingBottom: 6
+//     },
+//     submitbuttontextforsubmit: {
+//         color: 'white',
+//         fontSize: 20,
+//         alignItems: 'center',
+//         alignContent: 'center',
+//         paddingRight: 10,
+//         marginLeftl: 12,
+//         paddingTop: 10,
+//         marginHorizontal: 9,
+//         paddingBottom: 5
 
-    },
-    signupbutton: {
-        backgroundColor: '#246EE9',
-        width: 130,
-        alignItems: 'center',
-        borderTopEndRadius: 15,
-        borderBottomEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-        paddingRight: 12,
-        paddingLeft: 9,
-        marginHorizontal: 8,
+//     },
+//     signupbutton: {
+//         backgroundColor: '#246EE9',
+//         width: 130,
+//         alignItems: 'center',
+//         borderTopEndRadius: 15,
+//         borderBottomEndRadius: 15,
+//         borderTopStartRadius: 15,
+//         borderBottomStartRadius: 15,
+//         paddingRight: 12,
+//         paddingLeft: 9,
+//         marginHorizontal: 8,
 
-    },
-    forgetbutton: {
-        backgroundColor: '#FF2400',
-        padding: 6,
-        width: 130,
-        alignItems: 'center',
-        alignContent: 'center',
-        borderTopEndRadius: 15,
-        borderBottomEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-        paddingRight: 12,
-        paddingLeft: 10,
-        marginHorizontal: 9
-    },
-    signuptext: {
-        color: 'white',
-        fontSize: 20,
-    },
-    signinforgetproperty: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-end',
-        paddingTop: 240,
-        justifyContent: 'space-around',
-    },
+//     },
+//     forgetbutton: {
+//         backgroundColor: '#FF2400',
+//         padding: 6,
+//         width: 130,
+//         alignItems: 'center',
+//         alignContent: 'center',
+//         borderTopEndRadius: 15,
+//         borderBottomEndRadius: 15,
+//         borderTopStartRadius: 15,
+//         borderBottomStartRadius: 15,
+//         paddingRight: 12,
+//         paddingLeft: 10,
+//         marginHorizontal: 9
+//     },
+//     signuptext: {
+//         color: 'white',
+//         fontSize: 20,
+//     },
+//     signinforgetproperty: {
+//         display: 'flex',
+//         flexDirection: 'row',
+//         alignItems: 'flex-end',
+//         paddingTop: 240,
+//         justifyContent: 'space-around',
+//     },
 
-    loginEvents: {
-        display: 'flex',
-        justifyContent: 'center',
-        width: '90%',
-        alignSelf: 'center',
-        height: '50%',
-        paddingTop: 50
-    }
-})
+//     loginEvents: {
+//         display: 'flex',
+//         justifyContent: 'center',
+//         width: '90%',
+//         alignSelf: 'center',
+//         height: '50%',
+//         paddingTop: 50
+//     }
+// })
 
 // export default LoginScreen
 // import React, { useState } from 'react';

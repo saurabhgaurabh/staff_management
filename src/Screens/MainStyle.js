@@ -71,7 +71,14 @@ const styles = StyleSheet.create({
     goole_properties:{height: '70%', width: '45%'},
     networking_container:{flexDirection: 'row', backgroundColor: '#98FB98', width: '100%', borderRadius: 10,},
     networking_txt:{fontSize: 17,color: '#fff', fontWeight: 'bold'},
-    ////////////// Intro Page Properties //////////////////////
+    ////////////// Intro Page Properties  end //////////////////////
+
+
+    //////////  login page css  start /////////
+
+    mainbackground:{
+
+    },
     list_mainstyle: {
         flexDirection: 'column',
         width: '100%',
@@ -663,9 +670,10 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     topHeadingCss: {
-        height: 100,
+        height: 200,
         backgroundColor: '#0288D1',
-        borderBottomEndRadius: 210,
+        borderBottomEndRadius: 50,
+        borderBottomStartRadius: 50
     },
     OrderDetailsContainer: {
         display: 'flex'

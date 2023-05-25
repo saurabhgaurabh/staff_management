@@ -19,9 +19,6 @@ const OrderScreen = ({ navigation }) => {
         return true;
     }
 
-
-
-
     const onRefresh = () => {
         orderItemsApi()
     };
