@@ -26,7 +26,7 @@ export default{
     icfavForRemove: require('../assets/images/favForRemove.png'),
     icforDummy_image: require('../assets/images/images_dummy_bg.png'),
     icback: require('../assets/images/back.webp'),
-    iclogin_back: require('../assets/images/background.jpg'),
+    icuser: require('../assets/images/BookCreator.webp'),
     icgoogle: require('../assets/images/Google-Symbol.png'),
     icfirstss: require('../assets/images/ft_screen.jpg'),
     icui: require('../assets/images/UI.jpg'),

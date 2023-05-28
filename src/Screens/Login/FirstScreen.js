@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from '../MainStyle';
 import { useNavigation } from '@react-navigation/native';
 import navigationStrings from '../../constants/navigationStrings';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 const FirstScreen = () => {
@@ -17,7 +18,7 @@ const FirstScreen = () => {
     }
     return (
         // <View>
-        <ImageBackground source={imagePath.icui} style={styles.background}>
+        <ImageBackground source={imagePath.icfirstss} style={styles.background}>
             <SafeAreaView style={styles.upper_txt}>
                 <Text style={styles.sub_upper_txt}>Welcome To eStudy !</Text>
                 <Text style={styles.subtitle}>Type here something related to screen</Text>

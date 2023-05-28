@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ToastAndroid, Image, Pressable, Linking, BackHandler, Alert, Button } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, ToastAndroid, Image, Pressable, Linking, BackHandler, Alert, Button, ScrollView } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import imagePath from '../../constants/imagePath';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ServerUrl } from '../../Helper/Helper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from '../MainStyle';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 
@@ -64,32 +65,93 @@ const LoginScreen = () => {
 
 
     return (
-        <View style={styles.mainbackground}>
-            <View 
-            // style={styles.topHeadingCss}
-            >
-                <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 10 }} >
-                    <TouchableOpacity onPress={handleBackButtonClick} >
-                        <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
-                    </TouchableOpacity>
-                </SafeAreaView>
-            </View>
-            {/* <View style={styles.mainContainer}>
-                <View style={styles.forgerPasswordCss}><Text style={{ color: 'white' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
+        <ScrollView showsHorizontalScrollIndicator={true}>
+            <LinearGradient colors={['#8e9eab', '#eef2f3']}
+                style={styles.Linearcontainer}>
+                <View style={styles.mainbackground}>
+                    <View
+                    // style={styles.topHeadingCss}
+                    >
+                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', backgroundColor: '#8e9eab' }} >
+                            <TouchableOpacity onPress={handleBackButtonClick} >
+                                <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
+                                {/* <View style={styles.forgerPasswordCss}><Text style={{ color: 'white' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View> */}
+                            </TouchableOpacity>
+                        </SafeAreaView>
+                    </View>
+                    <View style={styles.formContainer}>
+                        <View style={styles.headingContainer}>
+                            <View><Text style={styles.text_css_heading}>Login</Text></View>
+                        </View>
+                    </View>
+                    <View style={{ justifyContent: 'center', alignItems: 'center',}}>
+                        <Image source={imagePath.icuser} style={styles.logoCss} />
+                    </View>
+                    <View style={styles.formbodycss}>
+                        <View style={styles.form_field_container}>
+                            <View style={{ alignSelf: 'center', width: '95%', paddingTop: 20 }}>
+                                <TextInput style={styles.inputCss}
+                                    label="Email"
+                                    activeUnderlineColor="#0288D1"
+                                    activeOutlineColor="grey"
+                                    mode='outlined'
+                                    outlineColor="white"
+                                    returnKeyLabel='next'
+                                    placeholderTextColor='#000'
+                                    autoCapitalize='none'
+                                //   onChangeText={handleUsername}
+                                />
+                                <TextInput style={styles.inputCss}
+                                    label="Password"
+                                    activeUnderlineColor="#0288D1"
+                                    activeOutlineColor="grey"
+                                    mode='outlined'
+                                    outlineColor="white"
+                                    returnKeyLabel='next'
+                                    placeholderTextColor='#000'
+                                    autoCapitalize='none'
+                                //   onChangeText={handleUsername}
+                                />
+                            </View>
+                        </View>
+                        <View style={styles.passwordContainer}>
+                            <View style={styles.forgerPasswordCss}><Text style={{ color: 'grey' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
 
-            </View> */}
-            {/* <View style={styles.inputfields}>
-                <View style={styles.loginEvents} >
-                    <TouchableOpacity onPress={gotoDashboard} style={styles.submitbuttonforlogin}>
-                        <Text style={styles.submitbuttontext}>Login</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={signupsubmit} style={styles.submitbuttonforlogin}>
+                        </View>
+                        <View style={styles.loginCss}>
+                            <View style={{}}>
+                                <TouchableOpacity onPress={gotoDashboard} activeOpacity={0.7}>
+                                    <LinearGradient
+                                        colors={['#6247AA', '#A594F9', '#77EED8']}
+                                        start={{ x: 0, y: 0 }}
+                                        end={{ x: 1, y: 0 }}
+                                        style={{
+                                            paddingVertical: 10,
+                                            paddingHorizontal: '45%',
+                                            borderRadius: 5,
+                                        }}
+                                    >
+                                        <Text style={styles.submitbuttontext}>Login</Text>
+                                    </LinearGradient>
+
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                    {/* <View style={styles.inputfields}>
+                        <View style={styles.loginEvents} >
+                            <TouchableOpacity onPress={gotoDashboard} style={styles.submitbuttonforlogin}>
+                                <Text style={styles.submitbuttontext}>Login</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={signupsubmit} style={styles.submitbuttonforlogin}>
                         <Text style={styles.submitbuttontext} >Sign Up</Text>
                     </TouchableOpacity>
 
+                        </View>
+                    </View> */}
                 </View>
-            </View> */}
-        </View>
+            </LinearGradient>
+        </ScrollView>
     )
 }
 

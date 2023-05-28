@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { BackgroundImage } from "react-native-elements/dist/config";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 
 const styles = StyleSheet.create({
@@ -65,18 +66,70 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' },
-    cont_with_fb: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
-    cont_with_goolge: { flexDirection: 'column', backgroundColor: '#FF3D3D', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
-    cont_with_new_acc: { flexDirection: 'column', backgroundColor: '#32CD32', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%',},
-    goole_properties:{height: '70%', width: '45%'},
-    networking_container:{flexDirection: 'row', backgroundColor: '#98FB98', width: '100%', borderRadius: 10,},
-    networking_txt:{fontSize: 17,color: '#fff', fontWeight: 'bold'},
+    cont_with_fb: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%', },
+    cont_with_goolge: { flexDirection: 'column', backgroundColor: '#FF3D3D', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%', },
+    cont_with_new_acc: { flexDirection: 'column', backgroundColor: '#32CD32', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%', },
+    goole_properties: { height: '70%', width: '45%' },
+    networking_container: { flexDirection: 'row', backgroundColor: '#98FB98', width: '100%', borderRadius: 10, },
+    networking_txt: { fontSize: 17, color: '#fff', fontWeight: 'bold' },
     ////////////// Intro Page Properties  end //////////////////////
 
 
     //////////  login page css  start /////////
+    Linearcontainer: {
+        flex: 1,
+    },
+    formContainer: {
+        display: 'flex',
+        // backgroundColor: '#6441A5',
+    },
+    headingContainer: {
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    text_css_heading: {
+        fontSize: 35,
+        paddingHorizontal: 10,
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        color: '#2193b0',
+    },
+    logoCss: {
+        width: '50%',
+        height: 180,
+    },
+    form_field_container: {
+        width: '100%',
+        // backgroundColor: '#3d72b4'
+        alignContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center'
+    },
+    passwordContainer: {
+        paddingHorizontal: 15
+        
+    },
+    forgerPasswordCss: {
+        alignContent: 'flex-end',
+        alignItems: 'flex-end',
+        alignSelf: 'flex-end'
+    },
+    inputCss: {
+        margin: 10,
+    },
+    loginCss: { width: '90%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', height: 45, margin: 25, borderTopEndRadius: 5, borderTopStartRadius: 5, borderBottomEndRadius: 5, borderBottomStartRadius: 5 },
+    submitbuttontext: {
+        color: '#fff',
+        fontSize: 13,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
-    mainbackground:{
+    //////////  login page css  end /////////
+
+    mainbackground: {
 
     },
     list_mainstyle: {
@@ -354,14 +407,7 @@ const styles = StyleSheet.create({
         textalign: 'center',
         height: 45
     },
-    submitbuttontext: {
-        color: 'white',
-        fontSize: 18,
-        alignItems: 'center',
-        alignContent: 'center',
-        alignSelf: 'center',
-        paddingTop: 10,
-    },
+
     increaseQty: {
         backgroundColor: 'green',
         borderRadius: 7,
@@ -493,7 +539,7 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     inputfields: {
-        bottom: 10,
+        bottomTop: 10,
     },
     profile_text_logout: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 40, color: 'grey' },
     profile_text_about: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 25, color: 'grey' },
