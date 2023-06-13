@@ -306,11 +306,6 @@ const SignUpScreen = () => {
               <Text style={styles.submitbuttontext}>Register</Text>
             </TouchableOpacity>
           </View>
-          {/* <View style={{ display: 'flex', flexDirection: 'column' }}>
-          <TouchableOpacity onPress={gotologin} style={styles.submitbuttonsignIn}>
-            <Text style={styles.submitbuttontext}>Sign In</Text>
-          </TouchableOpacity>
-        </View> */}
         </View>
       </ScrollView>
     </View>

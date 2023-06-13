@@ -28,6 +28,10 @@ const LoginScreen = () => {
         navigation.navigate(navigationStrings.TABROUTES)
     }
 
+    const [state, setState] = useState({ email: "", password: "" })
+    const handleEmail = (text) => { setState({ ...state, email: text }) }
+    const handlePassword = (text) => { setState({ ...state, password: text }) }
+    const [showNotification, setShowNotification] = useState(false);
 
     // here if press back from login then it works...
     useEffect(() => {
@@ -55,6 +59,13 @@ const LoginScreen = () => {
         navigation.goBack();
         return true;
     }
+    useEffect(() => {
+        if (showNotification) {
+          setTimeout(() => {
+            setShowNotification(false);
+          }, 2000);
+        }
+      }, [showNotification]);
 
     React.useEffect(() => {
         BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
@@ -62,6 +73,44 @@ const LoginScreen = () => {
             BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
         };
     }, []);
+    
+
+
+    const Redirect_To_Dashboard = async () => {
+        const { email, password } = state
+        console.log(email, password, "email, password")
+        if (email) {
+            if (password) {
+                try {
+                    let response = await fetch(`${ServerUrl()}login_user`, {
+                        method: "post",
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email, password })
+                    })
+                    const result = await response.json();
+                    if (result.status) {
+                        // dispatch(loginFetchDataForProfile(result))
+                        await AsyncStorage.setItem('tokenresult', result.token);
+                        setShowNotification(true);
+                        navigation.navigate(navigationStrings.TABROUTES)
+                        // navigation.navigate(navigationStrings.Routes)
+                        ToastAndroid.show('User Logged in Successfully', ToastAndroid.SHORT);
+                    } else {
+                        alert(`${result.message}`);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            } else {
+                alert("Please Enter Password")
+            }
+        } else {
+            alert("Please Enter Email")
+        }
+    }
 
 
     return (
@@ -69,22 +118,20 @@ const LoginScreen = () => {
             <LinearGradient colors={['#8e9eab', '#eef2f3']}
                 style={styles.Linearcontainer}>
                 <View style={styles.mainbackground}>
-                    <View
-                    // style={styles.topHeadingCss}
-                    >
+                    <View>
                         <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', backgroundColor: '#8e9eab' }} >
                             <TouchableOpacity onPress={handleBackButtonClick} >
                                 <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
-                                {/* <View style={styles.forgerPasswordCss}><Text style={{ color: 'white' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View> */}
                             </TouchableOpacity>
+                             {/* Notification Popup */}
+                        {showNotification && (
+                            <View style={styles.notificationContainer}>
+                                <Text style={styles.notificationText}>Login Successful!</Text>
+                            </View>
+                        )}
                         </SafeAreaView>
                     </View>
-                    <View style={styles.formContainer}>
-                        <View style={styles.headingContainer}>
-                            <View><Text style={styles.text_css_heading}>Login</Text></View>
-                        </View>
-                    </View>
-                    <View style={{ justifyContent: 'center', alignItems: 'center',}}>
+                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
                         <Image source={imagePath.icuser} style={styles.logoCss} />
                     </View>
                     <View style={styles.formbodycss}>
@@ -93,13 +140,14 @@ const LoginScreen = () => {
                                 <TextInput style={styles.inputCss}
                                     label="Email"
                                     activeUnderlineColor="#0288D1"
+                                    
                                     activeOutlineColor="grey"
                                     mode='outlined'
                                     outlineColor="white"
                                     returnKeyLabel='next'
                                     placeholderTextColor='#000'
                                     autoCapitalize='none'
-                                //   onChangeText={handleUsername}
+                                    onChangeText={(text) => { handleEmail(text) }}
                                 />
                                 <TextInput style={styles.inputCss}
                                     label="Password"
@@ -110,17 +158,16 @@ const LoginScreen = () => {
                                     returnKeyLabel='next'
                                     placeholderTextColor='#000'
                                     autoCapitalize='none'
-                                //   onChangeText={handleUsername}
+                                    onChangeText={(text) => { handlePassword(text) }}
                                 />
                             </View>
                         </View>
                         <View style={styles.passwordContainer}>
                             <View style={styles.forgerPasswordCss}><Text style={{ color: 'grey' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
-
                         </View>
                         <View style={styles.loginCss}>
                             <View style={{}}>
-                                <TouchableOpacity onPress={gotoDashboard} activeOpacity={0.7}>
+                                <TouchableOpacity onPress={Redirect_To_Dashboard} activeOpacity={0.7}>
                                     <LinearGradient
                                         colors={['#6247AA', '#A594F9', '#77EED8']}
                                         start={{ x: 0, y: 0 }}
@@ -133,218 +180,15 @@ const LoginScreen = () => {
                                     >
                                         <Text style={styles.submitbuttontext}>Login</Text>
                                     </LinearGradient>
-
                                 </TouchableOpacity>
                             </View>
                         </View>
+                       
                     </View>
-                    {/* <View style={styles.inputfields}>
-                        <View style={styles.loginEvents} >
-                            <TouchableOpacity onPress={gotoDashboard} style={styles.submitbuttonforlogin}>
-                                <Text style={styles.submitbuttontext}>Login</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={signupsubmit} style={styles.submitbuttonforlogin}>
-                        <Text style={styles.submitbuttontext} >Sign Up</Text>
-                    </TouchableOpacity>
-
-                        </View>
-                    </View> */}
                 </View>
             </LinearGradient>
         </ScrollView>
     )
 }
-
-// const styles = StyleSheet.create({
-//     socialIconStyle: {
-//         height: 45,
-//         width: 55,
-//         borderRadius: 50,
-//         margin: 10
-//     },
-//     mainContainer: {
-//         paddingTop: 10,
-//         backgroundColor: '#0288D1',
-//         borderBottomEndRadius: 200,
-//     },
-//     mainheading: {
-//         paddingTop: 99,
-//         paddingLeft: 25,
-//         fontSize: 29,
-//         color: 'white'
-//     },
-//     mainsubheading: {
-//         paddingLeft: 25,
-//         color: 'white'
-//     },
-//     label: {
-//         color: '#9CA4A1',
-//         fontSize: 18,
-//         paddingLeft: 25,
-//     },
-//     inputfields: {
-//         paddingTop: 60,
-//     },
-//     forgerPasswordCss: {
-//         display: 'flex',
-//         justifyContent: 'flex-end',
-//         paddingLeft: 230
-//     },
-//     input: {
-//         margin: 12,
-//         backgroundColor: 'white',
-//         borderRadius: 10,
-//     },
-//     submitbutton: {
-//         backgroundColor: '#3EB489',
-//         padding: 5,
-//         margin: 15,
-//         height: 45,
-//         borderTopEndRadius: 15,
-//         borderBottomEndRadius: 15,
-//         borderTopStartRadius: 15,
-//         borderBottomStartRadius: 15,
-//         alignItems: 'center'
-//     },
-//     submitbuttonforlogin: {
-//         backgroundColor: '#0288D1',
-//         padding: 5,
-//         margin: 5,
-//         height: '105%',
-//         borderTopEndRadius: 10,
-//         borderBottomEndRadius: 10,
-//         borderTopStartRadius: 10,
-//         borderBottomStartRadius: 10,
-//         alignItems: 'center',
-//     },
-//     submitbuttontext: {
-//         color: 'white',
-//         fontSize: 20,
-//         alignItems: 'center',
-//         alignContent: 'center',
-//         alignSelf: 'center',
-//         paddingTop: 5
-//     },
-//     submitbuttontextforforget: {
-//         color: 'white',
-//         fontSize: 20,
-//         alignItems: 'center',
-//         alignContent: 'center',
-//         paddingRight: 10,
-//         marginLeftl: 12,
-//         paddingHorizontal: 5,
-//         paddingBottom: 6
-//     },
-//     submitbuttontextforsubmit: {
-//         color: 'white',
-//         fontSize: 20,
-//         alignItems: 'center',
-//         alignContent: 'center',
-//         paddingRight: 10,
-//         marginLeftl: 12,
-//         paddingTop: 10,
-//         marginHorizontal: 9,
-//         paddingBottom: 5
-
-//     },
-//     signupbutton: {
-//         backgroundColor: '#246EE9',
-//         width: 130,
-//         alignItems: 'center',
-//         borderTopEndRadius: 15,
-//         borderBottomEndRadius: 15,
-//         borderTopStartRadius: 15,
-//         borderBottomStartRadius: 15,
-//         paddingRight: 12,
-//         paddingLeft: 9,
-//         marginHorizontal: 8,
-
-//     },
-//     forgetbutton: {
-//         backgroundColor: '#FF2400',
-//         padding: 6,
-//         width: 130,
-//         alignItems: 'center',
-//         alignContent: 'center',
-//         borderTopEndRadius: 15,
-//         borderBottomEndRadius: 15,
-//         borderTopStartRadius: 15,
-//         borderBottomStartRadius: 15,
-//         paddingRight: 12,
-//         paddingLeft: 10,
-//         marginHorizontal: 9
-//     },
-//     signuptext: {
-//         color: 'white',
-//         fontSize: 20,
-//     },
-//     signinforgetproperty: {
-//         display: 'flex',
-//         flexDirection: 'row',
-//         alignItems: 'flex-end',
-//         paddingTop: 240,
-//         justifyContent: 'space-around',
-//     },
-
-//     loginEvents: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         width: '90%',
-//         alignSelf: 'center',
-//         height: '50%',
-//         paddingTop: 50
-//     }
-// })
-
-// export default LoginScreen
-// import React, { useState } from 'react';
-// import { StyleSheet, View, Text, ImageBackground, TextInput, TouchableOpacity, Image, Animated } from 'react-native';
-// import imagePath from '../../constants/imagePath';
-// import { SafeAreaView } from 'react-native-safe-area-context';
-// import styles from '../MainStyle';
-
-// const LoginScreen = () => {
-
-//   return (
-//     // <View>
-//      <ImageBackground source={imagePath.iclogin_back} style={styles.background}>
-//       <SafeAreaView style={styles.upper_txt}>
-//         <Text style={styles.sub_upper_txt}>Welcome To eStudy !</Text>
-//         <Text style={styles.subtitle}>Type here something related to screen</Text>
-//       </SafeAreaView>
-//       <View style={styles.overlay}>
-//         <View style={styles.inputContainer}>
-//           <View style={styles.networking_container}>
-//             <View style={styles.cont_with_goolge_logo}>
-//               <Image source={imagePath.icgoogle} style={styles.goole_properties}/>
-//               </View>
-//               <View style={styles.cont_with_goolge}>
-//               <Text style={styles.networking_txt}>Continue With Google</Text>
-//               </View>
-//           </View>
-//         </View>
-//         <View style={styles.inputContainer}>
-//           <View style={styles.networking_container}>
-//             <View style={styles.cont_with_goolge_logo}>
-//               <Image source={imagePath.icfacebook} style={styles.goole_properties}/>
-//               </View>
-//               <View style={styles.cont_with_goolge}>
-//               <Text style={styles.networking_txt}>Continue With Facebook</Text>
-//               </View>
-//           </View>
-//         </View>
-//       </View>
-//       <View style={styles.main_screen_footer}>
-//         <View style={styles.main_screen_footer_division}>
-//           <Text style={styles.summary_property}>already have an account ? </Text>
-//         </View>
-//         <View style={styles.main_screen_footer_division}>
-//           <Text style={styles.sign_in_property}>{'Sign In' + '>'}</Text>
-//         </View>
-//       </View>
-//      </ImageBackground>
-//     // </View>
-//   );
-// };
 
 export default LoginScreen;

@@ -49,23 +49,15 @@ const DemoScreen = () => {
           async position => {
             console.log(position, "position");
             console.log('....result', position.coords);
-            // console.log(position.coords.latitude, " latidute from position"); //working
-            // const address = position.coords;    
-            // console.log(address, ",,,,,,,,,,,,,,address,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
 
             if (position.coords) {
               console.log(position.coords, "position. testing...............");
-              // console.log(position.coords.altitudeAccuracy,"position. testing...............");
               const { latitude, longitude, altitude } = position.coords;
               console.log("latitude, longitudelatitude, longitude", latitude, longitude, altitude)
               let resp = Location.reverseGeocodeAsync({
                 latitude,
                 longitude
               });
-
-              console.log(resp, " response from location\\\\\\\\\\\\\\\\\\\\");
-              console.log(position.coords, "............ position ................");
-              console.log(Location.LocationOptions, "jjjjjjjjjjjjjjjjjjjjjjjjjj");
               for (let item of resp) {
                 let address = `${item.name}, ${item.street}, ${item.postalCode}, ${item.city}`;
                 setDisplayCurrentAddress(address);

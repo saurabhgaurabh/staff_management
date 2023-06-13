@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'column',
         alignContent: 'center',
+        paddingBottom: 180
     },
     subtitle: {
         fontSize: 16,
@@ -99,16 +100,20 @@ const styles = StyleSheet.create({
         width: '50%',
         height: 180,
     },
+    formbodycss: {
+        // backgroundColor: '#3d72b4',
+
+    },
     form_field_container: {
         width: '100%',
-        // backgroundColor: '#3d72b4'
+        // backgroundColor: '#3d72b4',
         alignContent: 'center',
         alignItems: 'center',
         alignSelf: 'center'
     },
     passwordContainer: {
         paddingHorizontal: 15
-        
+
     },
     forgerPasswordCss: {
         alignContent: 'flex-end',
@@ -117,17 +122,77 @@ const styles = StyleSheet.create({
     },
     inputCss: {
         margin: 10,
+        fontSize: 15
     },
-    loginCss: { width: '90%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', height: 45, margin: 25, borderTopEndRadius: 5, borderTopStartRadius: 5, borderBottomEndRadius: 5, borderBottomStartRadius: 5 },
+    loginCss: {
+        width: '92%',
+        alignContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        // height: '15%',
+        margin: 20,
+        borderTopEndRadius: 5,
+        borderTopStartRadius: 5,
+        borderBottomEndRadius: 5,
+        borderBottomStartRadius: 5,
+    },
+    footerEvents: {
+        width: '92%',
+        alignContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+        // height: '15%',
+        margin: 20,
+        borderTopEndRadius: 5,
+        borderTopStartRadius: 5,
+        borderBottomEndRadius: 5,
+        borderBottomStartRadius: 5,
+        position: 'absolute',
+        bottom: -20
+    },
     submitbuttontext: {
         color: '#fff',
-        fontSize: 13,
+        fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'center',
     },
+    notificationContainer: {
+        backgroundColor: 'green',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        padding: 20,
+        alignItems: 'center',
+      },
+      notificationText: {
+        color: 'white',
+        fontSize: 18,
+        marginBottom: 10,
+      },
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
+
+
+
+    //////////  Home Screen page css  start /////////
+
+    MomoHeaderContainer: {
+        flex: 1
+    },
+    header: {
+        position: 'absolute',
+        width: '100%',
+        height: 136,
+        backgroundColor: 'red'
+    },
+    MomoHeaderContainer: {
+        flex: 1
+    },
+    //////////  Home Screen page css  end /////////
+
+
 
     mainbackground: {
 

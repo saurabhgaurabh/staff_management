@@ -13,22 +13,25 @@ const FirstScreen = () => {
     const goToLogin = () => {
         navigation.navigate(navigationStrings.LOGIN)
     }
-    const createAccount =()=>{
+    const createAccount = () => {
         navigation.navigate(navigationStrings.SIGNUP)
     }
     return (
-        // <View>
         <ImageBackground source={imagePath.icfirstss} style={styles.background}>
             <SafeAreaView style={styles.upper_txt}>
                 <Text style={styles.sub_upper_txt}>Welcome To eStudy !</Text>
                 <Text style={styles.subtitle}>Type here something related to screen</Text>
             </SafeAreaView>
+            <View style={{ justifyContent: 'center', alignItems: 'center', }}>
+                <Image source={imagePath.icuser} style={styles.logoCss} />
+            </View>
             <View style={styles.overlay}>
                 <View style={styles.inputContainer}>
                     <View style={styles.networking_container}>
                         <View style={styles.cont_with_goolge_logo}>
                             <Image source={imagePath.icgoogle} style={styles.goole_properties} />
                         </View>
+
                         <View style={styles.cont_with_goolge}>
                             <Text style={styles.networking_txt}>Continue With Google</Text>
                         </View>
@@ -63,7 +66,6 @@ const FirstScreen = () => {
                 </View>
             </View>
         </ImageBackground>
-        // </View>
     );
 }
 
