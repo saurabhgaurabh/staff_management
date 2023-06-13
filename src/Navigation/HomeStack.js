@@ -35,7 +35,7 @@ function HomeStack({navigation}) {
     // }, [])
     
     return (
-        <Stack.Navigator screenOptions={{ headerShown: true }}> 
+        <Stack.Navigator screenOptions={{ headerShown: true , }}> 
             <Stack.Screen
                 name={navigationStrings.HOME}
                 component={HomeScreen}

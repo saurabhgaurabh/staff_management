@@ -32,6 +32,10 @@ const LoginScreen = () => {
     const handleEmail = (text) => { setState({ ...state, email: text }) }
     const handlePassword = (text) => { setState({ ...state, password: text }) }
     const [showNotification, setShowNotification] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     // here if press back from login then it works...
     useEffect(() => {
@@ -61,11 +65,11 @@ const LoginScreen = () => {
     }
     useEffect(() => {
         if (showNotification) {
-          setTimeout(() => {
-            setShowNotification(false);
-          }, 2000);
+            setTimeout(() => {
+                setShowNotification(false);
+            }, 2000);
         }
-      }, [showNotification]);
+    }, [showNotification]);
 
     React.useEffect(() => {
         BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
@@ -73,7 +77,7 @@ const LoginScreen = () => {
             BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
         };
     }, []);
-    
+
 
 
     const Redirect_To_Dashboard = async () => {
@@ -95,8 +99,8 @@ const LoginScreen = () => {
                         // dispatch(loginFetchDataForProfile(result))
                         await AsyncStorage.setItem('tokenresult', result.token);
                         setShowNotification(true);
-                        navigation.navigate(navigationStrings.TABROUTES)
-                        // navigation.navigate(navigationStrings.Routes)
+                        // navigation.navigate(navigationStrings.TABROUTES)
+                        navigation.navigate(navigationStrings.Routes)
                         ToastAndroid.show('User Logged in Successfully', ToastAndroid.SHORT);
                     } else {
                         alert(`${result.message}`);
@@ -123,12 +127,12 @@ const LoginScreen = () => {
                             <TouchableOpacity onPress={handleBackButtonClick} >
                                 <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
                             </TouchableOpacity>
-                             {/* Notification Popup */}
-                        {showNotification && (
-                            <View style={styles.notificationContainer}>
-                                <Text style={styles.notificationText}>Login Successful!</Text>
-                            </View>
-                        )}
+                            {/* Notification Popup */}
+                            {showNotification && (
+                                <View style={styles.notificationContainer}>
+                                    <Text style={styles.notificationText}>Login Successful!</Text>
+                                </View>
+                            )}
                         </SafeAreaView>
                     </View>
                     <View style={{ justifyContent: 'center', alignItems: 'center', }}>
@@ -140,7 +144,7 @@ const LoginScreen = () => {
                                 <TextInput style={styles.inputCss}
                                     label="Email"
                                     activeUnderlineColor="#0288D1"
-                                    
+
                                     activeOutlineColor="grey"
                                     mode='outlined'
                                     outlineColor="white"
@@ -158,8 +162,12 @@ const LoginScreen = () => {
                                     returnKeyLabel='next'
                                     placeholderTextColor='#000'
                                     autoCapitalize='none'
+                                    secureTextEntry={!showPassword}
                                     onChangeText={(text) => { handlePassword(text) }}
                                 />
+                                <TouchableOpacity onPress={togglePasswordVisibility} style={{ position: 'absolute', right: 10 }}>
+                                    <Image source={showPassword ? imagePath.icHide : imagePath.icShow} style={{ height: 25, width: 25 }} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                         <View style={styles.passwordContainer}>
@@ -167,7 +175,7 @@ const LoginScreen = () => {
                         </View>
                         <View style={styles.loginCss}>
                             <View style={{}}>
-                                <TouchableOpacity onPress={Redirect_To_Dashboard} activeOpacity={0.7}>
+                                <TouchableOpacity onPress={gotoDashboard} activeOpacity={0.7}>
                                     <LinearGradient
                                         colors={['#6247AA', '#A594F9', '#77EED8']}
                                         start={{ x: 0, y: 0 }}
@@ -183,7 +191,7 @@ const LoginScreen = () => {
                                 </TouchableOpacity>
                             </View>
                         </View>
-                       
+
                     </View>
                 </View>
             </LinearGradient>

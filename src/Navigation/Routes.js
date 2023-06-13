@@ -25,8 +25,7 @@ function Routes({ navigation }) {
     >
       
       <Drawer.Screen
-        name={navigationStrings.TABROUTES}
-        component={TabRoutes}
+        name={navigationStrings.TABROUTES} component={TabRoutes}
         options={{
           title: "Dashboard",
           drawerIcon: () => (

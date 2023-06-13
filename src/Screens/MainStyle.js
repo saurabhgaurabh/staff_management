@@ -102,7 +102,23 @@ const styles = StyleSheet.create({
     },
     formbodycss: {
         // backgroundColor: '#3d72b4',
-
+    },
+    FlexBoxOne:{
+        // bottom: 15
+    },
+    MainContainer:{
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+    },
+    textCss:{
+        fontStyle: 'italic',
+        fontWeight: 'bold'
+    },
+    MomoHeaderContainer:{
+        // top: 15
     },
     form_field_container: {
         width: '100%',
