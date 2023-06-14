@@ -115,6 +115,8 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         // height: '100%'
     },
+    heading_trending:{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, padding: 10},
+    headingCss:{ fontSize: 22, fontWeight: 'bold'},
     card_container:{ flexDirection: 'row' },
     card_main_style:{ flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', },
     card_decoration:{ height: 110, width: 150, borderRadius: 10, margin: 5, borderWidth: 0, opacity: 0.9, shadowOpacity: 1, shadowRadius: 30.00, elevation: 3, },

@@ -7,6 +7,8 @@ import MomoHeaderScreen from './MomoHeaderScreen'
 import LinearGradient from 'react-native-linear-gradient';
 import styles from '../MainStyle'
 import ImageCarousel from '../../Components/ImageCarousel'
+import * as Animatable from 'react-native-animatable';
+import { FadeInDown, FadeInUp } from 'react-native-reanimated'
 
 const HomeScreen = ({ navigation }) => {
     // const [scrollOffset, setScrollOffset] = useState(0);
@@ -44,10 +46,10 @@ const HomeScreen = ({ navigation }) => {
                         <ImageCarousel images={images} />
                     </View>
 
-                    {/* <View style={styles.MomoHeaderContainer}>
+                    {/* <View  style={styles.MomoHeaderContainer}>
                     {data_array.map((cur, ind) => {
                         const { label, image, pressButton, money } = cur
-                        return <View style={styles.FlexBoxOne} key={ind}>
+                        return <Animatable.View animation={'pulse'} duration={1000} delay={ind * 100} style={styles.FlexBoxOne} key={ind}>
                             <View style={styles.ledgerBalanceImage}>
                                 <Image source={{ uri: image }} style={{ width: 90, height: 65 }} alt="Loading" />
                             </View>
@@ -55,12 +57,11 @@ const HomeScreen = ({ navigation }) => {
                                 <Text onPress={pressButton} style={styles.ledgerbalancetext}>{label}</Text>
                                 <Text style={styles.ledgerbalancetext}>{money}</Text>
                             </View>
-                        </View>
+                        </Animatable.View>
                     })}
-
                 </View> */}
-
-                    <View style={styles.MainContainer}>
+                    <View style={styles.heading_trending}><Animatable.Text style={styles.headingCss} animation="pulse" >Trending Now</Animatable.Text></View>
+                    <Animatable.View animation={'fadeInUp'} duration={1000} delay={100} style={styles.MainContainer}>
                         <View style={styles.card_container}>
                             <View style={styles.card_main_style}>
                                 <View style={styles.card_decoration}>
@@ -70,7 +71,7 @@ const HomeScreen = ({ navigation }) => {
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Add up Teachers</Text>
+                                                <Animatable.Text animation="zoomInUp" style={styles.textCss}>Add up Teachers</Animatable.Text>
                                             </View>
                                             <View style={styles.count_css}>
                                                 <Text style={styles.textCss}>Count(0)</Text>
@@ -224,8 +225,7 @@ const HomeScreen = ({ navigation }) => {
                                 </View>
                             </View>
                         </View>
-                    </View>
-
+                    </Animatable.View>
                 </LinearGradient>
             </ScrollView>
         </View>
