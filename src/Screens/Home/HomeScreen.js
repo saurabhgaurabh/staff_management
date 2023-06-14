@@ -36,14 +36,15 @@ const HomeScreen = ({ navigation }) => {
     ]
 
     return (
-        <ScrollView showsHorizontalScrollIndicator={true}>
-            <LinearGradient colors={['#8e9eab', '#eef2f3']}
-                style={styles.Linearcontainer}>
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
-                    <ImageCarousel images={images} />
-                </View>
+        <View style={{ height: '100%', paddingBottom: 55 }}>
+            <ScrollView showsHorizontalScrollIndicator={true}>
+                <LinearGradient colors={['#8e9eab', '#eef2f3']}
+                    style={styles.Linearcontainer}>
+                    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
+                        <ImageCarousel images={images} />
+                    </View>
 
-                {/* <View style={styles.MomoHeaderContainer}>
+                    {/* <View style={styles.MomoHeaderContainer}>
                     {data_array.map((cur, ind) => {
                         const { label, image, pressButton, money } = cur
                         return <View style={styles.FlexBoxOne} key={ind}>
@@ -59,37 +60,175 @@ const HomeScreen = ({ navigation }) => {
 
                 </View> */}
 
-                <View style={styles.MainContainer}>
-                    <View style={{ flexDirection: 'row', width: '100%' }}>
-                    <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center' }}>
-                            <View style={{ height: 110, width: 150, borderRadius: 10,margin: 5, borderWidth: 0.5, opacity: 0.5,}}>
-                                <View style={{flexDirection: 'column', height: '100%', width: '100%',justifyContent: 'center', alignContent: 'center', alignSelf: 'center'}}>
-                                    <View style={{flexDirection: 'row', width: '100%', height: '50%',alignContent: 'center', alignItems: 'center', alignSelf: 'center',justifyContent: 'center'}}>
-                                        <Image source={imagePath.icgoogle} style={{height: 40, width: 70}}/>
+                    <View style={styles.MainContainer}>
+                        <View style={styles.card_container}>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Add up Teachers</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
                                     </View>
-                                    <View style={{flexDirection: 'row', backgroundColor: 'yellow',width: '100%', height: '50%', alignItems: 'center', alignSelf: 'center', justifyContent: 'center'}}>
-                                        <Text>Add Summary</Text>
+                                </View>
+                            </View>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Teacher Route</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
                                     </View>
                                 </View>
                             </View>
                         </View>
-                        <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center' }}>
-                            <View style={{ height: 110, width: 150, borderRadius: 10,margin: 5, borderWidth: 0.5, opacity: 0.5,}}>
-                                <View style={{backgroundColor: '#bbb8f5', flexDirection: 'column', height: '100%', width: '100%',justifyContent: 'center', alignContent: 'center', alignSelf: 'center',}}>
-                                    <View style={{flexDirection: 'row', width: '100%', height: '50%',alignContent: 'center', alignItems: 'center', alignSelf: 'center',justifyContent: 'center'}}>
-                                        <Image source={imagePath.icgoogle} style={{height: 40, width: 70}}/>
+                        <View style={styles.card_container}>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Teacher Timeline</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
                                     </View>
-                                    <View style={{flexDirection: 'row', width: '100%', height: '50%', alignItems: 'center', alignSelf: 'center', justifyContent: 'center'}}>
-                                        <Text style={styles.textCss}>Add Summary</Text>
+                                </View>
+                            </View>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Staff Salary</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.card_container}>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Invoice generate</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Add Joining</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.card_container}>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Total Staff</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Add Class</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                        <View style={styles.card_container}>
+                            <View style={styles.card_main_style}>
+                                <View style={styles.card_decoration}>
+                                    <View style={styles.card_inner_decoration}>
+                                        <View style={styles.image_main_css}>
+                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                        </View>
+                                        <View style={styles.card_text_main_css}>
+                                            <View style={styles.card_main_css}>
+                                                <Text style={styles.textCss}>Add Book</Text>
+                                            </View>
+                                            <View style={styles.count_css}>
+                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            </View>
+                                        </View>
                                     </View>
                                 </View>
                             </View>
                         </View>
                     </View>
-                </View>
 
-            </LinearGradient>
-        </ScrollView>
+                </LinearGradient>
+            </ScrollView>
+        </View>
     )
 }
 export default HomeScreen

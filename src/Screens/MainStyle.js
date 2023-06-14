@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     //////////  login page css  start /////////
     Linearcontainer: {
         flex: 1,
+        // height: '100%'
     },
     formContainer: {
         display: 'flex',
@@ -112,10 +113,21 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
+        // height: '100%'
     },
+    card_container:{ flexDirection: 'row' },
+    card_main_style:{ flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', },
+    card_decoration:{ height: 110, width: 150, borderRadius: 10, margin: 5, borderWidth: 0, opacity: 0.9, shadowOpacity: 1, shadowRadius: 30.00, elevation: 3, },
+    card_inner_decoration: { backgroundColor: '#fff', flexDirection: 'column', height: '100%', width: '100%', justifyContent: 'center', alignContent: 'center', alignSelf: 'center', borderRadius: 10 },
+    image_main_css:{ flexDirection: 'row', width: '100%', height: '50%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
+    image_style:{ height: 40, width: 70 },
+    card_text_main_css:{ flexDirection: 'row', width: '100%', height: '50%', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
+    card_main_css:{ flexDirection: 'column', width: '50%', justifyContent: 'center', alignContent: 'center', alignItems: 'center' },
+    count_css:{ flexDirection: 'column', width: '50%', justifyContent: 'center', alignContent: 'center', alignItems: 'center' },
     textCss:{
         fontStyle: 'italic',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        color: 'black'
     },
     MomoHeaderContainer:{
         // top: 15
