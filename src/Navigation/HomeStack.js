@@ -14,6 +14,10 @@ import TeacherRoute from "../Screens/Home/TeacherRoute";
 import TeacherTimeline from "../Screens/Home/TeacherTimeline";
 import StaffSalary from "../Screens/Home/StaffSalary";
 import InvoiceGenerate from "../Screens/Home/InvoiceGenerate";
+import Joining from "../Screens/Home/Joining";
+import TotalStaff from "../Screens/Home/TotalStaff";
+import TotalClass from "../Screens/Home/TotalClass";
+import AddBooks from "../Screens/Home/AddBooks";
 
 function HomeStack({ navigation }) {
 
@@ -59,6 +63,10 @@ function HomeStack({ navigation }) {
             <Stack.Screen name={navigationStrings.TEACHERTIMELINE} component={TeacherTimeline} options={{ title: 'Teacher Timeline' }} />
             <Stack.Screen name={navigationStrings.STAFFSALARY} component={StaffSalary} options={{ title: 'Staff Salary' }} />
             <Stack.Screen name={navigationStrings.INVOICE} component={InvoiceGenerate} options={{ title: 'InvoiceG enerate' }} />
+            <Stack.Screen name={navigationStrings.JOINING} component={Joining} options={{ title: 'Teacher joining' }} />
+            <Stack.Screen name={navigationStrings.TOTALSTAFF} component={TotalStaff} options={{ title: 'Total Staff' }} />
+            <Stack.Screen name={navigationStrings.TOTALCLASS} component={TotalClass} options={{ title: 'Total Class' }} />
+            <Stack.Screen name={navigationStrings.BOOKS} component={AddBooks} options={{ title: 'Total Books' }} />
         </Stack.Navigator>
     )
 }

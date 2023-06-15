@@ -27,6 +27,10 @@ const HomeScreen = ({ navigation }) => {
     const TeacherTimeLine = () => navigation.navigate(navigationStrings.TEACHERTIMELINE);
     const AddStaffSalary = () => navigation.navigate(navigationStrings.STAFFSALARY);
     const AddInvoice = () => navigation.navigate(navigationStrings.INVOICE);
+    const AddJoiningTeacher = () => navigation.navigate(navigationStrings.JOINING);
+    const AddSTotaltaff = () => navigation.navigate(navigationStrings.TOTALSTAFF);
+    const AddSTotalClass = () => navigation.navigate(navigationStrings.TOTALCLASS);
+    const AddBooks = () => navigation.navigate(navigationStrings.BOOKS);
 
 
 
@@ -164,7 +168,7 @@ const HomeScreen = ({ navigation }) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={TeacherRoute}>
+                            <TouchableOpacity onPress={AddJoiningTeacher}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>
@@ -185,7 +189,7 @@ const HomeScreen = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <TouchableOpacity onPress={TeacherRoute}>
+                            <TouchableOpacity onPress={AddSTotaltaff}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>
@@ -204,7 +208,7 @@ const HomeScreen = ({ navigation }) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={TeacherRoute}>
+                            <TouchableOpacity onPress={AddSTotalClass}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>
@@ -225,7 +229,7 @@ const HomeScreen = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <TouchableOpacity onPress={TeacherRoute}>
+                            <TouchableOpacity onPress={AddBooks}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>

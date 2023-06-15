@@ -38,6 +38,10 @@ export default {
     TEACHERTIMELINE: "TeacherTimeline",
     STAFFSALARY: "StaffSalary",
     INVOICE: "InvoiceGenerate",
+    JOINING: "Joining",
+    TOTALSTAFF: "TotalStaff",
+    TOTALCLASS: "TotalClass",
+    BOOKS: "AddBooks",
 
     OUTSTANDINGPAYBLE: "OutstandingPayble",
     TOTAL_SALE: "TotalSale",
