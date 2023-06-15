@@ -67,7 +67,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icStaff} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -84,7 +84,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icRoute} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -103,7 +103,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icTimeline} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -120,7 +120,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icSalary} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -139,7 +139,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icInvoice} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -156,7 +156,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icJoining} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -175,7 +175,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.ictTotal_staff} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -192,7 +192,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icClass} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
@@ -211,7 +211,7 @@ const HomeScreen = ({ navigation }) => {
                                 <View style={styles.card_decoration}>
                                     <View style={styles.card_inner_decoration}>
                                         <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icgoogle} style={styles.image_style} />
+                                            <Image source={imagePath.icBook} style={styles.image_style} />
                                         </View>
                                         <View style={styles.card_text_main_css}>
                                             <View style={styles.card_main_css}>
