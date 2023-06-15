@@ -11,8 +11,7 @@ import { ServerUrl } from '../../Helper/Helper';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from '../MainStyle';
 import LinearGradient from 'react-native-linear-gradient';
-
-
+import * as Animatable from 'react-native-animatable';
 
 
 const LoginScreen = () => {
@@ -138,7 +137,7 @@ const LoginScreen = () => {
                     <View style={{ justifyContent: 'center', alignItems: 'center', }}>
                         <Image source={imagePath.icuser} style={styles.logoCss} />
                     </View>
-                    <View style={styles.formbodycss}>
+                    <Animatable.View animation={'zoomIn'} duration={1000} delay={100} style={styles.formbodycss}>
                         <View style={styles.form_field_container}>
                             <View style={{ alignSelf: 'center', width: '95%', paddingTop: 20 }}>
                                 <TextInput style={styles.inputCss}
@@ -171,7 +170,7 @@ const LoginScreen = () => {
                             </View>
                         </View>
                         <View style={styles.passwordContainer}>
-                            <View style={styles.forgerPasswordCss}><Text style={{ color: 'grey' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
+                            <View style={styles.forgerPasswordCss}><Text style={{ color: '#33cc5a', fontWeight: 'normal', fontSize: 14 }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
                         </View>
                         <View style={styles.loginCss}>
                             <View style={{}}>
@@ -192,7 +191,7 @@ const LoginScreen = () => {
                             </View>
                         </View>
 
-                    </View>
+                    </Animatable.View>
                 </View>
             </LinearGradient>
         </ScrollView>

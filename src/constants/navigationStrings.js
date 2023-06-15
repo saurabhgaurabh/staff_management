@@ -33,7 +33,10 @@ export default {
     Routes: "Routes",
 
     //Home Page Screens 
-    LEDGER_BALANCE: "LedgerBalance",
+    AddUPTeacher: "AddUpTeacher",
+    TEACHEROUTE: "TeacherRoute",
+    TEACHERTIMELINE: "TeacherTimeline",
+
     OUTSTANDINGPAYBLE: "OutstandingPayble",
     TOTAL_SALE: "TotalSale",
     // Ledgerscreen: "Ledgerscreen",

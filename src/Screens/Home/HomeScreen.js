@@ -1,6 +1,6 @@
 import React from 'react'
 import navigationStrings from '../../constants/navigationStrings'
-import { View, Text, Image, useState, RefreshControl, ScrollView } from 'react-native'
+import { View, Text, Image, useState, RefreshControl, ScrollView, TouchableOpacity } from 'react-native'
 import imagePath from '../../constants/imagePath'
 import { useSelector } from 'react-redux'
 import MomoHeaderScreen from './MomoHeaderScreen'
@@ -8,7 +8,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from '../MainStyle'
 import ImageCarousel from '../../Components/ImageCarousel'
 import * as Animatable from 'react-native-animatable';
-import { FadeInDown, FadeInUp } from 'react-native-reanimated'
+// import { FadeInDown, FadeInUp } from 'react-native-reanimated'
 
 const HomeScreen = ({ navigation }) => {
     // const [scrollOffset, setScrollOffset] = useState(0);
@@ -18,24 +18,24 @@ const HomeScreen = ({ navigation }) => {
     const { outstanding } = useSelector(state => state.login)
     const [refreshing, setRefreshing] = React.useState(false);
     const images = [
-        { source: require('../../assets/images/pexels.webp'), text: 'write caption here' },
+        { source: require('../../assets/images/pexels.webp'), text: 'Stydy is key of Success.' },
         { source: require('../../assets/images/pexels1.jpg') },
         { source: require('../../assets/images/pexels-polina.jpg') },
     ];
-    const goToLedger = () => navigation.navigate(navigationStrings.LEDGER_BALANCE)
-    const goToOutstandingPatble = () => navigation.navigate(navigationStrings.OUTSTANDINGPAYBLE)
-    const goToTotalSale = () => navigation.navigate(navigationStrings.TOTAL_SALE)
+    const AddUpTeacher = () => navigation.navigate(navigationStrings.AddUPTeacher)
+    const TeacherRoute = () => navigation.navigate(navigationStrings.TEACHEROUTE)
+    const TeacherTimeLine = () => navigation.navigate(navigationStrings.TEACHERTIMELINE)
     const gotTotarget = () => navigation.navigate(navigationStrings.TARGET)
 
 
 
-    let data_array = [
-        { label: 'Ledger Balance', image: "https://www.leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToLedger, money: '₹ ' + '8000.00' },
-        { label: 'Outstanding Receivable', image: "https://www.leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToOutstandingPatble, money: "₹ 8000.00" },
-        { label: 'Total Sale', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToTotalSale, money: "₹ 9652.00" },
-        { label: 'Target', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: gotTotarget, money: "₹ 4529.00" },
-        { label: 'Target', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: gotTotarget, money: "₹ 4529.00" },
-    ]
+    // let data_array = [
+    //     { label: 'Ledger Balance', image: "https://www.leadchainsystems.com/images/client/peddleLogo.png", pressButton: addUpTeacher, money: '₹ ' + '8000.00' },
+    //     { label: 'Outstanding Receivable', image: "https://www.leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToOutstandingPatble, money: "₹ 8000.00" },
+    //     { label: 'Total Sale', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToTotalSale, money: "₹ 9652.00" },
+    //     { label: 'Target', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: gotTotarget, money: "₹ 4529.00" },
+    //     { label: 'Target', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: gotTotarget, money: "₹ 4529.00" },
+    // ]
 
     return (
         <View style={{ height: '100%', paddingBottom: 55 }}>
@@ -60,170 +60,189 @@ const HomeScreen = ({ navigation }) => {
                         </Animatable.View>
                     })}
                 </View> */}
-                    <View style={styles.heading_trending}><Animatable.Text style={styles.headingCss} animation="pulse" >Trending Now</Animatable.Text></View>
+
+                    <View style={styles.heading_trending}><Animatable.Text style={styles.headingCss} animation="zoomIn" >Trending Now</Animatable.Text></View>
                     <Animatable.View animation={'fadeInUp'} duration={1000} delay={100} style={styles.MainContainer}>
                         <View style={styles.card_container}>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icStaff} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Animatable.Text animation="zoomInUp" style={styles.textCss}>Add up Teachers</Animatable.Text>
+                            <TouchableOpacity onPress={AddUpTeacher}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icStaff} style={styles.image_style} />
                                             </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icRoute} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Teacher Route</Text>
-                                            </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Animatable.Text animation="zoomInUp" style={styles.textCss}>Add up Teachers</Animatable.Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
                                             </View>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icRoute} style={styles.image_style} />
+                                            </View>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Teacher Route</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icTimeline} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Teacher Timeline</Text>
+                            <TouchableOpacity onPress={TeacherTimeLine}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icTimeline} style={styles.image_style} />
                                             </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icSalary} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Staff Salary</Text>
-                                            </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Teacher Timeline</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
                                             </View>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icSalary} style={styles.image_style} />
+                                            </View>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Staff Salary</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icInvoice} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Invoice generate</Text>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icInvoice} style={styles.image_style} />
                                             </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icJoining} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Add Joining</Text>
-                                            </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Invoice generate</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
                                             </View>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icJoining} style={styles.image_style} />
+                                            </View>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Add Joining</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.ictTotal_staff} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Total Staff</Text>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.ictTotal_staff} style={styles.image_style} />
                                             </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icClass} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Add Class</Text>
-                                            </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Total Staff</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
                                             </View>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icClass} style={styles.image_style} />
+                                            </View>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Add Class</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
+                                            </View>
+                                        </View>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <View style={styles.card_main_style}>
-                                <View style={styles.card_decoration}>
-                                    <View style={styles.card_inner_decoration}>
-                                        <View style={styles.image_main_css}>
-                                            <Image source={imagePath.icBook} style={styles.image_style} />
-                                        </View>
-                                        <View style={styles.card_text_main_css}>
-                                            <View style={styles.card_main_css}>
-                                                <Text style={styles.textCss}>Add Book</Text>
+                            <TouchableOpacity onPress={TeacherRoute}>
+                                <View style={styles.card_main_style}>
+                                    <View style={styles.card_decoration}>
+                                        <View style={styles.card_inner_decoration}>
+                                            <View style={styles.image_main_css}>
+                                                <Image source={imagePath.icBook} style={styles.image_style} />
                                             </View>
-                                            <View style={styles.count_css}>
-                                                <Text style={styles.textCss}>Count(0)</Text>
+                                            <View style={styles.card_text_main_css}>
+                                                <View style={styles.card_main_css}>
+                                                    <Text style={styles.textCss}>Add Book</Text>
+                                                </View>
+                                                <View style={styles.count_css}>
+                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                </View>
                                             </View>
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </Animatable.View>
                 </LinearGradient>

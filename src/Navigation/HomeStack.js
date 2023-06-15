@@ -1,26 +1,28 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import navigationStrings from "../constants/navigationStrings";
 import HomeScreen from "../Screens/Home/HomeScreen";
-import LedgerBalance from "../Screens/LedgerBalance/LedgerBalance";
 import { RoutePlan, TargetScreen } from "../Screens";
-import { TouchableOpacity, Image,useState,BackHandler, Alert  } from "react-native";
+import { TouchableOpacity, Image, useState, BackHandler, Alert } from "react-native";
 import imagePath from "../constants/imagePath";
 import OutstandingPayble from "../Screens/OutstandingPayble/OutstandingPayble";
 import TotalSale from "../Screens/TotalSale/TotalSale";
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSelector } from "react-redux";
+import AddUpTeacher from "../Screens/Home/AddUpTeacher";
+import TeacherRoute from "../Screens/Home/TeacherRoute";
+import TeacherTimeline from "../Screens/Home/TeacherTimeline";
 
-function HomeStack({navigation}) {
+function HomeStack({ navigation }) {
 
-  
+
     const Stack = createNativeStackNavigator();
 
     const { loginData } = useSelector(state => state.login)
     // const navigation = useNavigation();
-  
-  
-  
+
+
+
     // useEffect(() => {  
     //   if (loginData) {
     //     if (loginData.token) {
@@ -33,9 +35,9 @@ function HomeStack({navigation}) {
     //     navigation.navigate('LoginScreen');
     //   }
     // }, [])
-    
+
     return (
-        <Stack.Navigator screenOptions={{ headerShown: true , }}> 
+        <Stack.Navigator screenOptions={{ headerShown: true, }}>
             <Stack.Screen
                 name={navigationStrings.HOME}
                 component={HomeScreen}
@@ -50,8 +52,9 @@ function HomeStack({navigation}) {
                         )
                     }
                 })} />
-            <Stack.Screen name={navigationStrings.LEDGER_BALANCE} component={LedgerBalance} options={{ title: 'Ledger Balance' }} />
-            <Stack.Screen name={navigationStrings.OUTSTANDINGPAYBLE} component={OutstandingPayble} options={{ title: 'Outstanding Receivable' }} />
+            <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add up treacher' }} />
+            <Stack.Screen name={navigationStrings.TEACHEROUTE} component={TeacherRoute} options={{ title: 'Teacher Tracking' }} />
+            <Stack.Screen name={navigationStrings.TEACHERTIMELINE} component={TeacherTimeline} options={{ title: 'Teacher Timeline' }} />
             <Stack.Screen name={navigationStrings.TOTAL_SALE} component={TotalSale} options={{ title: 'Total Sale' }} />
             <Stack.Screen name={navigationStrings.TARGET} component={TargetScreen} options={{ title: 'Target' }} />
         </Stack.Navigator>
