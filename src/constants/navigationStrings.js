@@ -36,6 +36,8 @@ export default {
     AddUPTeacher: "AddUpTeacher",
     TEACHEROUTE: "TeacherRoute",
     TEACHERTIMELINE: "TeacherTimeline",
+    STAFFSALARY: "StaffSalary",
+    INVOICE: "InvoiceGenerate",
 
     OUTSTANDINGPAYBLE: "OutstandingPayble",
     TOTAL_SALE: "TotalSale",

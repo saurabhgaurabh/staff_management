@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 import AddUpTeacher from "../Screens/Home/AddUpTeacher";
 import TeacherRoute from "../Screens/Home/TeacherRoute";
 import TeacherTimeline from "../Screens/Home/TeacherTimeline";
+import StaffSalary from "../Screens/Home/StaffSalary";
+import InvoiceGenerate from "../Screens/Home/InvoiceGenerate";
 
 function HomeStack({ navigation }) {
 
@@ -55,8 +57,8 @@ function HomeStack({ navigation }) {
             <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add up treacher' }} />
             <Stack.Screen name={navigationStrings.TEACHEROUTE} component={TeacherRoute} options={{ title: 'Teacher Tracking' }} />
             <Stack.Screen name={navigationStrings.TEACHERTIMELINE} component={TeacherTimeline} options={{ title: 'Teacher Timeline' }} />
-            <Stack.Screen name={navigationStrings.TOTAL_SALE} component={TotalSale} options={{ title: 'Total Sale' }} />
-            <Stack.Screen name={navigationStrings.TARGET} component={TargetScreen} options={{ title: 'Target' }} />
+            <Stack.Screen name={navigationStrings.STAFFSALARY} component={StaffSalary} options={{ title: 'Staff Salary' }} />
+            <Stack.Screen name={navigationStrings.INVOICE} component={InvoiceGenerate} options={{ title: 'InvoiceG enerate' }} />
         </Stack.Navigator>
     )
 }

@@ -22,10 +22,11 @@ const HomeScreen = ({ navigation }) => {
         { source: require('../../assets/images/pexels1.jpg') },
         { source: require('../../assets/images/pexels-polina.jpg') },
     ];
-    const AddUpTeacher = () => navigation.navigate(navigationStrings.AddUPTeacher)
-    const TeacherRoute = () => navigation.navigate(navigationStrings.TEACHEROUTE)
-    const TeacherTimeLine = () => navigation.navigate(navigationStrings.TEACHERTIMELINE)
-    const gotTotarget = () => navigation.navigate(navigationStrings.TARGET)
+    const AddUpTeacher = () => navigation.navigate(navigationStrings.AddUPTeacher);
+    const TeacherRoute = () => navigation.navigate(navigationStrings.TEACHEROUTE);
+    const TeacherTimeLine = () => navigation.navigate(navigationStrings.TEACHERTIMELINE);
+    const AddStaffSalary = () => navigation.navigate(navigationStrings.STAFFSALARY);
+    const AddInvoice = () => navigation.navigate(navigationStrings.INVOICE);
 
 
 
@@ -123,7 +124,7 @@ const HomeScreen = ({ navigation }) => {
                                     </View>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={TeacherRoute}>
+                            <TouchableOpacity onPress={AddStaffSalary}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>
@@ -144,7 +145,7 @@ const HomeScreen = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                         <View style={styles.card_container}>
-                            <TouchableOpacity onPress={TeacherRoute}>
+                            <TouchableOpacity onPress={AddInvoice}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>
