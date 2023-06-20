@@ -42,10 +42,4 @@ export default {
     TOTALSTAFF: "TotalStaff",
     TOTALCLASS: "TotalClass",
     BOOKS: "AddBooks",
-
-    OUTSTANDINGPAYBLE: "OutstandingPayble",
-    TOTAL_SALE: "TotalSale",
-    // Ledgerscreen: "Ledgerscreen",
-    TARGET: "TargetScreen",
-    ROUTEPLANS: "RoutePlan"
 }

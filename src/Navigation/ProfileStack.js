@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const ProfileStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: true }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen 
       name={navigationStrings.PROFILE} 
       component={Profile}

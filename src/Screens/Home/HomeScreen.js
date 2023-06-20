@@ -45,7 +45,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={{ height: '100%', paddingBottom: 55 }}>
             <ScrollView showsHorizontalScrollIndicator={true}>
-                <LinearGradient colors={['#8e9eab', '#eef2f3']}
+            <LinearGradient colors={['#9f9bd4', '#d6d3e8']}
                     style={styles.Linearcontainer}>
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
                         <ImageCarousel images={images} />

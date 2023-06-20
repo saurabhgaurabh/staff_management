@@ -25,10 +25,5 @@ export {default as OrderStack} from '../Navigation/OrderStack';
 export {default as ProfileStack} from '../Navigation/ProfileStack';
 
 //SubScreen's of Home Page Start's from here
-export {default as LedgerBalance} from './LedgerBalance/LedgerBalance';
-export {default as OutstandingPayble} from './OutstandingPayble/OutstandingPayble';
-export {default as TargetScreen} from './Target/TargetScreen';
-export {default as TotalSale} from './TotalSale/TotalSale';
-export {default as RoutePlan} from './RoutePlan/RoutePlan';
 export {default as FirstScreen} from './Login/FirstScreen';
 //SubScreen's of Home Page Ends's from here

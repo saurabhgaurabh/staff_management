@@ -102,12 +102,10 @@ const styles = StyleSheet.create({
         height: 180,
     },
     formbodycss: {
-        // backgroundColor: '#3d72b4',
     },
-    FlexBoxOne:{
-        // bottom: 15
+    FlexBoxOne: {
     },
-    MainContainer:{
+    MainContainer: {
         flexDirection: 'column',
         justifyContent: 'center',
         alignContent: 'center',
@@ -115,23 +113,23 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         // height: '100%'
     },
-    heading_trending:{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, padding: 10},
-    headingCss:{ fontSize: 22, fontWeight: 'bold'},
-    card_container:{ flexDirection: 'row' },
-    card_main_style:{ flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', },
-    card_decoration:{ height: 120, width: 160, borderRadius: 10, margin: 5, borderWidth: 0, opacity: 0.9, shadowOpacity: 1, shadowRadius: 30.00, elevation: 3, },
+    heading_trending: { flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, padding: 10 },
+    headingCss: { fontSize: 22, fontWeight: 'bold' , fontStyle: 'italic'},
+    card_container: { flexDirection: 'row' },
+    card_main_style: { flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', },
+    card_decoration: { height: 120, width: 160, borderRadius: 10, margin: 5, borderWidth: 0, opacity: 0.9, shadowOpacity: 1, shadowRadius: 30.00, elevation: 3, },
     card_inner_decoration: { backgroundColor: '#fff', flexDirection: 'column', height: '100%', width: '100%', justifyContent: 'center', alignContent: 'center', alignSelf: 'center', borderRadius: 10 },
-    image_main_css:{ flexDirection: 'row', width: '100%', height: '50%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
-    image_style:{ height: 40, width: 50 },
-    card_text_main_css:{ flexDirection: 'row', width: '100%', height: '50%', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
-    card_main_css:{ flexDirection: 'column', width: '50%', justifyContent: 'center', alignContent: 'center', alignItems: 'center' },
-    count_css:{ flexDirection: 'column', width: '50%', justifyContent: 'center', alignContent: 'center', alignItems: 'center' },
-    textCss:{
+    image_main_css: { flexDirection: 'row', width: '100%', height: '50%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
+    image_style: { height: 40, width: 50 },
+    card_text_main_css: { flexDirection: 'row', width: '100%', height: '50%', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
+    card_main_css: { flexDirection: 'column', width: '50%', justifyContent: 'center', alignContent: 'center', alignItems: 'center' },
+    count_css: { flexDirection: 'column', width: '50%', justifyContent: 'center', alignContent: 'center', alignItems: 'center' },
+    textCss: {
         fontStyle: 'italic',
         fontWeight: 'bold',
         color: 'black'
     },
-    MomoHeaderContainer:{
+    MomoHeaderContainer: {
         // top: 15
     },
     form_field_container: {
@@ -194,12 +192,13 @@ const styles = StyleSheet.create({
         right: 0,
         padding: 20,
         alignItems: 'center',
-      },
-      notificationText: {
+    },
+    notificationText: {
         color: 'white',
         fontSize: 18,
         marginBottom: 10,
-      },
+        fontStyle: 'italic',
+    },
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
@@ -223,6 +222,26 @@ const styles = StyleSheet.create({
     //////////  Home Screen page css  end /////////
 
 
+
+    // profile screen css properties start...
+    profileHeading:{fontStyle: 'italic', flexWrap: 'wrap', fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: '#7c79b0', },
+    profileHeading_second:{ fontStyle: 'italic', flexWrap: 'wrap', fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: '#7c79b0',paddingTop: 25 },
+    profile_header_component: {
+        flexDirection: 'column', height: 250, width: '100%', borderRadius: 10,
+ 
+    },
+    profile_img_css: { flexDirection: 'row', width: '100%', height: '50%', borderTopRightRadius: 10, borderTopLeftRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center' },
+    profile_info: {  flexDirection: 'column', width: '100%', height: '50%', borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomEndRadius: 10, borderBottomStartRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center', },
+    profile_info_css:{ flexDirection: 'row', justifyContent: 'center' },
+    linearCss:{ flex: 1, width: '100%', borderRadius: 10 },
+    img_size: { height: '100%', width: '40%' },
+    profileText:{fontStyle: 'italic', fontStyle: 'italic',fontWeight: 'bold', fontSize: 20, color: '#fff'},
+    profile_menu: { flexDirection: 'column', width: '100%', height: 100, justifyContent: 'center', alignSelf: 'center', },
+    profile_main_card: { flexDirection: 'row', justifyContent: 'space-between', width: '100%', },
+    profile_card:{ flexDirection: 'column', backgroundColor: 'grey', width: '48%', height: 80, alignContent: 'center', margin: 2, alignItems: 'center', justifyContent: 'center', borderRadius: 10 },
+    profile_card_img:{ flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'flex-end' , paddingHorizontal: 10},
+    profile_card_txt:{ flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'center' },
+    // profile screen css properties end...
 
     mainbackground: {
 
@@ -551,58 +570,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    profile_image_Css: {
-        flexDirection: 'row',
-        width: '100%',
-        alignSelf: 'center',
-        height: '25%',
-        backgroundColor: '#E1E2E5',
-        marginTop: 10,
-        borderRadius: 10,
-        elevation: 10,
-        paddingLeft: 10,
-        paddingTop: 4,
-        justifyContent: 'space-between',
 
-    },
-    profile_image_style: {
-        flexDirection: 'column',
-        width: '30%',
-        paddingRight: 50,
-        paddingTop: 10,
-    },
-    profile_text_css: {
-        paddingTop: 10,
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        width: '70%',
-        flexShrink: 0.1
-    },
-    dataStyleCss: {
-        fontSize: 16,
-        color: 'grey',
-        fontWeight: '600',
-        paddingTop: 0,
-        paddingLeft: 10,
-        alignItems: 'center',
-        flexShrink: 10,
-    },
-    profile_information_image: {
-        paddingTop: 20,
-        flexDirection: 'column',
-        width: 50,
-    },
-    profile_information_Css: {
-        paddingTop: 20,
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        width: 200,
-    },
-    middle_Css: {
-        flexDirection: 'row',
-        alignContent: 'center',
-        paddingTop: 10
-    },
+    // profile_information_image: {
+    //     paddingTop: 20,
+    //     flexDirection: 'column',
+    //     width: 50,
+    // },
+    // profile_information_Css: {
+    //     paddingTop: 20,
+    //     flexDirection: 'column',
+    //     alignItems: 'flex-start',
+    //     width: 200,
+    // },
+    // middle_Css: {
+    //     flexDirection: 'row',
+    //     alignContent: 'center',
+    //     paddingTop: 10
+    // },
     input: {
         height: 45,
         margin: 12,
@@ -611,44 +595,44 @@ const styles = StyleSheet.create({
         mode: 'outlined',
         width: '100%'
     },
-    inputForProfile: {
-        // height: 45,
-        margin: 12,
-        backgroundColor: 'white',
-        borderRadius: 10,
-        mode: 'outlined',
-        width: 250,
-        borderColor: '#0288D1',
+    // inputForProfile: {
+    //     // height: 45,
+    //     margin: 12,
+    //     backgroundColor: 'white',
+    //     borderRadius: 10,
+    //     mode: 'outlined',
+    //     width: 250,
+    //     borderColor: '#0288D1',
 
-    },
-    inputForIMage: {
-        // height: 45,
-        height: '12%',
-        margin: 12,
-        backgroundColor: 'white',
-        borderRadius: 10,
-        mode: 'outlined',
-        // width: 250,
-        borderColor: '#0288D1',
-        flexDirection: 'row',
-        width: '100%'
-    },
+    // },
+    // inputForIMage: {
+    //     // height: 45,
+    //     height: '12%',
+    //     margin: 12,
+    //     backgroundColor: 'white',
+    //     borderRadius: 10,
+    //     mode: 'outlined',
+    //     // width: 250,
+    //     borderColor: '#0288D1',
+    //     flexDirection: 'row',
+    //     width: '100%'
+    // },
     inputfields: {
         bottomTop: 10,
     },
-    profile_text_logout: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 40, color: 'grey' },
-    profile_text_about: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 25, color: 'grey' },
-    profile_text_editProfile: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 10, color: 'grey' },
-    profile_close_editProfile: { fontSize: 16, fontWeight: 'bold', justifyContent: 'space-around', color: 'red' },
-    profile_update_event: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', paddingRight: 70, color: 'green' },
-    popupInnerCss: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)' },
-    popupInfoTextCss: { backgroundColor: 'lightgray', padding: 20, borderRadius: 15, alignItems: 'center', paddingRight: 10, margin: 10 },
+    // profile_text_logout: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 40, color: 'grey' },
+    // profile_text_about: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 25, color: 'grey' },
+    // profile_text_editProfile: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', bottom: 10, color: 'grey' },
+    // profile_close_editProfile: { fontSize: 16, fontWeight: 'bold', justifyContent: 'space-around', color: 'red' },
+    // profile_update_event: { fontSize: 16, fontWeight: 'bold', alignItems: 'flex-start', paddingRight: 70, color: 'green' },
+    // popupInnerCss: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0,0,0,0.5)' },
+    // popupInfoTextCss: { backgroundColor: 'lightgray', padding: 20, borderRadius: 15, alignItems: 'center', paddingRight: 10, margin: 10 },
     image_css: {
         alignContent: 'flex-start', alignItems: 'center', alignSelf: 'center',
         borderWidth: 1,
         height: '7%'
     },
-    img_text: { color: 'green', fontSize: 17, textAlign: 'center', margin: 10 },
+    // img_text: { color: 'green', fontSize: 17, textAlign: 'center', margin: 10 },
 
     FinalOrderScrMainContainer: {
         position: 'relative',
@@ -674,22 +658,10 @@ const styles = StyleSheet.create({
 
     },
 
-    profile_count: {
-        flexDirection: 'column',
-        paddingTop: 30,
-        width: '33%',
-        alignItems: 'center'
-    },
-    font_size: {
-        fontSize: 50,
-        color: '#a6ab66'
-    },
-    info_css: { fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: 'grey' },
-    profile_middle_main_css: { flexDirection: 'column', justifyContent: 'space-between', paddingTop: 40 },
-    profile_text: {
-        fontSize: 12,
-        textAlign: 'center', fontWeight: 'bold', color: 'grey'
-    },
+
+    // info_css: { fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: 'grey' },
+    // profile_middle_main_css: { flexDirection: 'column', justifyContent: 'space-between', paddingTop: 40 },
+
     orderDeliverAddressCss: {
         flexDirection: 'row',
         width: '94%',

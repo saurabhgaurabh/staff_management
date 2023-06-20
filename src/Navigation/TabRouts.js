@@ -39,7 +39,7 @@ function TabRoutes() {
         <Tab.Navigator
             screenOptions={{
                 tabBarInactiveTintColor: 'black',
-                tabBarActiveTintColor: 'green',
+                tabBarActiveTintColor: '#8581b9',
                 tabBarShowLabel: true,
                 headerTitleAlign: 'center',
                 headerTintColor: '#3CB371',
@@ -50,7 +50,7 @@ function TabRoutes() {
                     shadowColor: 'blue',
                     headerShown: true,
                     position: 'absolute',
-                    bottom: 0,
+                    bottom: 1,
                     shadowColor: "red",
                     shadowOffset: { width: 0, height: 40 },
                     shadowOpacity: 0.25,
@@ -74,8 +74,8 @@ function TabRoutes() {
                     title: "Home",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ tintColor: focused ? 'green' : 'black' }} source={imagePath.icNavHome} />)
-                    }, headerTintColor: 'green', headerShown: false
+                            <Image style={{ tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icNavHome} />)
+                    }, headerTintColor: 'skyblue', headerShown: false
                 }} />
             <Tab.Screen
                 name={navigationStrings.FAVORITESTACK} component={FavoriteStack}
@@ -83,8 +83,8 @@ function TabRoutes() {
                     title: "Favorite",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ height: 25, width: 25, tintColor: focused ? 'green' : 'black' }} source={imagePath.icAddfavorite} />)
-                    }, headerTintColor: 'green', headerShown: false
+                            <Image style={{ height: 25, width: 25, tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icAddfavorite} />)
+                    }, headerTintColor: 'skyblue', headerShown: false
                 }} />
             <Tab.Screen
                 name={navigationStrings.ORDERSTACK} component={OrderStack}
@@ -92,9 +92,9 @@ function TabRoutes() {
                     title: "Order",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ height: 27, width: 27, tintColor: focused ? 'green' : 'black' }} source={imagePath.icNAbCategory} />
+                            <Image style={{ height: 27, width: 27, tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icNAbCategory} />
                         )
-                    }, headerTintColor: 'green', headerShown: false
+                    }, headerTintColor: 'skyblue', headerShown: false
                 }} />
             <Tab.Screen
                 name={navigationStrings.PROFILESTACK} component={ProfileStack}
@@ -102,9 +102,9 @@ function TabRoutes() {
                     title: "Profile",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ tintColor: focused ? 'green' : 'black' }} source={imagePath.icNabProfile} />
+                            <Image style={{ tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icNabProfile} />
                         )
-                    }, headerTintColor: 'green', headerShown: false
+                    }, headerTintColor: 'skyblue', headerShown: false
                 }} />
         </Tab.Navigator>
     )

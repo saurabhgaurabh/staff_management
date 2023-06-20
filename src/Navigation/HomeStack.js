@@ -6,7 +6,7 @@ import { RoutePlan, TargetScreen } from "../Screens";
 import { TouchableOpacity, Image, useState, BackHandler, Alert } from "react-native";
 import imagePath from "../constants/imagePath";
 import OutstandingPayble from "../Screens/OutstandingPayble/OutstandingPayble";
-import TotalSale from "../Screens/TotalSale/TotalSale";
+// import TotalSale from "../Screens/TotalSale/TotalSale";
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSelector } from "react-redux";
 import AddUpTeacher from "../Screens/Home/AddUpTeacher";
@@ -58,11 +58,11 @@ function HomeStack({ navigation }) {
                         )
                     }
                 })} />
-            <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add up treacher' }} />
+            <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add up Treacher' }} />
             <Stack.Screen name={navigationStrings.TEACHEROUTE} component={TeacherRoute} options={{ title: 'Teacher Tracking' }} />
             <Stack.Screen name={navigationStrings.TEACHERTIMELINE} component={TeacherTimeline} options={{ title: 'Teacher Timeline' }} />
             <Stack.Screen name={navigationStrings.STAFFSALARY} component={StaffSalary} options={{ title: 'Staff Salary' }} />
-            <Stack.Screen name={navigationStrings.INVOICE} component={InvoiceGenerate} options={{ title: 'InvoiceG enerate' }} />
+            <Stack.Screen name={navigationStrings.INVOICE} component={InvoiceGenerate} options={{ title: 'Invoice enerate' }} />
             <Stack.Screen name={navigationStrings.JOINING} component={Joining} options={{ title: 'Teacher joining' }} />
             <Stack.Screen name={navigationStrings.TOTALSTAFF} component={TotalStaff} options={{ title: 'Total Staff' }} />
             <Stack.Screen name={navigationStrings.TOTALCLASS} component={TotalClass} options={{ title: 'Total Class' }} />

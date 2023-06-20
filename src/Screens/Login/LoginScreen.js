@@ -124,7 +124,7 @@ const LoginScreen = () => {
                     <View>
                         <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', backgroundColor: '#8e9eab' }} >
                             <TouchableOpacity onPress={handleBackButtonClick} >
-                                <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
+                                <Image style={{ height: 35, width: 25 }} source={imagePath.icback} />
                             </TouchableOpacity>
                             {/* Notification Popup */}
                             {showNotification && (
