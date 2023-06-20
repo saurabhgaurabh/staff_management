@@ -170,7 +170,7 @@ const LoginScreen = () => {
                             </View>
                         </View>
                         <View style={styles.passwordContainer}>
-                            <View style={styles.forgerPasswordCss}><Text style={{ color: '#33cc5a', fontWeight: 'normal', fontSize: 14 }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
+                            <View style={styles.forgerPasswordCss}><Text style={{ color: '#33cc5a', fontWeight: 'normal', fontSize: 14, fontStyle: 'italic' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
                         </View>
                         <View style={styles.loginCss}>
                             <View style={{}}>

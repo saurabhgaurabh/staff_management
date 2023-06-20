@@ -73,7 +73,7 @@ const Profile = ({ navigation }) => {
               </LinearGradient>
             </View>
             <View style={styles.profile_card}>
-              <LinearGradient colors={['#e3f7f1', '#dbe062']} style={styles.linearCss}>
+              <LinearGradient colors={['#e3f7f1', '#c7ce78']} style={styles.linearCss}>
                 <View style={styles.profile_card_img}><Image source={imagePath.icContactUs} style={{ height: 30, width: 30 }} /></View>
                 <View style={styles.profile_card_txt}><Text style={styles.textCss}>Contact Us</Text></View>
               </LinearGradient>
@@ -83,13 +83,13 @@ const Profile = ({ navigation }) => {
         <View style={styles.profile_menu}>
           <View style={styles.profile_main_card}>
             <View style={styles.profile_card}>
-              <LinearGradient colors={['#e3f7f1', '#7ff27e']} style={styles.linearCss}>
+              <LinearGradient colors={['#e3f7f1', '#76c67a']} style={styles.linearCss}>
                 <View style={styles.profile_card_img}><Image source={imagePath.icPassword} style={{ height: 30, width: 30 }} /></View>
                 <View style={styles.profile_card_txt}><Text style={styles.textCss}>Change Passsword</Text></View>
               </LinearGradient>
             </View>
             <View style={styles.profile_card}>
-              <LinearGradient colors={['#e3f7f1', '#d2b3e9']} style={styles.linearCss}>
+              <LinearGradient colors={['#e3f7f1','#4c98bf']} style={styles.linearCss}>
                 <View style={styles.profile_card_img}><Image source={imagePath.icAboutUs} style={{ height: 30, width: 30 }} /></View>
                 <View style={styles.profile_card_txt}><Text style={styles.textCss}>About Us</Text></View>
               </LinearGradient>
@@ -99,7 +99,7 @@ const Profile = ({ navigation }) => {
         <View style={styles.profile_menu}>
           <View style={styles.profile_main_card}>
             <View style={styles.profile_card}>
-              <LinearGradient colors={['#e3f7f1', '#f17985']} style={styles.linearCss}>
+              <LinearGradient colors={['#e3f7f1', '#f57a93']} style={styles.linearCss}>
                 <View style={styles.profile_card_img}><Image source={imagePath.icLogOut} style={{ height: 30, width: 30 }} /></View>
                 <View style={styles.profile_card_txt}><Text style={styles.textCss}>Logout</Text></View>
               </LinearGradient>

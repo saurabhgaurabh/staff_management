@@ -80,7 +80,7 @@ function TabRoutes() {
             <Tab.Screen
                 name={navigationStrings.FAVORITESTACK} component={FavoriteStack}
                 options={{
-                    title: "Favorite",
+                    title: "Map",
                     tabBarIcon: ({ focused }) => {
                         return (
                             <Image style={{ height: 25, width: 25, tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icAddfavorite} />)

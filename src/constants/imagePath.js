@@ -21,12 +21,12 @@ export default{
     icAddToCart: require('../assets/images/addtocart.png'),
     icAddFavorite: require('../assets/images/addfavotite.png'),
     icedit: require('../assets/images/edit.png'),
-    icAddfavorite: require('../assets/images/fav.png'),
     icDeleteItem: require('../assets/images/delete.png'),
     icfavForRemove: require('../assets/images/favForRemove.png'),
     icuser: require('../assets/images/BookCreator.webp'),
     icgoogle: require('../assets/images/Google-Symbol.png'),
     
+    icAddfavorite: require('../assets/images/maps-and-flags.png'),
     ////////////////////////////////////
     icEditProfile: require('../assets/images/output-edit_profile.gif'),
     icContactUs: require('../assets/images/output-contact_us.gif'),
