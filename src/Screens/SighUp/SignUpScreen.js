@@ -27,15 +27,13 @@ const SignUpScreen = () => {
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
-  const [state, setState] = useState({ user_name: "", user_email: "", user_mobile: "", position: "", password: "", confirmpassword: "", message: "", fileName: "", base64File: "" })
+  const [state, setState] = useState({ user_name: "", user_email: "", user_mobile: "", position: "", password: "", fileName: "", base64File: "" })
 
   const handleUsername = (text) => { setState({ ...state, user_name: text }) }
   const handleEmail = (text) => { setState({ ...state, user_email: text }) }
   const handleMobile = (text) => { setState({ ...state, user_mobile: text }) }
   const handlePosition = (text) => { setState({ ...state, position: text }) }
   const handlePassword = (text) => { setState({ ...state, password: text }) }
-  const handleConfirmPassword = (text) => { setState({ ...state, confirmpassword: text }) }
-  const handleMessage = (text) => { setState({ ...state, message: text }) }
   const { loginData } = useSelector(state => state.login)
   console.log(loginData, " loginData")
 
@@ -175,7 +173,7 @@ const SignUpScreen = () => {
         showsVerticalScrollIndicator={true}
         style={styles.listsrcsytle}>
         <View style={{ display: 'flex' }}>
-          <View style={{ flexDirection: 'column', paddingTop: 20 }}>
+          <View style={{ flexDirection: 'column', paddingTop: 40 }}>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
                 <TextInput style={styles.input}
@@ -248,35 +246,6 @@ const SignUpScreen = () => {
                   autoCapitalize='none'
                   placeholderTextColor='#000'
                   onChangeText={handlePassword}
-                />
-              </View>
-            </View>
-            <View style={styles.FormMainStyles}>
-              <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
-                  label="Confirm Password"
-                  activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
-                  mode='outlined'
-                  outlineColor="#0288D1"
-                  returnKeyLabel='next'
-                  autoCapitalize='none'
-                  placeholderTextColor='#000'
-                  onChangeText={handleConfirmPassword}
-                />
-              </View>
-            </View>
-            <View style={styles.FormMainStyles}>
-              <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
-                  label="Message"
-                  activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
-                  mode='outlined'
-                  outlineColor="#0288D1"
-                  returnKeyLabel='next'
-                  placeholderTextColor='#000'
-                  onChangeText={handleMessage}
                 />
               </View>
             </View>

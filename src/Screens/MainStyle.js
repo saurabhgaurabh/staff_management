@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignSelf: 'center'
       },
-      signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center' },
+      signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center', },
       image_css: {
         width: '90%',
         alignContent: 'flex-start',
@@ -270,6 +270,7 @@ const styles = StyleSheet.create({
         margin: 10,
         fontSize: 15
     },
+    
     loginCss: {
         width: '92%',
         alignContent: 'center',
