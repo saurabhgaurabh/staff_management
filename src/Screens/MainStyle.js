@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'column',
         alignContent: 'center',
-        paddingBottom: 180
+        paddingBottom: 100
     },
  
     inputContainer: {
@@ -26,7 +26,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        padding: 10,
+        paddingTop: 10,
+        margin: 15,
+        justifyContent: 'center'
     },
     input: {
         backgroundColor: '#fff',
@@ -78,7 +80,121 @@ const styles = StyleSheet.create({
     ////////////// Intro Page Properties  end //////////////////////
 
 
-    //////////  login page css  start /////////
+    
+    //////////  login page css  start //////
+    headerComponent:{ flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 30, borderBottomWidth: 1, borderBottomColor: '#ddd', },
+    header_tet_body:{ flexDirection: 'column', width: '60%',justifyContent: 'center', alignItems: 'center' },
+    headerText:{ fontSize: 20, fontFamily: 'italic'},
+    headerTxt:{ flexDirection: 'column', width: '20%', paddingHorizontal: 2, justifyContent: 'center' },
+    header: {
+        backgroundColor: '#f5f5f5',
+        paddingVertical: 20,
+        paddingHorizontal: 30,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+      },
+    
+      FormMainStyles: {
+        flexDirection: 'row',
+        alignContent: 'center',
+        alignSelf: 'center',
+        height: 65,
+        width: '90%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    
+      },
+      formContainer: {
+        paddingHorizontal: 30,
+        paddingVertical: 20,
+      },button: {
+        backgroundColor: '#007bff',
+        paddingVertical: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+      },
+      buttonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+      },
+      sighupSubmitTxt:{ fontStyle: 'italic', fontSize: 15, color: '#fffff', fontWeight: 'bold'},
+      label: {
+        color: '#9CA4A1',
+        fontSize: 18,
+        paddingLeft: 25,
+      },
+      inputfields: {
+        paddingTop: 40,
+      },
+      TextStyles: {
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingBottom: 10,
+        padding: 18,
+        paddingLeft: 50,
+        height: 50,
+        width: '100%',
+        fontWeight: 'bold',
+        bottom: 8,
+      },
+      input: {
+        height: 50,
+        margin: 17,
+        // height: '10%'
+      },
+      submitbutton: {
+        backgroundColor: '#0288D1',
+        paddingHorizontal: 45,
+        margin: 5,
+        // height: '8%',
+        height: 50,
+        borderTopEndRadius: 15,
+        borderBottomEndRadius: 15,
+        borderTopStartRadius: 15,
+        borderBottomStartRadius: 15,
+        paddingTop: 10,
+        alignSelf: 'center'
+      },
+      submitbuttonsignIn: {
+        backgroundColor: '#0288D1',
+        paddingHorizontal: 52,
+        margin: 5,
+        height: '100%',
+        alignContent: 'center',
+        alignItems: 'center',
+        borderTopEndRadius: 15,
+        borderBottomEndRadius: 15,
+        borderTopStartRadius: 15,
+        borderBottomStartRadius: 15,
+        paddingTop: 8,
+      },
+      submitbuttontext: {
+        color: 'white',
+        fontSize: 20,
+        alignItems: 'center',
+        alignContent: 'center',
+        alignSelf: 'center'
+      },
+      signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center' },
+      image_css: {
+        width: '90%',
+        alignContent: 'flex-start',
+        alignItems: 'center',
+        alignSelf: 'center',
+        flexDirection: 'row',
+        borderTopEndRadius: 5,
+        borderBottomEndRadius: 5,
+        borderTopStartRadius: 5,
+        borderBottomStartRadius: 5,
+        borderWidth: 1,
+        height: '7%',
+        fontWeight: 'bold',
+      },
+      img_text: { color: 'green', fontSize: 20, textAlign: 'center', margin: 5 },
+      signUpFileUpload:{ flexDirection: 'row', justifyContent: 'center', width: '90%', borderWidth: 1, borderColor: '#0288D1', alignSelf: 'center'},
+      image_btn: { width: '100%' },
     Linearcontainer: {
         flex: 1,
         // height: '100%'

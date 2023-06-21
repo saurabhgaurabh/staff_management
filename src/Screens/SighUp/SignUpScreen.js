@@ -10,6 +10,9 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginFetchDataForProfile, Registercheck } from '../../redux/MyLoginSlice';
 import imagePath from '../../constants/imagePath';
+import styles from '../MainStyle';
+import LinearGradient from 'react-native-linear-gradient';
+import * as Animatable from 'react-native-animatable';
 
 
 
@@ -157,19 +160,22 @@ const SignUpScreen = () => {
   return (
     <View style={{ height: '100%' }}>
       <View style={styles.mainContainer}>
-        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 10 }} >
-          <TouchableOpacity onPress={handleBackButtonClick} >
-            <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
-          </TouchableOpacity>
-        </SafeAreaView>
-        <Text style={styles.mainheading}>Registration</Text>
-        {/* <Text style={styles.mainsubheading}>Welcome To Taxlin</Text> */}
+        <View style={styles.headerComponent}>
+          <View style={styles.headerTxt}>
+            <TouchableOpacity onPress={handleBackButtonClick} >
+              <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.header_tet_body}>
+            <Text style={styles.headerText}>Admin Registration</Text>
+          </View>
+        </View>
       </View>
       <ScrollView
         showsVerticalScrollIndicator={true}
         style={styles.listsrcsytle}>
         <View style={{ display: 'flex' }}>
-          <View style={{ flexDirection: 'column', }}>
+          <View style={{ flexDirection: 'column', paddingTop: 20 }}>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
                 <TextInput style={styles.input}
@@ -274,150 +280,30 @@ const SignUpScreen = () => {
                 />
               </View>
             </View>
-            <View style={styles.FormMainStyles}>
-              <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
-                  label="Code"
-                  activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
-                  mode='outlined'
-                  outlineColor="#0288D1"
-                  returnKeyLabel='next'
-                  placeholderTextColor='#000'
-                />
-              </View>
-            </View>
-            <View style={styles.image_css}>
-              <View style={{ flexDirection: 'column', width: '40%', }}><TouchableOpacity onPress={openGallery}>
+            <View style={styles.signUpFileUpload}>
+              <View style={{ flexDirection: 'column', width: '40%',}}><TouchableOpacity onPress={openGallery}>
                 <Text style={styles.img_text} >Upload File</Text>
-              </TouchableOpacity></View>
+              </TouchableOpacity>
+              </View>
               <View style={{ flexDirection: 'column', width: '60%', }}><Text>{state.fileName}</Text></View>
-            </View>
+            </View>            
           </View>
         </View>
-        <View style={{ display: 'flex', flexDirection: 'row', alignSelf: 'center' }}>
-          <View style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', alignSelf: 'center' }}>
-            <TouchableOpacity onPress={gotologin} style={styles.submitbutton}>
-              <Text style={styles.submitbuttontext}>Sign In</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={{ display: 'flex', flexDirection: 'column', }}>
-            <TouchableOpacity onPress={SignUpSubmit} style={styles.submitbutton}>
-              <Text style={styles.submitbuttontext}>Register</Text>
-            </TouchableOpacity>
-          </View>
+
+        <View style={styles.overlay}>
+          <Animatable.View animation={'bounceInRight'} delay={3} style={styles.inputContainer}>
+            <LinearGradient colors={['#c5b2f3', '#b4a4f0']} style={styles.linearCss}>
+              <View style={styles.networking_container}>
+                <TouchableOpacity style={styles.cont_with_new_acc} onPress={SignUpSubmit}>
+                  <Text style={styles.networking_txt}>Registration</Text>
+                </TouchableOpacity>
+              </View>
+            </LinearGradient>
+          </Animatable.View>
         </View>
       </ScrollView>
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  mainContainer: {
-    height: 100,
-    backgroundColor: '#0288D1',
-    borderBottomEndRadius: 210,
-    paddingTop: 10
-  },
-  mainheading: {
-    // paddingTop: 1,
-    paddingLeft: 15,
-    fontSize: 25,
-    color: 'white',
-    alignItems: 'center',
-    textAlign: 'center',
-  },
-  // mainsubheading: {
-  //   paddingLeft: 15,
-  //   color: 'white',
-  // },
-  FormMainStyles: {
-    flexDirection: 'row',
-    display: 'flex',
-    padding: 2,
-    alignContent: 'center',
-    borderTopRightRadius: 8,
-    borderTopLeftRadius: 8,
-    borderBottomTopRadius: 8,
-    borderBottomBottomRadius: 8,
-    height: 65,
-
-  },
-  label: {
-    color: '#9CA4A1',
-    fontSize: 18,
-    paddingLeft: 25,
-  },
-  inputfields: {
-    paddingTop: 40,
-  },
-  TextStyles: {
-    alignContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 10,
-    padding: 18,
-    paddingLeft: 50,
-    height: 50,
-    width: '100%',
-    fontWeight: 'bold',
-    bottom: 8,
-  },
-  input: {
-    height: 50,
-    margin: 17,
-    // height: '10%'
-  },
-  submitbutton: {
-    backgroundColor: '#0288D1',
-    paddingHorizontal: 45,
-    margin: 5,
-    // height: '8%',
-    height: 50,
-    borderTopEndRadius: 15,
-    borderBottomEndRadius: 15,
-    borderTopStartRadius: 15,
-    borderBottomStartRadius: 15,
-    paddingTop: 10,
-    alignSelf: 'center'
-  },
-  submitbuttonsignIn: {
-    backgroundColor: '#0288D1',
-    paddingHorizontal: 52,
-    margin: 5,
-    height: '100%',
-    alignContent: 'center',
-    alignItems: 'center',
-    borderTopEndRadius: 15,
-    borderBottomEndRadius: 15,
-    borderTopStartRadius: 15,
-    borderBottomStartRadius: 15,
-    paddingTop: 8,
-  },
-  submitbuttontext: {
-    color: 'white',
-    fontSize: 20,
-    alignItems: 'center',
-    alignContent: 'center',
-    alignSelf: 'center'
-  },
-  signUp_input: { flexDirection: 'column', width: '100%', bottom: 20 },
-  image_css: {
-    width: '90%',
-    alignContent: 'flex-start',
-    alignItems: 'center',
-    alignSelf: 'center',
-    flexDirection: 'row',
-    borderTopEndRadius: 5,
-    borderBottomEndRadius: 5,
-    borderTopStartRadius: 5,
-    borderBottomStartRadius: 5,
-    borderWidth: 1,
-    height: '7%',
-    fontWeight: 'bold',
-  },
-  img_text: { color: 'green', fontSize: 20, textAlign: 'center', margin: 5 },
-  image_btn: { width: '100%' },
-})
 
 export default SignUpScreen

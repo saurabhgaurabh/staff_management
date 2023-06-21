@@ -176,7 +176,7 @@ const LoginScreen = () => {
                             <View style={{}}>
                                 <TouchableOpacity onPress={gotoDashboard} activeOpacity={0.7}>
                                     <LinearGradient
-                                        colors={['#6247AA', '#A594F9', '#7145f1']}
+                                        colors={[ '#A594F9','#6247AA',]}
                                         start={{ x: 0, y: 0 }}
                                         end={{ x: 1, y: 0 }}
                                         style={{
@@ -190,7 +190,6 @@ const LoginScreen = () => {
                                 </TouchableOpacity>
                             </View>
                         </View>
-
                     </Animatable.View>
                 </View>
             </LinearGradient>
