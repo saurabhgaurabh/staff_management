@@ -12,14 +12,14 @@ import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
 
-const FavoriteStack = ({navigation}) => {
+const MapStack = ({navigation}) => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true, headerStyle: {  } }}>
       <Stack.Screen name={navigationStrings.FAVORITESCREEN} component={FavoriteScreen}
 
         options={({ navigation }) => ({
           headerTitleAlign: 'center',
-          title: 'Favorites',
+          title: 'Your Location',
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => { navigation.toggleDrawer(); }}>
@@ -36,6 +36,6 @@ const FavoriteStack = ({navigation}) => {
   )
 }
 
-export default FavoriteStack
+export default MapStack
 
 const styles = StyleSheet.create({})

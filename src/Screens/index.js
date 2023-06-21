@@ -20,7 +20,7 @@ export {default as Profile} from './Profile/Profile';
 // Tab pages Ends's from here
 
 export {default as HomeStack} from '../Navigation/HomeStack';
-export {default as FavoriteStack} from '../Navigation/FavoriteStack';
+export {default as FavoriteStack} from '../Navigation/MapStack';
 export {default as OrderStack} from '../Navigation/OrderStack';
 export {default as ProfileStack} from '../Navigation/ProfileStack';
 

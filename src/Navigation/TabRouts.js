@@ -4,10 +4,11 @@ import navigationStrings from '../constants/navigationStrings';
 import imagePath from '../constants/imagePath';
 import { Image, useState, BackHandler, Alert } from 'react-native';
 import HomeStack from './HomeStack';
-import FavoriteStack from './FavoriteStack';
+import FavoriteStack from './MapStack';
 import OrderStack from './OrderStack';
 import ProfileStack from './ProfileStack';
 import { useNavigation } from '@react-navigation/native';
+import MapStack from './MapStack';
 
 
 function TabRoutes() {
@@ -78,7 +79,7 @@ function TabRoutes() {
                     }, headerTintColor: 'skyblue', headerShown: false
                 }} />
             <Tab.Screen
-                name={navigationStrings.FAVORITESTACK} component={FavoriteStack}
+                name={navigationStrings.MAP} component={MapStack}
                 options={{
                     title: "Map",
                     tabBarIcon: ({ focused }) => {

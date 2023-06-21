@@ -25,7 +25,7 @@ export default {
     HOMESTACK: "HomeStack",
     ORDERSTACK: "OrderStack",
     PROFILESTACK: "ProfileStack",
-    FAVORITESTACK: "FavoriteStack",
+    MAP: "MapStack",
 
 
     TABS: "Tabs",
