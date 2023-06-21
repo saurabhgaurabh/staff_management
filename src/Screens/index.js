@@ -15,7 +15,7 @@ export {default as OrderDetails} from './Order/OrderDetails';
 // Tab pages start's from here
 export {default as Home} from './Home/HomeScreen';
 export {default as OrderScreen} from './Order/OrderScreen';
-export {default as FavoriteScreen} from './Favorite/FavoriteScreen';
+export {default as FavoriteScreen} from './Map/MapScreen';
 export {default as Profile} from './Profile/Profile';
 // Tab pages Ends's from here
 

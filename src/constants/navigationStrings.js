@@ -18,7 +18,7 @@ export default {
     HOME: "HomeScreen",
     PROFILE: "Profile",
     ORDER: "OrderScreen",
-    FAVORITESCREEN: "FavoriteScreen",
+    MAPSCREEN: "MapScreen",
 
     //Tab Screens start's from here
 

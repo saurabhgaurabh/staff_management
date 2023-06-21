@@ -7,6 +7,7 @@ import { TouchableOpacity, Image } from 'react-native';
 import imagePath from '../constants/imagePath';
 // import { Image } from 'react-native-svg';
 import { useNavigation } from '@react-navigation/native';
+import MapScreen from '../Screens/Map/MapScreen';
 
 
 
@@ -15,7 +16,7 @@ const Stack = createNativeStackNavigator();
 const MapStack = ({navigation}) => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: true, headerStyle: {  } }}>
-      <Stack.Screen name={navigationStrings.FAVORITESCREEN} component={FavoriteScreen}
+      <Stack.Screen name={navigationStrings.MAPSCREEN} component={MapScreen}
 
         options={({ navigation }) => ({
           headerTitleAlign: 'center',
