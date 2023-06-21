@@ -40,7 +40,7 @@ function TabRoutes() {
         <Tab.Navigator
             screenOptions={{
                 tabBarInactiveTintColor: 'black',
-                tabBarActiveTintColor: '#8581b9',
+                tabBarActiveTintColor: '#c01fff',
                 tabBarShowLabel: true,
                 headerTitleAlign: 'center',
                 headerTintColor: '#3CB371',
@@ -75,7 +75,7 @@ function TabRoutes() {
                     title: "Home",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icNavHome} />)
+                            <Image style={{ tintColor: focused ? '#c01fff' : 'black' }} source={imagePath.icNavHome} />)
                     }, headerTintColor: 'skyblue', headerShown: false
                 }} />
             <Tab.Screen
@@ -84,7 +84,7 @@ function TabRoutes() {
                     title: "Map",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ height: 25, width: 25, tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icAddfavorite} />)
+                            <Image style={{ height: 25, width: 25, tintColor: focused ? '#c01fff' : 'black' }} source={imagePath.icAddfavorite} />)
                     }, headerTintColor: 'skyblue', headerShown: false
                 }} />
             <Tab.Screen
@@ -93,7 +93,7 @@ function TabRoutes() {
                     title: "Order",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ height: 27, width: 27, tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icNAbCategory} />
+                            <Image style={{ height: 27, width: 27, tintColor: focused ? '#c01fff' : 'black' }} source={imagePath.icNAbCategory} />
                         )
                     }, headerTintColor: 'skyblue', headerShown: false
                 }} />
@@ -103,7 +103,7 @@ function TabRoutes() {
                     title: "Profile",
                     tabBarIcon: ({ focused }) => {
                         return (
-                            <Image style={{ tintColor: focused ? '#8581b9' : 'black' }} source={imagePath.icNabProfile} />
+                            <Image style={{ tintColor: focused ? '#c01fff' : 'black' }} source={imagePath.icNabProfile} />
                         )
                     }, headerTintColor: 'skyblue', headerShown: false
                 }} />

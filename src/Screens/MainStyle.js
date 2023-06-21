@@ -18,10 +18,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         paddingBottom: 180
     },
-    subtitle: {
-        fontSize: 16,
-        color: '#fff',
-    },
+ 
     inputContainer: {
         display: 'flex',
         width: '90%',
@@ -29,7 +26,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
-        padding: 10
+        padding: 10,
     },
     input: {
         backgroundColor: '#fff',
@@ -47,32 +44,37 @@ const styles = StyleSheet.create({
     sub_upper_txt: {
         fontSize: 30,
         fontWeight: 'bold',
-        color: 'white'
+        color: '#7145f1',
+        fontStyle: 'italic',
     },
     main_screen_footer: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignContent: 'center',
-        bottom: 10,
+        bottom: 20,
     },
     main_screen_footer_division: {
         flexDirection: 'column',
     },
     summary_property: {
         fontWeight: 'bold',
-        color: 'white'
+        color: '#7145f1',
+        fontStyle: 'italic',
     },
     sign_in_property: {
         fontWeight: 'bold',
-        color: 'white'
+        color: 'white',
+        fontStyle: 'italic',
+        color: '#7145f1',
+        fontSize: 15,
     },
-    cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' },
-    cont_with_fb: { flexDirection: 'column', backgroundColor: '#4285F4', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%', },
-    cont_with_goolge: { flexDirection: 'column', backgroundColor: '#FF3D3D', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%', },
-    cont_with_new_acc: { flexDirection: 'column', backgroundColor: '#32CD32', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%', },
+    cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' , borderBottomStartRadius: 10 },
+    cont_with_fb: { flexDirection: 'column', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
+    cont_with_goolge: { flexDirection: 'column',  height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
+    cont_with_new_acc: { flexDirection: 'column',  height: 45, justifyContent: 'center', alignItems: 'center', width: '100%', },
     goole_properties: { height: '70%', width: '45%' },
-    networking_container: { flexDirection: 'row', backgroundColor: '#98FB98', width: '100%', borderRadius: 10, },
-    networking_txt: { fontSize: 17, color: '#fff', fontWeight: 'bold' },
+    networking_container: { flexDirection: 'row', width: '100%', },
+    networking_txt: { fontSize: 17, color: '#fff', fontWeight: 'bold', fontStyle: 'italic', },
     ////////////// Intro Page Properties  end //////////////////////
 
 

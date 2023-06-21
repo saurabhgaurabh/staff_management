@@ -44,7 +44,7 @@ const Profile = ({ navigation }) => {
 
   return (
     <View style={{ padding: 20 }}>
-      <Animatable.Text animation="zoomIn" style={styles.profileHeading}>My Profile </Animatable.Text>
+      <Animatable.Text animation="zoomIn" delay={2} style={styles.profileHeading}>My Profile </Animatable.Text>
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
@@ -62,7 +62,7 @@ const Profile = ({ navigation }) => {
           </View>
         </View>
 
-        <Animatable.Text animation="zoomIn" style={styles.profileHeading_second}>My Accessibility </Animatable.Text>
+        <Animatable.Text animation="zoomIn" delay={2} style={styles.profileHeading_second}>My Accessibility </Animatable.Text>
 
         <View style={styles.profile_menu}>
           <View style={styles.profile_main_card}>

@@ -124,7 +124,7 @@ const LoginScreen = () => {
                     <View>
                         <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', backgroundColor: '#8e9eab' }} >
                             <TouchableOpacity onPress={handleBackButtonClick} >
-                                <Image style={{ height: 35, width: 25 }} source={imagePath.icback} />
+                                <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
                             </TouchableOpacity>
                             {/* Notification Popup */}
                             {showNotification && (
@@ -176,7 +176,7 @@ const LoginScreen = () => {
                             <View style={{}}>
                                 <TouchableOpacity onPress={gotoDashboard} activeOpacity={0.7}>
                                     <LinearGradient
-                                        colors={['#6247AA', '#A594F9', '#77EED8']}
+                                        colors={['#6247AA', '#A594F9', '#7145f1']}
                                         start={{ x: 0, y: 0 }}
                                         end={{ x: 1, y: 0 }}
                                         style={{
