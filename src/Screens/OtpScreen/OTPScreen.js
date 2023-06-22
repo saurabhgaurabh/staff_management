@@ -4,12 +4,16 @@ import { useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-paper';
 import { ServerUrl } from '../../Helper/Helper';
 import imagePath from '../../constants/imagePath';
+import * as Animatable from 'react-native-animatable';
+import LinearGradient from 'react-native-linear-gradient';
+import styles from '../MainStyle';
+import navigationStrings from '../../constants/navigationStrings';
 
 
 const OTPScreen = (props) => {
     const navigation = useNavigation();
-    const user_id = props.route.params.user_id
-
+    // const user_id = props.route.params.user_id
+    const newUI = () => { navigation.navigate(navigationStrings.NEWPASSWORD) }
     const [state, setState] = useState({ otp: "" })
     const handleOTP = (text) => { setState({ ...state, otp: text }) }
 
@@ -65,109 +69,58 @@ const OTPScreen = (props) => {
     }, []);
 
     return (
-
-        <View >
-            <View style={styles.mainContainer}>
-                <SafeAreaView style={{}} >
-                    <TouchableOpacity onPress={handleBackButtonClick} style={{ paddingLeft: 20 }}>
-                        <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
+        <View>
+            <View style={styles.headerComponent}>
+                <View style={styles.headerTxt}>
+                    <TouchableOpacity onPress={handleBackButtonClick} >
+                        <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
                     </TouchableOpacity>
-                </SafeAreaView>
-                <Text style={styles.mainheading}>Your OTP</Text>
-                <Text style={styles.mainsubheading}>Please Enter Your Verified OTP </Text>
+                </View>
+                <View style={styles.header_tet_body}>
+                    <Text style={styles.headerText}>Submit OTP</Text>
+                </View>
             </View>
-
-
-            <View style={styles.inputfields}>
-                <TextInput style={styles.input}
-                    label="Enter OTP"
-                    activeUnderlineColor="#0288D1"
-                    activeOutlineColor="#0288D1"
-                    mode='outlined'
-                    outlineColor="#0288D1"
-                    returnKeyLabel='next'
-                    placeholderTextColor='#000'
-                    keyboardType='numeric'
-                    onChangeText={handleOTP}
-                />
-
-                <TouchableOpacity onPress={submitOpt} style={styles.submitbutton}>
-                    <Text style={styles.submitbuttontext} >Submit</Text>
-                </TouchableOpacity>
+            <View style={styles.summary_View}>
+                <Text style={styles.summary}>Complete the process by submitting the OTP (One-Time Password), ensuring a secure and seamless journey to your destination.</Text>
+            </View>
+            <View style={{ display: 'flex' }}>
+                <View style={styles.forgetUIBody}>
+                    <View style={{ flexDirection: 'row', paddingTop: 100 }}>
+                        <View style={styles.forgerInput}>
+                            <View style={styles.FormMainStyles}>
+                                <View style={styles.signUp_input}>
+                                    <TextInput style={styles.input}
+                                        label="Enter OTP"
+                                        activeUnderlineColor="#0288D1"
+                                        activeOutlineColor="#0288D1"
+                                        mode='outlined'
+                                        outlineColor="#0288D1"
+                                        returnKeyLabel='next'
+                                        placeholderTextColor='#000'
+                                        onChangeText={handleOTP}
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row', }}>
+                        <View style={styles.overlay}>
+                            <Animatable.View animation={'bounceInRight'} delay={3} style={styles.inputContainer}>
+                                <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
+                                    <View style={styles.networking_container}>
+                                        <TouchableOpacity style={styles.cont_with_new_acc} onPress={submitOpt}>
+                                            <Text style={styles.networking_txt}>Submit OTP</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </LinearGradient>
+                            </Animatable.View>
+                        </View>
+                    </View>
+                </View>
             </View>
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-    mainContainer: {
-        paddingTop: 10,
-        height: 200,
-        backgroundColor: '#0288D1',
-        borderBottomEndRadius: 200,
-    },
-    mainheading: {
-        paddingTop: 99,
-        paddingLeft: 25,
-        fontSize: 29,
-        color: 'white',
-    },
-    mainsubheading: {
-        paddingLeft: 25,
-        color: 'white'
-    },
-    label: {
-        color: '#9CA4A1',
-        fontSize: 18,
-        paddingLeft: 25,
-    },
-    inputfields: {
-        paddingTop: 60,
-    },
-    input: {
-        height: 50,
-        margin: 17,
-    },
-    submitbutton: {
-        backgroundColor: '#0288D1',
-        padding: 10,
-        margin: 15,
-        // height: 45,
-        borderTopEndRadius: 15,
-        borderBottomEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-        alignItems: 'center',
-        textAlign: 'center',
-    },
-    submitbuttontext: {
-        color: 'white',
-        fontSize: 20,
-        alignItems: 'center',
-        alignContent: 'center',
-        alignSelf: 'center'
-    },
-    signupbutton: {
-        backgroundColor: '#cccc33',
-        padding: 10,
-        margin: 15,
-        height: 45,
-        borderTopEndRadius: 15,
-        borderBottomEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-    },
-    forgetbutton: {
-        backgroundColor: '#ff8080',
-        padding: 10,
-        margin: 15,
-        height: 45,
-    },
-    signuptext: {
-        color: 'white',
-        fontSize: 20,
-        paddingLeft: 110
-    }
-})
 
 export default OTPScreen

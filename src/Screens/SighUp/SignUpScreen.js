@@ -261,7 +261,7 @@ const SignUpScreen = () => {
 
         <View style={styles.overlay}>
           <Animatable.View animation={'bounceInRight'} delay={3} style={styles.inputContainer}>
-            <LinearGradient colors={['#c5b2f3', '#b4a4f0']} style={styles.linearCss}>
+          <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
               <View style={styles.networking_container}>
                 <TouchableOpacity style={styles.cont_with_new_acc} onPress={SignUpSubmit}>
                   <Text style={styles.networking_txt}>Registration</Text>

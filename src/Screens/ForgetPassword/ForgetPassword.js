@@ -9,6 +9,8 @@ import styles from '../MainStyle';
 import { useEffect } from 'react';
 import { BackHandler } from 'react-native';
 import imagePath from '../../constants/imagePath';
+import * as Animatable from 'react-native-animatable';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 
@@ -26,6 +28,10 @@ const ForgetPassword = () => {
             BackHandler.removeEventListener("hardwareBackPress", handleBackButtonClick);
         };
     }, []);
+
+    const otpUi = () => {
+        navigation.navigate(navigationStrings.OTPSCREEN)
+    }
 
     const navigation = useNavigation();
     const [state, setState] = useState({ email: "" })
@@ -56,139 +62,67 @@ const ForgetPassword = () => {
                     alert("Invalid User");
                 }
             } catch (error) {
-                console.log(error)
+                console.log(error, "Ui internal server Error.")
             }
         } else {
             alert("Email not Found Please Try Again");
         }
     }
 
-    const signupsubmit = () => {
-        navigation.navigate(navigationStrings.LOGIN)
-    }
-    const passwordforgetsubmit = () => {
-        navigation.navigate(navigationStrings.FORGETPASSWORD)
-    }
-
     return (
-
         <View>
-
-            <View style={stylesForget.mainContainer}>
-                <View>
-                    <SafeAreaView style={{}} >
-                        <TouchableOpacity onPress={handleBackButtonClick} style={{ paddingLeft: 20 }}>
-                            <Image style={{ height: 25, width: 15 }} source={imagePath.icback} />
-                        </TouchableOpacity>
-                    </SafeAreaView>
-                </View>
-
-                <Text style={stylesForget.mainheading}>Forget Password</Text>
-                <Text style={stylesForget.mainsubheading}></Text>
-
-            </View>
-
-
-            <View style={stylesForget.inputfields}>
-                <TextInput style={stylesForget.input}
-                    label="E-Mail"
-                    activeUnderlineColor="#0288D1"
-                    activeOutlineColor="#0288D1"
-                    mode='outlined'
-                    outlineColor="#0288D1"
-                    returnKeyLabel='next'
-                    placeholderTextColor='#000'
-                    onChangeText={handleEmail}
-                />
-                <View style={{ display: 'flex', justifyContent: 'center', width: '100%', flexDirection: 'row', width: '100%' }} >
-                    <View style={{ flexDirection: 'column', width: '45%' }}>
-                        <TouchableOpacity onPress={signupsubmit} style={styles.submitbuttonforlogin}>
-                            <Text style={styles.submitbuttontext} >Sign In</Text>
+            <View style={styles.mainContainer}>
+                <View style={styles.headerComponent}>
+                    <View style={styles.headerTxt}>
+                        <TouchableOpacity onPress={handleBackButtonClick} >
+                            <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
                         </TouchableOpacity>
                     </View>
-                    <View style={{ flexDirection: 'column', width: '45%' }}>
-                        <TouchableOpacity onPress={forgetpass} style={styles.submitbuttonforlogin}>
-                            <Text style={styles.submitbuttontext} >Forget</Text>
-                        </TouchableOpacity>
+                    <View style={styles.header_tet_body}>
+                        <Text style={styles.headerText}>Forget Password</Text>
+                    </View>
+                </View>
+            </View>
+            <View style={styles.summary_View}>
+                <Text style={styles.summary}>Recover your access by initiating the password reset process. Let us guide you through the steps to regain control of your account and continue your seamless experience.</Text>
+            </View>
+            <View style={{ display: 'flex' }}>
+                <View style={styles.forgetUIBody}>
+                    <View style={{ flexDirection: 'row', paddingTop: 100 }}>
+                        <View style={styles.forgerInput}>
+                            <View style={styles.FormMainStyles}>
+                                <View style={styles.signUp_input}>
+                                    <TextInput style={styles.input}
+                                        label="E-Mail"
+                                        activeUnderlineColor="#0288D1"
+                                        activeOutlineColor="#0288D1"
+                                        mode='outlined'
+                                        outlineColor="#0288D1"
+                                        returnKeyLabel='next'
+                                        placeholderTextColor='#000'
+                                        onChangeText={handleEmail}
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row', }}>
+                        <View style={styles.overlay}>
+                            <Animatable.View animation={'bounceInRight'} delay={3} style={styles.inputContainer}>
+                                <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
+                                    <View style={styles.networking_container}>
+                                        <TouchableOpacity style={styles.cont_with_new_acc} onPress={forgetpass}>
+                                            <Text style={styles.networking_txt}>Forget Password</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </LinearGradient>
+                            </Animatable.View>
+                        </View>
                     </View>
                 </View>
             </View>
         </View>
     )
 }
-
-const stylesForget = StyleSheet.create({
-    mainContainer: {
-        paddingTop: 10,
-        // height: 200,
-        backgroundColor: '#0288D1',
-        borderBottomEndRadius: 200,
-    },
-    mainheading: {
-        paddingTop: 99,
-        paddingLeft: 25,
-        fontSize: 29,
-        color: 'white',
-    },
-    mainsubheading: {
-        paddingLeft: 25,
-        color: 'white'
-    },
-    label: {
-        color: '#9CA4A1',
-        fontSize: 18,
-        paddingLeft: 25,
-    },
-    inputfields: {
-        paddingTop: 60,
-    },
-    input: {
-        borderColor: '#4D7CEB',
-        // height: 60,
-        // height: '10%',
-        margin: 17,
-    },
-    submitbuttonforlogin: {
-        backgroundColor: '#0288D1',
-        padding: 5,
-        margin: 5,
-        height: 45,
-        borderTopEndRadius: 10,
-        borderBottomEndRadius: 10,
-        borderTopStartRadius: 10,
-        borderBottomStartRadius: 10,
-        alignItems: 'center',
-    },
-    submitbuttontext: {
-        color: 'white',
-        fontSize: 20,
-        alignItems: 'center',
-        alignContent: 'center',
-        paddingRight: 10,
-        paddingLeft: 12,
-        paddingHorizontal: 5
-    },
-    signupbutton: {
-        backgroundColor: '#0288D1',
-        padding: 10,
-        margin: 15,
-        height: 45,
-        borderTopEndRadius: 15,
-        borderBottomEndRadius: 15,
-        borderTopStartRadius: 15,
-        borderBottomStartRadius: 15,
-    },
-    forgetbutton: {
-        backgroundColor: '#ff8080',
-        padding: 10,
-        margin: 15,
-        height: 45,
-    },
-    signuptext: {
-        color: 'white',
-        fontSize: 20,
-        paddingLeft: 110
-    }
-})
 
 export default ForgetPassword

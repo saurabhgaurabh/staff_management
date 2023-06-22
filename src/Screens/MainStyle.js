@@ -85,7 +85,11 @@ const styles = StyleSheet.create({
     headerComponent:{ flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 30, borderBottomWidth: 1, borderBottomColor: '#ddd', },
     header_tet_body:{ flexDirection: 'column', width: '60%',justifyContent: 'center', alignItems: 'center' },
     headerText:{ fontSize: 20, fontFamily: 'italic'},
+    summary_View:{justifyContent: 'center', alignItems: 'center', alignSelf: 'center'},
+    summary:{ fontSize: 16, fontFamily: 'italic', paddingTop: 10, color: 'green', textAlign: "center"},
     headerTxt:{ flexDirection: 'column', width: '20%', paddingHorizontal: 2, justifyContent: 'center' },
+    forgetUIBody:{ flexDirection: 'column', justifyContent: 'center', },
+    forgerInput:{ flexDirection: 'column', paddingTop: 40 , width: '100%'},
     header: {
         backgroundColor: '#f5f5f5',
         paddingVertical: 20,
