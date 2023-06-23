@@ -71,16 +71,14 @@ const ForgetPassword = () => {
 
     return (
         <View>
-            <View style={styles.mainContainer}>
-                <View style={styles.headerComponent}>
-                    <View style={styles.headerTxt}>
-                        <TouchableOpacity onPress={handleBackButtonClick} >
-                            <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.header_tet_body}>
-                        <Text style={styles.headerText}>Forget Password</Text>
-                    </View>
+            <View style={styles.headerComponent}>
+                <View style={styles.headerTxt}>
+                    <TouchableOpacity onPress={handleBackButtonClick} >
+                        <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.header_tet_body}>
+                    <Text style={styles.headerText}>Forget Password</Text>
                 </View>
             </View>
             <View style={styles.summary_View}>

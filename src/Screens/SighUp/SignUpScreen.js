@@ -173,7 +173,7 @@ const SignUpScreen = () => {
         showsVerticalScrollIndicator={true}
         style={styles.listsrcsytle}>
         <View style={{ display: 'flex' }}>
-          <View style={{ flexDirection: 'column', paddingTop: 40 }}>
+          <Animatable.View animation={'bounceInRight'} delay={2}  style={{ flexDirection: 'column', paddingTop: 40 }}>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
                 <TextInput style={styles.input}
@@ -250,20 +250,20 @@ const SignUpScreen = () => {
               </View>
             </View>
             <View style={styles.signUpFileUpload}>
-              <View style={{ flexDirection: 'column', width: '40%',}}><TouchableOpacity onPress={openGallery}>
+              <View style={{ flexDirection: 'column', width: '40%', }}><TouchableOpacity onPress={openGallery}>
                 <Text style={styles.img_text} >Upload File</Text>
               </TouchableOpacity>
               </View>
               <View style={{ flexDirection: 'column', width: '60%', }}><Text>{state.fileName}</Text></View>
-            </View>            
-          </View>
+            </View>
+          </Animatable.View>
         </View>
 
         <View style={styles.overlay}>
-          <Animatable.View animation={'bounceInRight'} delay={3} style={styles.inputContainer}>
-          <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
+          <Animatable.View animation={'zoomIn'} delay={9} style={styles.inputContainer}>
+            <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
               <View style={styles.networking_container}>
-                <TouchableOpacity style={styles.cont_with_new_acc} onPress={SignUpSubmit}>
+                <TouchableOpacity style={styles.cont_with_new_acc} onPress={gotoSignUpOtpScreen}>
                   <Text style={styles.networking_txt}>Registration</Text>
                 </TouchableOpacity>
               </View>
