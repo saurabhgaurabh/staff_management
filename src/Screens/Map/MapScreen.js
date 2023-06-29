@@ -3,7 +3,9 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useEffect } from 'react';
 import { BackHandler } from 'react-native';
-import MapView from 'react-native-maps';
+import MapViewComponent from './MapViewComponent';
+// import MapView from 'react-native-maps';
+
 
 
 const MapScreen = () => {
@@ -22,15 +24,8 @@ const MapScreen = () => {
     }, [])
 
     return (
-        <View style={{flex: 1, alignContent: 'center', justifyContent: 'center'}}>
-            <MapView
-                initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
-                    latitudeDelta: 0.01,
-                    longitudeDelta: 0.01,
-                }}
-            />
+        <View style={{ flex: 1, alignContent: 'center', justifyContent: 'center' , height: '100%', width: '100%'}}>
+            <MapViewComponent />
         </View>
     )
 }

@@ -43,7 +43,7 @@ function HomeStack({ navigation }) {
     // }, [])
 
     return (
-        <Stack.Navigator screenOptions={{ headerShown: true, }}>
+        <Stack.Navigator screenOptions={{ headerShown: false, }}>
             <Stack.Screen
                 name={navigationStrings.HOME}
                 component={HomeScreen}
@@ -58,7 +58,7 @@ function HomeStack({ navigation }) {
                         )
                     }
                 })} />
-            <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add up Treacher' }} />
+            <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add Treacher' }} />
             <Stack.Screen name={navigationStrings.TEACHEROUTE} component={TeacherRoute} options={{ title: 'Teacher Tracking' }} />
             <Stack.Screen name={navigationStrings.TEACHERTIMELINE} component={TeacherTimeline} options={{ title: 'Teacher Timeline' }} />
             <Stack.Screen name={navigationStrings.STAFFSALARY} component={StaffSalary} options={{ title: 'Staff Salary' }} />

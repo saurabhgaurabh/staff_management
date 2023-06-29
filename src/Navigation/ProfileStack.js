@@ -4,15 +4,14 @@ import { Profile } from '../Screens';
 import navigationStrings from '../constants/navigationStrings';
 import { TouchableOpacity, Image } from "react-native";
 import imagePath from "../constants/imagePath";
+import Notification from '../Screens/Profile/Notification';
 
 const Stack = createNativeStackNavigator();
 
 const ProfileStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen 
-      name={navigationStrings.PROFILE} 
-      component={Profile}
+      <Stack.Screen name={navigationStrings.PROFILE} component={Profile}
         options={({ navigation }) => ({
           headerTitleAlign: 'center',
           title: 'Profile',
@@ -26,6 +25,7 @@ const ProfileStack = () => {
         })}
         screenOptions={{ headerShown: true }}
       />
+      <Stack.Screen name={navigationStrings.NOTIFY} component={Notification}/>
     </Stack.Navigator>
   )
 }

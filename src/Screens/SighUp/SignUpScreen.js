@@ -19,7 +19,6 @@ import * as Animatable from 'react-native-animatable';
 
 const SignUpScreen = () => {
 
-  const gotologin = () => { navigation.navigate('LoginScreen') }
   const gotoSignUpOtpScreen = () => { navigation.navigate('SignUpOtpScreen') }
   const navigation = useNavigation();
   const dispatch = useDispatch();
@@ -173,7 +172,7 @@ const SignUpScreen = () => {
         showsVerticalScrollIndicator={true}
         style={styles.listsrcsytle}>
         <View style={{ display: 'flex' }}>
-          <Animatable.View animation={'bounceInRight'} delay={2}  style={{ flexDirection: 'column', paddingTop: 40 }}>
+          <Animatable.View animation={'bounceInLeft'} delay={2}  style={{ flexDirection: 'column', paddingTop: 40 }}>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
                 <TextInput style={styles.input}
@@ -260,10 +259,10 @@ const SignUpScreen = () => {
         </View>
 
         <View style={styles.overlay}>
-          <Animatable.View animation={'zoomIn'} delay={9} style={styles.inputContainer}>
+          <Animatable.View animation={'bounceInRight'} delay={9} style={styles.inputContainer}>
             <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
               <View style={styles.networking_container}>
-                <TouchableOpacity style={styles.cont_with_new_acc} onPress={gotoSignUpOtpScreen}>
+                <TouchableOpacity style={styles.cont_with_new_acc} onPress={SignUpSubmit}>
                   <Text style={styles.networking_txt}>Registration</Text>
                 </TouchableOpacity>
               </View>

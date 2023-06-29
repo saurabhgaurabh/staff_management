@@ -20,6 +20,10 @@ export default {
     ORDER: "OrderScreen",
     MAPSCREEN: "MapScreen",
 
+
+    //  profile screens
+    NOTIFY: "Notification",
+
     //Tab Screens start's from here
 
     HOMESTACK: "HomeStack",

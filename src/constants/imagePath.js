@@ -35,6 +35,7 @@ export default{
     icAboutUs: require('../assets/images/output-about_us.gif'),
     icDummyUser: require('../assets/images/dummy_user.png'),
     icbackForward: require('../assets/images/output-back.gif'),
+    icbackNoraml: require('../assets/images/back.webp'),
     icback: require('../assets/images/output-back.gif'),
     icfirstss: require('../assets/images/ft_screen.jpg'),
     icStaff: require('../assets/images/output-onlinegiftools.gif'),

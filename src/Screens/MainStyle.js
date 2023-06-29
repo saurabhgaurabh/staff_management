@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     headerTxt:{ flexDirection: 'column', width: '20%', paddingHorizontal: 1, justifyContent: 'center' },
     forgetUIBody:{ flexDirection: 'column', justifyContent: 'center', },
     forgerInput:{ flexDirection: 'column', paddingTop: 40 , width: '100%'},
+    AddTeacherHeading:{ fontSize: 25, fontStyle: 'italic', fontWeight: 'bold'},
     header: {
         backgroundColor: '#f5f5f5',
         paddingVertical: 20,

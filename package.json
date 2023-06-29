@@ -1,5 +1,5 @@
 {
-  "name": "AwesomeProject",
+  "name": "staff_management",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -18,6 +18,8 @@
     "@react-native-clipboard/clipboard": "^1.11.2",
     "@react-native-community/datetimepicker": "^7.0.1",
     "@react-native-community/hooks": "^3.0.0",
+    "@react-native-firebase/app": "^18.1.0",
+    "@react-native-firebase/messaging": "^18.1.0",
     "@react-native-picker/picker": "^2.4.10",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/drawer": "^6.6.2",
@@ -89,3 +91,4 @@
     "preset": "react-native"
   }
 }
+  

@@ -34,6 +34,9 @@ const Profile = ({ navigation }) => {
     navigation.navigate(dd ? navigationStrings.HOME : navigationStrings.LOGIN);
     ToastAndroid.show('User Logged Out Successfully', ToastAndroid.CENTER);
   }
+  const nofifyScreen = ()=>{
+    navigation.navigate(navigationStrings.NOTIFY);
+  }
 
 
   const onRefresh = () => {
@@ -103,6 +106,14 @@ const Profile = ({ navigation }) => {
                 <View style={styles.profile_card_img}><Image source={imagePath.icLogOut} style={{ height: 30, width: 30 }} /></View>
                 <View style={styles.profile_card_txt}><Text style={styles.textCss}>Logout</Text></View>
               </LinearGradient>
+            </View>
+            <View style={styles.profile_card}>
+            <TouchableOpacity onPress={nofifyScreen}>        
+              <LinearGradient colors={['#e3f7f1', '#f57a93']} style={styles.linearCss}>
+                <View style={styles.profile_card_img}><Image source={imagePath.icLogOut} style={{ height: 30, width: 30 }} /></View>
+                <View style={styles.profile_card_txt}><Text style={styles.textCss}>Notifications</Text></View>
+              </LinearGradient>
+            </TouchableOpacity>
             </View>
           </View>
         </View>

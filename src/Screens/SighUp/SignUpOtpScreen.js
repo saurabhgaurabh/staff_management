@@ -95,7 +95,7 @@ const SignUpOtpScreen = (props) => {
             </View>
 
             <View style={{ flexDirection: 'row', paddingTop: 100 }}>
-                <Animatable.View animation={'bounceInRight'} style={styles.forgerInput}>
+                <Animatable.View animation={'bounceInLeft'} style={styles.forgerInput}>
                     <View style={styles.FormMainStyles}>
                         <View style={styles.signUp_input}>
                             <TextInput style={styles.input}
