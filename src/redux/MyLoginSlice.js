@@ -8,9 +8,12 @@ export const MyLoginSlice = createSlice({
 
   reducers: {
     loginFetchDataForProfile: (state, action) => {
+      console.log(action.payload," action.paluylod profile")
       state.loginData = action.payload
+      console.log(state.loginData," action data")
     },
     loginFetchDataForProfile_token: (state, action) => {
+      console.log(state.loginData.token," token")
       state.loginData.token = action.payload
     },
     Registercheck: (state, action) => {

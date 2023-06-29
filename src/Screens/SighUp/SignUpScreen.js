@@ -75,46 +75,46 @@ const SignUpScreen = () => {
       if (user_email) {
         if (user_mobile) {
           if (fileName) {
-          if (password) {
-            // if (confirmpassword) {
-            try {
-              let response = await fetch(`${ServerUrl()}register`, {
-                method: "post",
-                headers: {
-                  'Accept': 'Application/json',
-                  'Content-type': 'Application/json'
-                },
-                body: JSON.stringify({
-                  'name': state.user_name,
-                  'email': state.user_email,
-                  'mobile': state.user_mobile,
-                  // 'position': state.position,
-                  'fileName': state.fileName,
-                  'password': state.password,
-                  // 'confirmPassword': state.confirmpassword,
-                  'base64File': state.base64File
+            if (password) {
+              // if (confirmpassword) {
+              try {
+                let response = await fetch(`${ServerUrl()}register`, {
+                  method: "post",
+                  headers: {
+                    'Accept': 'Application/json',
+                    'Content-type': 'Application/json'
+                  },
+                  body: JSON.stringify({
+                    'name': state.user_name,
+                    'email': state.user_email,
+                    'mobile': state.user_mobile,
+                    // 'position': state.position,
+                    'fileName': state.fileName,
+                    'password': state.password,
+                    // 'confirmPassword': state.confirmpassword,
+                    'base64File': state.base64File
+                  })
                 })
-              })
-              const result = await response.json();
-              console.log(result, 'resul register');
-              // const new_data = { name: result.user_name, email: result.user_email, mobile: result.user_mobile, image: result.image }
-              // dispatch(loginFetchDataForProfile(new_data))
-              if (result.status) {
-                navigation.navigate(navigationStrings.SIGNUPOTP, state.user_email )
-                ToastAndroid.show("Please Check Your Email", ToastAndroid.CENTER)
-              } else {
-                ToastAndroid.show("Please Enter Valid Email", ToastAndroid.SHORT)
-                alert('Email Already Exist')
+                const result = await response.json();
+                console.log(result, 'resul register');
+                const new_data = { name: result.name, email: result.email, mobile: result.mobile }
+                dispatch(loginFetchDataForProfile(new_data))
+                if (result.status) {
+                  navigation.navigate(navigationStrings.SIGNUPOTP, state.user_email)
+                  ToastAndroid.show("Please Check Your Email", ToastAndroid.CENTER)
+                } else {
+                  ToastAndroid.show("Please Enter Valid Email", ToastAndroid.SHORT)
+                  alert('Email Already Exist')
+                }
+              } catch (error) {
+                console.log(error, "sign up error");
               }
-            } catch (error) {
-              console.log(error, "sign up error");
+              // } else {
+              //   alert('Confirm Password Required')
+              // }
+            } else {
+              alert("Password not Fount PLease Try Again")
             }
-            // } else {
-            //   alert('Confirm Password Required')
-            // }
-          } else {
-            alert("Password not Fount PLease Try Again")
-          }
           }
           else {
             alert("Image Not Found");

@@ -68,6 +68,7 @@
     "react-native-share": "^8.2.2",
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^13.9.0",
+    "react-native-swiper": "^1.6.0",
     "react-native-table-component": "^1.2.2",
     "react-native-timeline-flatlist": "^0.8.0",
     "react-native-vector-icons": "^9.2.0",
@@ -91,4 +92,3 @@
     "preset": "react-native"
   }
 }
-  

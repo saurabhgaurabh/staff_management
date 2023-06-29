@@ -10,6 +10,7 @@ import * as Animatable from 'react-native-animatable';
 
 const FirstScreen = () => {
     const navigation = useNavigation();
+    const onboard =()=>{ navigation.navigate(navigationStrings.ONBOARD)}
     const goToLogin = () => {
         navigation.navigate(navigationStrings.LOGIN)
     }
@@ -45,7 +46,9 @@ const FirstScreen = () => {
                             <Image source={imagePath.icfacebook} style={styles.goole_properties} />
                         </View>
                         <View style={styles.cont_with_fb}>
+                            <TouchableOpacity onPress={onboard}>
                             <Text style={styles.networking_txt}>Continue With Facebook</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                     </LinearGradient>

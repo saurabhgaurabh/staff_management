@@ -28,13 +28,14 @@ const Profile = ({ navigation }) => {
     };
   }, []);
 
+
   const getMyObjectRemove = async () => {
     dispatch(loginFetchDataForProfile(''))
     let dd = await AsyncStorage.removeItem('tokenresult')
     navigation.navigate(dd ? navigationStrings.HOME : navigationStrings.LOGIN);
     ToastAndroid.show('User Logged Out Successfully', ToastAndroid.CENTER);
   }
-  const nofifyScreen = ()=>{
+  const nofifyScreen = () => {
     navigation.navigate(navigationStrings.NOTIFY);
   }
 
@@ -43,6 +44,9 @@ const Profile = ({ navigation }) => {
   };
   const [refreshing, setRefreshing] = React.useState(false);
 
+  const { loginData } = useSelector(state => state.login)
+  console.log(loginData, " logindata for profile")
+  console.log(loginData.newData, " logindata fornew data")
 
 
   return (
@@ -58,9 +62,9 @@ const Profile = ({ navigation }) => {
           <View style={styles.profile_info}>
             <LinearGradient colors={['#9f9bd4', '#7c79b0']}
               style={styles.linearCss}>
-              <View style={styles.profile_info_css}><Animatable.Text animation={'fadeIn'} style={styles.profileText}>Saurabh kumar</Animatable.Text></View>
-              <View style={styles.profile_info_css}><Animatable.Text animation={'fadeIn'} style={styles.notificationText}>saurabhprajapati0792@gmail.com</Animatable.Text></View>
-              <View style={styles.profile_info_css}><Animatable.Text animation={'fadeIn'} style={styles.notificationText}>9259926746</Animatable.Text></View>
+              <View style={styles.profile_info_css}><Animatable.Text animation={'fadeIn'} style={styles.profileText}>{loginData.newData.name.toUpperCase()}</Animatable.Text></View>
+              <View style={styles.profile_info_css}><Animatable.Text animation={'fadeIn'} style={styles.notificationText}>{loginData.newData.email}</Animatable.Text></View>
+              <View style={styles.profile_info_css}><Animatable.Text animation={'fadeIn'} style={styles.notificationText}>{loginData.newData.mobile}</Animatable.Text></View>
             </LinearGradient>
           </View>
         </View>
@@ -92,7 +96,7 @@ const Profile = ({ navigation }) => {
               </LinearGradient>
             </View>
             <View style={styles.profile_card}>
-              <LinearGradient colors={['#e3f7f1','#4c98bf']} style={styles.linearCss}>
+              <LinearGradient colors={['#e3f7f1', '#4c98bf']} style={styles.linearCss}>
                 <View style={styles.profile_card_img}><Image source={imagePath.icAboutUs} style={{ height: 30, width: 30 }} /></View>
                 <View style={styles.profile_card_txt}><Text style={styles.textCss}>About Us</Text></View>
               </LinearGradient>
@@ -108,12 +112,12 @@ const Profile = ({ navigation }) => {
               </LinearGradient>
             </View>
             <View style={styles.profile_card}>
-            <TouchableOpacity onPress={nofifyScreen}>        
-              <LinearGradient colors={['#e3f7f1', '#f57a93']} style={styles.linearCss}>
-                <View style={styles.profile_card_img}><Image source={imagePath.icLogOut} style={{ height: 30, width: 30 }} /></View>
-                <View style={styles.profile_card_txt}><Text style={styles.textCss}>Notifications</Text></View>
-              </LinearGradient>
-            </TouchableOpacity>
+              <TouchableOpacity onPress={nofifyScreen}>
+                <LinearGradient colors={['#e3f7f1', '#f57a93']} style={styles.linearCss}>
+                  <View style={styles.profile_card_img}><Image source={imagePath.icLogOut} style={{ height: 30, width: 30 }} /></View>
+                  <View style={styles.profile_card_txt}><Text style={styles.textCss}>Notifications</Text></View>
+                </LinearGradient>
+              </TouchableOpacity>
             </View>
           </View>
         </View>

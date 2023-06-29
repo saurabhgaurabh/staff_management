@@ -1,6 +1,7 @@
 export default {
     SPLASH: "Splash",
     FIRSTSCREEN: "FirstScreen",
+    ONBOARD: "Onboarding",
     LOGIN: "LoginScreen",
     SIGNUP: "SignUpScreen",
     FORGETPASSWORD: "ForgetPassword",

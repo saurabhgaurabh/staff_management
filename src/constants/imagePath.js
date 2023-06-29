@@ -42,4 +42,7 @@ export default{
     ictTotal_staff: require('../assets/images/output-total-staff.gif'),
     icBook: require('../assets/images/output-class.gif'),
     icClass: require('../assets/images/output-add_book.gif'),
+    icIntroA: require('../assets/images/intro_a.png'),
+    icIntroB: require('../assets/images/intro_b.png'),
+    icIntroC: require('../assets/images/intro_c.png'),
 }

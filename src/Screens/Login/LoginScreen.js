@@ -16,6 +16,7 @@ import * as Animatable from 'react-native-animatable';
 
 const LoginScreen = () => {
     const navigation = useNavigation();
+    const dispatch = useDispatch();
     const passwordforgetsubmit = () => {
         navigation.navigate(navigationStrings.FORGETPASSWORD)
     }
@@ -74,7 +75,6 @@ const LoginScreen = () => {
 
     const Redirect_To_Dashboard = async () => {
         const { email, password } = state
-        console.log(email, password, "email, password")
         if (email) {
             if (password) {
                 try {
@@ -87,8 +87,9 @@ const LoginScreen = () => {
                         body: JSON.stringify({ email, password })
                     })
                     const result = await response.json();
+                    console.log(result, "login result")
                     if (result.status) {
-                        // dispatch(loginFetchDataForProfile(result))
+                        dispatch(loginFetchDataForProfile(result))
                         await AsyncStorage.setItem('tokenresult', result.token);
                         setShowNotification(true);
                         navigation.navigate(navigationStrings.Routes)
@@ -168,7 +169,7 @@ const LoginScreen = () => {
                             <View style={{}}>
                                 <TouchableOpacity onPress={Redirect_To_Dashboard} activeOpacity={0.7}>
                                     <LinearGradient
-                                        colors={[ '#A594F9','#6247AA',]}
+                                        colors={['#A594F9', '#6247AA',]}
                                         start={{ x: 0, y: 0 }}
                                         end={{ x: 1, y: 0 }}
                                         style={{

@@ -4,7 +4,3 @@ export function ServerUrl(){
     // return 'https://api.taxlin.com/'  
     return 'http://192.168.141.233:8000/'  
 }
-
-export function ServerUrlPeddle(){
-    return 'http://10.5.51.138:52019/'
-}

@@ -39,8 +39,8 @@ const AddUpTeacher = () => {
         </View>
       </View> */}
 
-      <CustomHeader name="My Custom Header" color="#8e2cc3" />
-      <View style={{}}></View>
+      {/* <CustomHeader name="My Custom Header" color="#8e2784" /> */}
+      <View style={{}}><Text>hjhkjh</Text></View>
 
       <ScrollView>
       </ScrollView>
