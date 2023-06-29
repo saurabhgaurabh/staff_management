@@ -24,17 +24,19 @@ const SignUpOtpScreen = (props) => {
     const handleOTP = (text) => { setState({ ...state, otp: text }) }
 
 
-
+console.log(props, "props")
     const submitOpt = async () => {
         const OTP = state.otp
-        if (user_id) {
+        console.log(state.otp, props.route.params,  "otp, id")
+        if (props.route.params) {
             if (OTP) {
                 var raw = JSON.stringify({
-                    "user_id": user_id,
+                    "email": props.route.params,
                     "otp": OTP,
                 });
+                console.log( OTP, "user otp")
                 try {
-                    let response = await fetch(`${ServerUrl()}register_otp`, {
+                    let response = await fetch(`${ServerUrl()}verify_otp`, {
                         method: 'post',
                         headers: {
                             'Accept': 'Application/json',
@@ -45,7 +47,7 @@ const SignUpOtpScreen = (props) => {
                     const result = await response.json();
                     console.log(result, " result for sign up otp")
                     if (result.status) {
-                        navigation.navigate(navigationStrings.Routes, { user_id: result.user_id })
+                        navigation.navigate(navigationStrings.Routes)
                         dispatch(loginFetchDataForProfile_token(result.token))
                         ToastAndroid.show('Your Registration Successfully Done', ToastAndroid.SHORT);
                     }
@@ -105,6 +107,7 @@ const SignUpOtpScreen = (props) => {
                                 mode='outlined'
                                 outlineColor="#0288D1"
                                 returnKeyLabel='next'
+                                keyboardType='numeric'
                                 placeholderTextColor='#000'
                                 onChangeText={handleOTP}
                             />

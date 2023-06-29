@@ -26,15 +26,15 @@ const SignUpScreen = () => {
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
-  const [state, setState] = useState({ user_name: "", user_email: "", user_mobile: "", position: "", password: "", fileName: "", base64File: "" })
+  const [state, setState] = useState({ user_name: "", user_email: "", user_mobile: "", password: "", fileName: "", base64File: "" })
 
   const handleUsername = (text) => { setState({ ...state, user_name: text }) }
   const handleEmail = (text) => { setState({ ...state, user_email: text }) }
   const handleMobile = (text) => { setState({ ...state, user_mobile: text }) }
-  const handlePosition = (text) => { setState({ ...state, position: text }) }
+  // const handlePosition = (text) => { setState({ ...state, position: text }) }
   const handlePassword = (text) => { setState({ ...state, password: text }) }
   const { loginData } = useSelector(state => state.login)
-  console.log(loginData, " loginData")
+  // console.log(loginData, " loginData")
 
   const openGallery = () => {
     const options = {
@@ -60,74 +60,64 @@ const SignUpScreen = () => {
     })
   }
 
-  // console.log(state.fileName, " response.assets[0].fileName")
+  console.log(state.fileName, " response.assets[0].fileName")
 
   const SignUpSubmit = async () => {
     const user_name = state.user_name
     const user_email = state.user_email
     const user_mobile = state.user_mobile
-    const position = state.position
+    // const position = state.position
     const fileName = state.fileName
     const password = state.password
-    const confirmpassword = state.confirmpassword
-    const message = state.message
-
+    // const confirmpassword = state.confirmpassword
+    console.log(state.user_name, state.user_email, state.user_mobile, state.password, state.fileName, "result info")
     if (user_name) {
       if (user_email) {
         if (user_mobile) {
-          if (position) {
-            if (fileName) {
-              if (password) {
-                if (confirmpassword) {
-                  if (message) {
-                    try {
-                      let response = await fetch(`${ServerUrl()}register`, {
-                        method: "post",
-                        headers: {
-                          'Accept': 'Application/json',
-                          'Content-type': 'Application/json'
-                        },
-                        body: JSON.stringify({
-                          'name': state.user_name,
-                          'email': state.user_email,
-                          'mobile': state.user_mobile,
-                          'position': state.position,
-                          'fileName': state.fileName,
-                          'password': state.password,
-                          'confirmPassword': state.confirmpassword,
-                          'base64File': state.base64File,
-                          'message': state.message
-                        })
-                      })
-                      const result = await response.json();
-                      console.log(result, 'resul register');
-                      const new_data = { name: result.user_name, email: result.user_email, mobile: result.user_mobile, image: result.image }
-                      dispatch(loginFetchDataForProfile(new_data))
-                      if (result.status) {
-                        navigation.navigate(navigationStrings.SIGNUPOTP, { user_id: result.user_id, user_email: result.user_email })
-                        ToastAndroid.show("Please Check Your Email", ToastAndroid.CENTER)
-                      } else {
-                        // ToastAndroid.show("Please Enter Valid Email", ToastAndroid.SHORT)
-                        alert('Email Already Exist')
-                      }
-                    } catch (error) {
-                      console.log(error, "sign up error");
-                    }
-                  } else {
-                    alert('Message Required')
-                  }
-                } else {
-                  alert('Confirm Password Required')
-                }
+          if (fileName) {
+          if (password) {
+            // if (confirmpassword) {
+            try {
+              let response = await fetch(`${ServerUrl()}register`, {
+                method: "post",
+                headers: {
+                  'Accept': 'Application/json',
+                  'Content-type': 'Application/json'
+                },
+                body: JSON.stringify({
+                  'name': state.user_name,
+                  'email': state.user_email,
+                  'mobile': state.user_mobile,
+                  // 'position': state.position,
+                  'fileName': state.fileName,
+                  'password': state.password,
+                  // 'confirmPassword': state.confirmpassword,
+                  'base64File': state.base64File
+                })
+              })
+              const result = await response.json();
+              console.log(result, 'resul register');
+              // const new_data = { name: result.user_name, email: result.user_email, mobile: result.user_mobile, image: result.image }
+              // dispatch(loginFetchDataForProfile(new_data))
+              if (result.status) {
+                navigation.navigate(navigationStrings.SIGNUPOTP, state.user_email )
+                ToastAndroid.show("Please Check Your Email", ToastAndroid.CENTER)
               } else {
-                alert("Password not Fount PLease Try Again")
+                ToastAndroid.show("Please Enter Valid Email", ToastAndroid.SHORT)
+                alert('Email Already Exist')
               }
+            } catch (error) {
+              console.log(error, "sign up error");
             }
-            else {
-              alert("Image Not Found");
-            }
+            // } else {
+            //   alert('Confirm Password Required')
+            // }
           } else {
-            alert("Please Enter Your Position?");
+            alert("Password not Fount PLease Try Again")
+          }
+          }
+          else {
+            alert("Image Not Found");
           }
         } else {
           alert("Mobile not found Please Try Again")
@@ -172,7 +162,7 @@ const SignUpScreen = () => {
         showsVerticalScrollIndicator={true}
         style={styles.listsrcsytle}>
         <View style={{ display: 'flex' }}>
-          <Animatable.View animation={'bounceInLeft'} delay={2}  style={{ flexDirection: 'column', paddingTop: 40 }}>
+          <Animatable.View animation={'bounceInLeft'} delay={2} style={{ flexDirection: 'column', paddingTop: 40 }}>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
                 <TextInput style={styles.input}
@@ -215,21 +205,6 @@ const SignUpScreen = () => {
                   keyboardType='numeric'
                   placeholderTextColor='#000'
                   onChangeText={handleMobile}
-                />
-              </View>
-            </View>
-            <View style={styles.FormMainStyles}>
-              <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
-                  label="Position"
-                  activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
-                  mode='outlined'
-                  outlineColor="#0288D1"
-                  returnKeyLabel='next'
-                  autoCapitalize='none'
-                  placeholderTextColor='#000'
-                  onChangeText={handlePosition}
                 />
               </View>
             </View>

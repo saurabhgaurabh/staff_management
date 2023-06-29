@@ -1,6 +1,6 @@
 import React from 'react';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-import { Image, View ,ToastAndroid} from 'react-native';
+import { Image, View, ToastAndroid } from 'react-native';
 import imagePath from '../constants/imagePath';
 import navigationStrings from '../constants/navigationStrings';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -31,30 +31,13 @@ function CustomDrawer(props) {
                     <Image style={{
                         height: 80,
                         width: 150
-                    }} source={imagePath.icleadchain_logo} />
+                    }} source={imagePath.icDrawer_logo} />
                 </View>
             </View>
 
             <DrawerItemList {...props} />
             <View style={styles.drawercontentStyle} >
-                <View  style={{}}>
-                    <DrawerItem
-                        label="Add Customer"
-                        onPress={() => navigation.navigate(navigationStrings.ADDCUSTOMER)}
-                        icon={() => <Image style={{ height: 20, width: 20 }} source={imagePath.icAddCustomer} />}
-                        labelStyle={styles.lblCssDrawer}
-                    />
-                </View>
                 <View >
-                    <View style={{
-                        color: '#000000',
-                        backgroundColor: '#000000',
-                        height: .5,
-                        borderColor: '#000000',
-                        // paddingTop: 10
-                    }}>
-                    </View>
-
                     <DrawerItem
                         label="Log Out"
                         onPress={getMyObjectRemove}

@@ -43,20 +43,28 @@ function HomeStack({ navigation }) {
     // }, [])
 
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false, }}>
+        <Stack.Navigator screenOptions={{ headerShown: true, }}>
             <Stack.Screen
-                name={navigationStrings.HOME}
-                component={HomeScreen}
-                options={({ navigation }) => ({
+                name={navigationStrings.HOME} component={HomeScreen} options={({ navigation }) => ({
                     headerTitleAlign: 'center',
-                    title: 'Home',
+                    title: 'eStudy',
                     headerLeft: () => {
                         return (
                             <TouchableOpacity onPress={navigation.toggleDrawer}>
                                 <Image style={{ height: 25, width: 15 }} source={imagePath.iciconsmenu} />
                             </TouchableOpacity>
                         )
-                    }
+                    },
+                    headerRight: () => {
+                        return (
+                            <TouchableOpacity onPress={navigation.toggleDrawer}>
+                                <Image style={{ height: 35, width: 25 }} source={imagePath.icDummyUser} />
+                            </TouchableOpacity>
+                        )
+                    },
+                    headerStyle: {
+                        backgroundColor: '#9f9bd4', // Set the background color to purple
+                      },
                 })} />
             <Stack.Screen name={navigationStrings.AddUPTeacher} component={AddUpTeacher} options={{ title: 'Add Treacher' }} />
             <Stack.Screen name={navigationStrings.TEACHEROUTE} component={TeacherRoute} options={{ title: 'Teacher Tracking' }} />

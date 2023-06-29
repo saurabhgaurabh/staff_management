@@ -16,15 +16,8 @@ import * as Animatable from 'react-native-animatable';
 
 const LoginScreen = () => {
     const navigation = useNavigation();
-
-    const signupsubmit = () => {
-        navigation.navigate(navigationStrings.SIGNUP)
-    }
     const passwordforgetsubmit = () => {
         navigation.navigate(navigationStrings.FORGETPASSWORD)
-    }
-    const gotoDashboard = () => {
-        navigation.navigate(navigationStrings.TABROUTES)
     }
 
     const [state, setState] = useState({ email: "", password: "" })
@@ -98,7 +91,6 @@ const LoginScreen = () => {
                         // dispatch(loginFetchDataForProfile(result))
                         await AsyncStorage.setItem('tokenresult', result.token);
                         setShowNotification(true);
-                        // navigation.navigate(navigationStrings.TABROUTES)
                         navigation.navigate(navigationStrings.Routes)
                         ToastAndroid.show('User Logged in Successfully', ToastAndroid.SHORT);
                     } else {
@@ -174,7 +166,7 @@ const LoginScreen = () => {
                         </View>
                         <View style={styles.loginCss}>
                             <View style={{}}>
-                                <TouchableOpacity onPress={gotoDashboard} activeOpacity={0.7}>
+                                <TouchableOpacity onPress={Redirect_To_Dashboard} activeOpacity={0.7}>
                                     <LinearGradient
                                         colors={[ '#A594F9','#6247AA',]}
                                         start={{ x: 0, y: 0 }}
