@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         paddingBottom: 100
     },
- 
+
     inputContainer: {
         display: 'flex',
         width: '90%',
@@ -70,69 +70,91 @@ const styles = StyleSheet.create({
         color: '#7145f1',
         fontSize: 15,
     },
-    cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%' , borderBottomStartRadius: 10 },
-    cont_with_fb: { flexDirection: 'column', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
-    cont_with_goolge: { flexDirection: 'column',  height: 45, justifyContent: 'center', alignItems: 'center', width: '75%',},
-    cont_with_new_acc: { flexDirection: 'column',  height: 45, justifyContent: 'center', alignItems: 'center', width: '100%', },
+    cont_with_goolge_logo: { flexDirection: 'column', backgroundColor: '#fff', height: 45, justifyContent: 'center', alignItems: 'center', width: '25%', borderBottomStartRadius: 10 },
+    cont_with_fb: { flexDirection: 'column', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%', },
+    cont_with_goolge: { flexDirection: 'column', height: 45, justifyContent: 'center', alignItems: 'center', width: '75%', },
+    cont_with_new_acc: { flexDirection: 'column', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%', },
     goole_properties: { height: '70%', width: '45%' },
     networking_container: { flexDirection: 'row', width: '100%', },
     networking_txt: { fontSize: 17, color: '#fff', fontWeight: 'bold', fontStyle: 'italic', },
     ////////////// Intro Page Properties  end //////////////////////
 
 
-    
+
     //////////  login page css  start //////
-    headerComponent:{ flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: '#ddd', },
-    header_tet_body:{ flexDirection: 'column', width: '60%',justifyContent: 'center', alignItems: 'center' },
-    headerText:{ fontSize: 20, fontFamily: 'italic'},
-    summary_View:{justifyContent: 'center',paddingTop: 10,  alignItems: 'center', alignSelf: 'center'},
-    summary:{ fontSize: 16, fontFamily: 'italic', color: 'green', textAlign: "center"},
-    headerTxt:{ flexDirection: 'column', width: '20%', paddingHorizontal: 1, justifyContent: 'center' },
-    forgetUIBody:{ flexDirection: 'column', justifyContent: 'center', },
-    forgerInput:{ flexDirection: 'column', paddingTop: 40 , width: '100%'},
-    AddTeacherHeading:{ fontSize: 25, fontStyle: 'italic', fontWeight: 'bold'},
+    headerComponent: { flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: '#ddd', },
+    headerView: { flexDirection: 'row', backgroundColor: '#DCDCDC', paddingVertical: 5,paddingHorizontal: 1, borderBottomWidth: 1, borderBottomColor: '#c0c0c0', justifyContent: 'flex-end'},
+    header_tet_body: { flexDirection: 'column', width: '60%', justifyContent: 'center', alignItems: 'center' },
+    headerText: { fontSize: 20, fontFamily: 'italic', color: '#2da600' },
+    summary_View: { justifyContent: 'center', paddingTop: 10, alignItems: 'center', alignSelf: 'center' },
+    summary: { fontSize: 16, fontFamily: 'italic', color: 'green', textAlign: "center" },
+    headerTxt: { flexDirection: 'column', width: '20%', paddingHorizontal: 1, justifyContent: 'center' },
+    forgetUIBody: { flexDirection: 'column', justifyContent: 'center', },
+    forgerInput: { flexDirection: 'column', paddingTop: 40, width: '100%' },
+    AddTeacherHeading: { fontSize: 25, fontStyle: 'italic', fontWeight: 'bold' },
+    containerBack: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        resizeMode: 'cover',
+    },
+    container: {
+        flex: 1,
+      },
+      image: {
+        flex: 1,
+        justifyContent: 'center',
+      },
+      text: {
+        color: 'white',
+        fontSize: 42,
+        lineHeight: 84,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        backgroundColor: '#000000c0',
+      },
     header: {
         backgroundColor: '#f5f5f5',
         paddingVertical: 20,
         paddingHorizontal: 30,
         borderBottomWidth: 1,
         borderBottomColor: '#ddd',
-      },
-    
-      FormMainStyles: {
+    },
+
+    FormMainStyles: {
         flexDirection: 'row',
         alignContent: 'center',
         alignSelf: 'center',
-        height: 65,
+        height: 60,
         width: '90%',
         justifyContent: 'center',
         alignItems: 'center'
-    
-      },
-      formContainer: {
+
+    },
+    formContainer: {
         paddingHorizontal: 30,
         paddingVertical: 20,
-      },button: {
+    }, button: {
         backgroundColor: '#007bff',
         paddingVertical: 10,
         borderRadius: 5,
         alignItems: 'center',
-      },
-      buttonText: {
+    },
+    buttonText: {
         color: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
-      },
-      sighupSubmitTxt:{ fontStyle: 'italic', fontSize: 15, color: '#fffff', fontWeight: 'bold'},
-      label: {
+    },
+    sighupSubmitTxt: { fontStyle: 'italic', fontSize: 15, color: '#fffff', fontWeight: 'bold' },
+    label: {
         color: '#9CA4A1',
         fontSize: 18,
         paddingLeft: 25,
-      },
-      inputfields: {
+    },
+    inputfields: {
         paddingTop: 40,
-      },
-      TextStyles: {
+    },
+    TextStyles: {
         alignContent: 'center',
         alignItems: 'center',
         justifyContent: 'center',
@@ -143,13 +165,13 @@ const styles = StyleSheet.create({
         width: '100%',
         fontWeight: 'bold',
         bottom: 8,
-      },
-      input: {
+    },
+    input: {
         height: 50,
         margin: 17,
         // height: '10%'
-      },
-      submitbutton: {
+    },
+    submitbutton: {
         backgroundColor: '#0288D1',
         paddingHorizontal: 45,
         margin: 5,
@@ -161,8 +183,8 @@ const styles = StyleSheet.create({
         borderBottomStartRadius: 15,
         paddingTop: 10,
         alignSelf: 'center'
-      },
-      submitbuttonsignIn: {
+    },
+    submitbuttonsignIn: {
         backgroundColor: '#0288D1',
         paddingHorizontal: 52,
         margin: 5,
@@ -174,16 +196,16 @@ const styles = StyleSheet.create({
         borderTopStartRadius: 15,
         borderBottomStartRadius: 15,
         paddingTop: 8,
-      },
-      submitbuttontext: {
+    },
+    submitbuttontext: {
         color: 'white',
         fontSize: 20,
         alignItems: 'center',
         alignContent: 'center',
         alignSelf: 'center'
-      },
-      signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center', },
-      image_css: {
+    },
+    signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center', },
+    image_css: {
         width: '90%',
         alignContent: 'flex-start',
         alignItems: 'center',
@@ -196,10 +218,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         height: '7%',
         fontWeight: 'bold',
-      },
-      img_text: { color: 'green', fontSize: 20, textAlign: 'center', margin: 5 },
-      signUpFileUpload:{ flexDirection: 'row', justifyContent: 'center', width: '90%', borderWidth: 1, borderColor: '#0288D1', alignSelf: 'center'},
-      image_btn: { width: '100%' },
+    },
+    img_text: { color: 'green', fontSize: 20, textAlign: 'center', margin: 5 },
+    signUpFileUpload: { flexDirection: 'row', justifyContent: 'center', width: '90%', borderWidth: 1, borderColor: '#2da600', alignSelf: 'center' },
+    image_btn: { width: '100%' },
     Linearcontainer: {
         flex: 1,
         // height: '100%'
@@ -237,7 +259,7 @@ const styles = StyleSheet.create({
         // height: '100%'
     },
     heading_trending: { flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, padding: 10 },
-    headingCss: { fontSize: 22, fontWeight: 'bold' , fontStyle: 'italic'},
+    headingCss: { fontSize: 22, fontWeight: 'bold', fontStyle: 'italic' },
     card_container: { flexDirection: 'row' },
     card_main_style: { flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', },
     card_decoration: { height: 120, width: 160, borderRadius: 10, margin: 5, borderWidth: 0, opacity: 0.9, shadowOpacity: 1, shadowRadius: 30.00, elevation: 3, },
@@ -275,7 +297,7 @@ const styles = StyleSheet.create({
         margin: 10,
         fontSize: 15
     },
-    
+
     loginCss: {
         width: '92%',
         alignContent: 'center',
@@ -349,23 +371,23 @@ const styles = StyleSheet.create({
 
 
     // profile screen css properties start...
-    profileHeading:{fontStyle: 'italic', flexWrap: 'wrap', fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: '#7c79b0', },
-    profileHeading_second:{ fontStyle: 'italic', flexWrap: 'wrap', fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: '#7c79b0',paddingTop: 25 },
+    profileHeading: { fontStyle: 'italic', flexWrap: 'wrap', fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: '#7c79b0', },
+    profileHeading_second: { fontStyle: 'italic', flexWrap: 'wrap', fontSize: 20, fontWeight: 'bold', paddingLeft: 10, color: '#7c79b0', paddingTop: 25 },
     profile_header_component: {
         flexDirection: 'column', height: 250, width: '100%', borderRadius: 10,
- 
+
     },
     profile_img_css: { flexDirection: 'row', width: '100%', height: '50%', borderTopRightRadius: 10, borderTopLeftRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center' },
-    profile_info: {  flexDirection: 'column', width: '100%', height: '50%', borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomEndRadius: 10, borderBottomStartRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center', },
-    profile_info_css:{ flexDirection: 'row', justifyContent: 'center' },
-    linearCss:{ flex: 1, width: '100%', borderRadius: 10 },
+    profile_info: { flexDirection: 'column', width: '100%', height: '50%', borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomEndRadius: 10, borderBottomStartRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center', },
+    profile_info_css: { flexDirection: 'row', justifyContent: 'center' },
+    linearCss: { flex: 1, width: '100%', borderRadius: 10 },
     img_size: { height: '100%', width: '40%' },
-    profileText:{fontStyle: 'italic', fontStyle: 'italic',fontWeight: 'bold', fontSize: 20, color: '#fff'},
+    profileText: { fontStyle: 'italic', fontStyle: 'italic', fontWeight: 'bold', fontSize: 20, color: '#fff' },
     profile_menu: { flexDirection: 'column', width: '100%', height: 100, justifyContent: 'center', alignSelf: 'center', },
     profile_main_card: { flexDirection: 'row', justifyContent: 'space-between', width: '100%', },
-    profile_card:{ flexDirection: 'column', backgroundColor: 'grey', width: '48%', height: 80, alignContent: 'center', margin: 2, alignItems: 'center', justifyContent: 'center', borderRadius: 10 },
-    profile_card_img:{ flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'flex-end' , paddingHorizontal: 10},
-    profile_card_txt:{ flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'center' },
+    profile_card: { flexDirection: 'column', backgroundColor: 'grey', width: '48%', height: 80, alignContent: 'center', margin: 2, alignItems: 'center', justifyContent: 'center', borderRadius: 10 },
+    profile_card_img: { flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'flex-end', paddingHorizontal: 10 },
+    profile_card_txt: { flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'center' },
     // profile screen css properties end...
 
     mainbackground: {
