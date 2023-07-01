@@ -9,7 +9,7 @@ export {default as AddCustomer} from './Customer/AddCustomer';
 export {default as demoScreen} from './Customer/demoScreen';
 export {default as AddtoCart} from './Order/AddCardScreen';
 export {default as FinalOrder} from './Order/FinalOrder';
-export {default as PaymentScreen} from './Order/PaymentScreen';
+export {default as AddTeacherList} from '../HomeDetails/AddTeacherList';
 export {default as OrderDetails} from './Order/OrderDetails';
 
 // Tab pages start's from here

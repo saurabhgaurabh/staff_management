@@ -97,23 +97,7 @@ const AddUpTeacher = () => {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          username_teacher,
-          teacher_name,
-          age,
-          email_teacher,
-          address_teacher,
-          salary,
-          mobile,
-          password,
-          confirm_password,
-          eligibility,
-          degree,
-          experience,
-          position,
-          image: fileName,
-          base64File
-        })
+        body: JSON.stringify({ username_teacher, teacher_name, age, email_teacher, address_teacher, salary, mobile, password, confirm_password, eligibility, degree, experience, position, image: fileName, base64File  })
       });
 
       const result = await response.json();
@@ -367,7 +351,7 @@ const AddUpTeacher = () => {
               <LinearGradient colors={['#63f880', '#2a913e']} style={styles.linearCss}>
                 <View style={styles.networking_container}>
                   <TouchableOpacity style={styles.cont_with_new_acc} onPress={submitTeacherDetails}>
-                    <Text style={styles.networking_txt}>Save Your Information</Text>
+                    <Text style={styles.networking_txt}>Save</Text>
                   </TouchableOpacity>
                 </View>
               </LinearGradient>

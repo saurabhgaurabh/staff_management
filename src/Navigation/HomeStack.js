@@ -18,6 +18,7 @@ import Joining from "../Screens/Home/Joining";
 import TotalStaff from "../Screens/Home/TotalStaff";
 import TotalClass from "../Screens/Home/TotalClass";
 import AddBooks from "../Screens/Home/AddBooks";
+import AddTeacherList from "../HomeDetails/AddTeacherList";
 
 function HomeStack({ navigation }) {
 
@@ -75,6 +76,7 @@ function HomeStack({ navigation }) {
             <Stack.Screen name={navigationStrings.TOTALSTAFF} component={TotalStaff} options={{ title: 'Total Staff' }} />
             <Stack.Screen name={navigationStrings.TOTALCLASS} component={TotalClass} options={{ title: 'Total Class' }} />
             <Stack.Screen name={navigationStrings.BOOKS} component={AddBooks} options={{ title: 'Total Books' }} />
+            {/* <Stack.Screen name={navigationStrings.TEACHLIST} component={AddTeacherList} options={{ title: 'Total Books' }} /> */}
         </Stack.Navigator>
     )
 }

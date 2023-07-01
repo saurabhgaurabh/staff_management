@@ -47,4 +47,7 @@ export default {
     TOTALSTAFF: "TotalStaff",
     TOTALCLASS: "TotalClass",
     BOOKS: "AddBooks",
+
+    // Home  Details Screens
+    TEACHLIST: "AddTeacherList",
 }

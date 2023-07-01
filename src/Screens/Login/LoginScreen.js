@@ -136,10 +136,9 @@ const LoginScreen = () => {
                                 <TextInput style={styles.inputCss}
                                     label="Email"
                                     activeUnderlineColor="#0288D1"
-
-                                    activeOutlineColor="grey"
+                                    activeOutlineColor="#A594F9"
                                     mode='outlined'
-                                    outlineColor="white"
+                                    outlineColor="#A594F9"
                                     returnKeyLabel='next'
                                     placeholderTextColor='#000'
                                     autoCapitalize='none'
@@ -148,9 +147,9 @@ const LoginScreen = () => {
                                 <TextInput style={styles.inputCss}
                                     label="Password"
                                     activeUnderlineColor="#0288D1"
-                                    activeOutlineColor="grey"
+                                    activeOutlineColor="#A594F9"
                                     mode='outlined'
-                                    outlineColor="white"
+                                    outlineColor="#A594F9"
                                     returnKeyLabel='next'
                                     placeholderTextColor='#000'
                                     autoCapitalize='none'

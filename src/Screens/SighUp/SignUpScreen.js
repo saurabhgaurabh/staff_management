@@ -164,9 +164,9 @@ const SignUpScreen = () => {
                 <TextInput style={styles.input}
                   label="Username"
                   activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
+                  activeOutlineColor="#2da600"
                   mode='outlined'
-                  outlineColor="#0288D1"
+                  outlineColor="green"
                   returnKeyLabel='next'
                   placeholderTextColor='#000'
                   autoCapitalize='none'
@@ -179,9 +179,9 @@ const SignUpScreen = () => {
                 <TextInput style={styles.input}
                   label="E-Mail"
                   activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
+                  activeOutlineColor="#2da600"
                   mode='outlined'
-                  outlineColor="#0288D1"
+                  outlineColor="green"
                   returnKeyLabel='next'
                   placeholderTextColor='#000'
                   autoCapitalize='none'
@@ -194,9 +194,9 @@ const SignUpScreen = () => {
                 <TextInput style={styles.input}
                   label="Mobile"
                   activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
+                  activeOutlineColor="#2da600"
                   mode='outlined'
-                  outlineColor="#0288D1"
+                  outlineColor="green"
                   returnKeyLabel='next'
                   keyboardType='numeric'
                   placeholderTextColor='#000'
@@ -209,9 +209,9 @@ const SignUpScreen = () => {
                 <TextInput style={styles.input}
                   label="Password"
                   activeUnderlineColor="#0288D1"
-                  activeOutlineColor="#0288D1"
+                  activeOutlineColor="#2da600"
                   mode='outlined'
-                  outlineColor="#0288D1"
+                  outlineColor="green"
                   returnKeyLabel='next'
                   autoCapitalize='none'
                   placeholderTextColor='#000'

@@ -8,6 +8,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from '../MainStyle'
 import ImageCarousel from '../../Components/ImageCarousel'
 import * as Animatable from 'react-native-animatable';
+import AddTeacherList from '../../HomeDetails/AddTeacherList'
+
 
 const HomeScreen = ({ navigation }) => {
     // const [scrollOffset, setScrollOffset] = useState(0);
@@ -30,6 +32,7 @@ const HomeScreen = ({ navigation }) => {
     const AddSTotaltaff = () => navigation.navigate(navigationStrings.TOTALSTAFF);
     const AddSTotalClass = () => navigation.navigate(navigationStrings.TOTALCLASS);
     const AddBooks = () => navigation.navigate(navigationStrings.BOOKS);
+    const teacherList = () => navigation.navigate(navigationStrings.TEACHLIST);
 
 
 
@@ -44,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={{ height: '100%', paddingBottom: 55 }}>
             <ScrollView showsHorizontalScrollIndicator={true}>
-            <LinearGradient colors={['#9f9bd4', '#d6d3e8']} style={styles.Linearcontainer}>
+                <LinearGradient colors={['#9f9bd4', '#d6d3e8']} style={styles.Linearcontainer}>
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
                         <ImageCarousel images={images} />
                     </View>
@@ -80,6 +83,9 @@ const HomeScreen = ({ navigation }) => {
                                                 </View>
                                                 <View style={styles.count_css}>
                                                     <Text style={styles.textCss}>Count(0)</Text>
+                                                    <TouchableOpacity onPress={teacherList}>
+                                                        <Text style={styles.textCss}>View More</Text>
+                                                    </TouchableOpacity>
                                                 </View>
                                             </View>
                                         </View>
@@ -99,6 +105,7 @@ const HomeScreen = ({ navigation }) => {
                                                 </View>
                                                 <View style={styles.count_css}>
                                                     <Text style={styles.textCss}>Count(0)</Text>
+                                                    <Text style={styles.textCss}>View More</Text>
                                                 </View>
                                             </View>
                                         </View>
