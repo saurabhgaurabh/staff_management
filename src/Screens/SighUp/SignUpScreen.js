@@ -66,7 +66,6 @@ const SignUpScreen = () => {
     const user_name = state.user_name
     const user_email = state.user_email
     const user_mobile = state.user_mobile
-    // const position = state.position
     const fileName = state.fileName
     const password = state.password
     // const confirmpassword = state.confirmpassword
@@ -88,15 +87,12 @@ const SignUpScreen = () => {
                     'name': state.user_name,
                     'email': state.user_email,
                     'mobile': state.user_mobile,
-                    // 'position': state.position,
                     'fileName': state.fileName,
-                    'password': state.password,
-                    // 'confirmPassword': state.confirmpassword,
-                    'base64File': state.base64File
+                    'base64File': state.base64File,
+                    'password': state.password
                   })
                 })
                 const result = await response.json();
-                console.log(result, 'resul register');
                 const new_data = { name: result.name, email: result.email, mobile: result.mobile }
                 dispatch(loginFetchDataForProfile(new_data))
                 if (result.status) {

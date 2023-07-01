@@ -87,7 +87,7 @@ const LoginScreen = () => {
                         body: JSON.stringify({ email, password })
                     })
                     const result = await response.json();
-                    console.log(result, "login result")
+                    console.log(result,"resulr login")
                     if (result.status) {
                         dispatch(loginFetchDataForProfile(result))
                         await AsyncStorage.setItem('tokenresult', result.token);
