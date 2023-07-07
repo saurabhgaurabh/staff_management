@@ -82,10 +82,10 @@ const styles = StyleSheet.create({
 
 
     //////////  login page css  start //////
-    headerComponent: { flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: '#ddd', },
+    headerComponent: { flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: 'lightgrey', },
     headerView: { flexDirection: 'row', backgroundColor: '#DCDCDC', paddingVertical: 5,paddingHorizontal: 1, borderBottomWidth: 1, borderBottomColor: '#c0c0c0', justifyContent: 'flex-end'},
     header_tet_body: { flexDirection: 'column', width: '60%', justifyContent: 'center', alignItems: 'center' },
-    headerText: { fontSize: 20, fontFamily: 'italic', color: '#2da600' },
+    headerText: { fontSize: 20, fontFamily: 'italic', color: 'black', fontWeight: 'bold' },
     summary_View: { justifyContent: 'center', paddingTop: 10, alignItems: 'center', alignSelf: 'center' },
     summary: { fontSize: 16, fontFamily: 'italic', color: 'green', textAlign: "center" },
     headerTxt: { flexDirection: 'column', width: '20%', paddingHorizontal: 1, justifyContent: 'center' },
