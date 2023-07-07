@@ -34,8 +34,10 @@ const styles = StyleSheet.create({
     headerContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: '27%',
+        height: 60,
         paddingHorizontal: 16,
+        // position: 'absolute', 
+        top: 0
     },
     headerText: {
         fontSize: 18,
