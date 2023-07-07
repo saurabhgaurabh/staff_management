@@ -13,7 +13,7 @@ import OTPScreen from "../Screens/OtpScreen/OTPScreen";
 import NewPasswordScreen from "../Screens/OtpScreen/NewPasswordScreen";
 import SignUpOtpScreen from "../Screens/SighUp/SignUpOtpScreen";
 import FavoriteStack from "./FavoriteStack";
-import AddCustomer, { AddtoCart, OrderDetails } from "../Screens";
+import AddCustomer, { AddTeacherList, AddtoCart, OrderDetails } from "../Screens";
 import demoScreen from "../Screens/Customer/demoScreen";
 import Routes from "./Routes";
 import FinalOrder from "../Screens/Order/FinalOrder"
@@ -77,11 +77,7 @@ export default function (Stack) {
             />
 
             {/* Home screen pages  Start's Here */}
-
-            <Stack.Screen
-                name={navigationStrings.LEDGER_BALANCE}
-                component={LedgerBalance}
-            />
+            
             <Stack.Screen
                 name={navigationStrings.OUTSTANDINGPAYBLE}
                 component={OutstandingPayble}
@@ -121,6 +117,10 @@ export default function (Stack) {
             <Stack.Screen
                 name={navigationStrings.ORDERDETAILS}
                 component={OrderDetails}
+            />
+            <Stack.Screen
+                name={navigationStrings.TEACHLIST}
+                component={AddTeacherList}
             />
         </>
     )

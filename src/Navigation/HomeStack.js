@@ -76,7 +76,7 @@ function HomeStack({ navigation }) {
             <Stack.Screen name={navigationStrings.TOTALSTAFF} component={TotalStaff} options={{ title: 'Total Staff' }} />
             <Stack.Screen name={navigationStrings.TOTALCLASS} component={TotalClass} options={{ title: 'Total Class' }} />
             <Stack.Screen name={navigationStrings.BOOKS} component={AddBooks} options={{ title: 'Total Books' }} />
-            {/* <Stack.Screen name={navigationStrings.TEACHLIST} component={AddTeacherList} options={{ title: 'Total Books' }} /> */}
+            {/* <Stack.Screen name={navigationStrings.TEACHLIST} component={AddTeacherList} options={{ title: 'treacherlists' }} /> */}
         </Stack.Navigator>
     )
 }

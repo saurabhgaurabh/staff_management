@@ -12,7 +12,7 @@ import NewPasswordScreen from '../Screens/OtpScreen/NewPasswordScreen';
 import SignUpOtpScreen from '../Screens/SighUp/SignUpOtpScreen';
 import AddCustomer from '../Screens/Customer/AddCustomer';
 import AddtoCart from '../Screens/Order/AddCardScreen';
-import { FinalOrder, FirstScreen } from '../Screens';
+import { AddTeacherList, FinalOrder, FirstScreen } from '../Screens';
 import { useEffect } from 'react';
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 import { useNavigation } from '@react-navigation/native';
@@ -31,6 +31,7 @@ const SplashRoute = () => {
     <NavigationContainer >
       <Stack.Navigator screenOptions={{presentation: 'modal', headerShown: false }}>
         <Stack.Screen name={navigationStrings.FIRSTSCREEN} component={FirstScreen} />
+        <Stack.Screen name={navigationStrings.TEACHLIST} component={AddTeacherList} />
         <Stack.Screen name={navigationStrings.ONBOARD} component={Onboarding} />
         <Stack.Screen name={navigationStrings.LOGIN} component={LoginScreen} />
         <Stack.Screen name={navigationStrings.Routes} component={Routes} />

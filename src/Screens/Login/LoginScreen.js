@@ -87,7 +87,7 @@ const LoginScreen = () => {
                         body: JSON.stringify({ email, password })
                     })
                     const result = await response.json();
-                    console.log(result,"resulr login")
+                    // console.log(result,"resulr login")
                     if (result.status) {
                         dispatch(loginFetchDataForProfile(result))
                         await AsyncStorage.setItem('tokenresult', result.token);
@@ -115,9 +115,9 @@ const LoginScreen = () => {
                 style={styles.Linearcontainer}>
                 <View style={styles.mainbackground}>
                     <View>
-                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', backgroundColor: '#8e9eab' }} >
+                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start',}} >
                             <TouchableOpacity onPress={handleBackButtonClick} >
-                                <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
+                                <Image style={{ height: 25, width: 25 }} source={imagePath.icbackNoraml} />
                             </TouchableOpacity>
                             {/* Notification Popup */}
                             {showNotification && (
