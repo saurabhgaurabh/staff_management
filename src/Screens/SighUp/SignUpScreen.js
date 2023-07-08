@@ -146,7 +146,7 @@ const SignUpScreen = () => {
         <View style={styles.headerComponent}>
           <View style={styles.headerTxt}>
             <TouchableOpacity onPress={handleBackButtonClick} >
-              <Image style={{ height: 30, width: 25 }} source={imagePath.icback} />
+              <Image style={{ height: 25, width: 25 }} source={imagePath.icbackNoraml} />
             </TouchableOpacity>
           </View>
           <View style={styles.header_tet_body}>

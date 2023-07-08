@@ -115,7 +115,7 @@ const LoginScreen = () => {
                 style={styles.Linearcontainer}>
                 <View style={styles.mainbackground}>
                     <View>
-                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start',}} >
+                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', }} >
                             <TouchableOpacity onPress={handleBackButtonClick} >
                                 <Image style={{ height: 25, width: 25 }} source={imagePath.icbackNoraml} />
                             </TouchableOpacity>
@@ -129,12 +129,14 @@ const LoginScreen = () => {
                     </View>
                     <View style={{ justifyContent: 'center', alignItems: 'center', }}>
                         <Image source={imagePath.icuser} style={styles.logoCss} />
+                        <Text style={styles.loginMiddleText}>Login</Text>
                     </View>
                     <Animatable.View animation={'zoomIn'} duration={1000} delay={100} style={styles.formbodycss}>
                         <View style={styles.form_field_container}>
                             <View style={{ alignSelf: 'center', width: '95%', paddingTop: 20 }}>
                                 <TextInput style={styles.inputCss}
                                     label="Email"
+                                    placeholder='example@gmail.com'
                                     activeUnderlineColor="#0288D1"
                                     activeOutlineColor="#A594F9"
                                     mode='outlined'
@@ -146,6 +148,7 @@ const LoginScreen = () => {
                                 />
                                 <TextInput style={styles.inputCss}
                                     label="Password"
+                                    placeholder='**********'
                                     activeUnderlineColor="#0288D1"
                                     activeOutlineColor="#A594F9"
                                     mode='outlined'

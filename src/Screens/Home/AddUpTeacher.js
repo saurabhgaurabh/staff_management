@@ -10,12 +10,20 @@ import CustomHeader from '../../Components/CustomHeader';
 import { TextInput } from 'react-native-paper';
 import { ServerUrl } from '../../Helper/Helper';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
+// import { MyStaffReduceres } from '../../redux/MyStaffSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { MyStaffAddData } from '../../redux/MyLoginSlice';
+
+
 
 
 
 
 const AddUpTeacher = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+  // const {myStaffData} = useSelector(state => state.myStaff)
+  // console.log(myStaffData,"staffData...")
   function handleBackButtonClick() {
     navigation.goBack();
     return true;
@@ -97,11 +105,12 @@ const AddUpTeacher = () => {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username_teacher, teacher_name, age, email_teacher, address_teacher, salary, mobile, password, confirm_password, eligibility, degree, experience, position, image: fileName, base64File  })
+        body: JSON.stringify({ username_teacher, teacher_name, age, email_teacher, address_teacher, salary, mobile, password, confirm_password, eligibility, degree, experience, position, image: fileName, base64File })
       });
 
       const result = await response.json();
       console.log(result, "add teacher result.");
+      dispatch(MyStaffAddData(result))
       if (result.status === true) {
         if (result.message === "Duplicate Record Can't Accept") {
           return alert("Duplicate data: Teacher with the same name and email already exists.");

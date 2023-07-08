@@ -6,6 +6,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import thunk from "redux-thunk";
+import MyStaffSlice from "./MyStaffSlice";
 
 const persistConfig = {
     key: 'root',
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     login: MyLoginSlice,   //object of rootReducer
     product: MyProductSlice,
     cart: MyCartSlice,  //object of rootReducer
+    myStaff: MyStaffSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

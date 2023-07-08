@@ -7,13 +7,18 @@ export const MyLoginSlice = createSlice({
   },
 
   reducers: {
+    MyStaffAddData: (state, action) => {
+      console.log(action.payload, "mystaff payload...")
+      state.myStaffData = action.payload
+      console.log(state.myStaffData,"myStaffData...")
+    },
+
     loginFetchDataForProfile: (state, action) => {
-      console.log(action.payload," action.paluylod profile")
+      console.log(action.payload, " action.paluylod profile")
       state.loginData = action.payload
-      // console.log(state.loginData," action data")
     },
     loginFetchDataForProfile_token: (state, action) => {
-      console.log(state.loginData.token," token")
+      console.log(state.loginData.token, " token")
       state.loginData.token = action.payload
     },
     Registercheck: (state, action) => {
@@ -39,5 +44,5 @@ export const MyLoginSlice = createSlice({
   }
 })
 
-export const { loginFetchDataForProfile, profileUpdate, orderDetailsToView, ledgerBalcance, outstandingRecievable, loginFetchDataForProfile_token, Registercheck } = MyLoginSlice.actions
+export const { loginFetchDataForProfile, profileUpdate, orderDetailsToView, ledgerBalcance, outstandingRecievable, loginFetchDataForProfile_token, Registercheck, MyStaffAddData } = MyLoginSlice.actions
 export default MyLoginSlice.reducer

@@ -348,6 +348,14 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
     },
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
+    loginMiddleText: {
+        color: 'white',
+        fontSize: 28,
+        marginBottom: 10,
+        fontStyle: 'italic',
+        fontWeight: 'bold'
+    },
+    // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
 
