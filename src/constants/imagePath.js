@@ -46,4 +46,5 @@ export default{
     icIntroB: require('../assets/images/intro_b.png'),
     icIntroC: require('../assets/images/intro_c.png'),
     icBackground: require('../assets/images/background.jpg'),
+    icMore: require('../assets/images/more.png'),
 }
