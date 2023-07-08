@@ -358,7 +358,15 @@ const styles = StyleSheet.create({
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
-
+    BoxContainer: { flexDirection: 'column', backgroundColor: '#fdf4c9', height: '100%', width: '95%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 5, borderBottomWidth: 0.9, borderBottomColor: 'grey', opacity: 0.4, },
+    img_Box: { flexDirection: 'row', width: '100%', },
+    img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal: 10 },
+    img_box_Img:{ flexDirection: 'column', width: '50%', paddingLeft: 130 },
+    BoxContainer_data: { flexDirection: 'row', paddingTop: 10 },
+    leftContainer:{ flexDirection: 'column', width: '35%', },
+    leftContainer_Css: { flexDirection: 'row', alignSelf: 'center' },
+    rightContainer: { flexDirection: 'column', width: '65%', },
+    rightContainer_Css: { flexDirection: 'row', alignSelf: 'center' },
 
 
     //////////  Home Screen page css  start /////////

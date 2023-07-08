@@ -22,8 +22,6 @@ import { MyStaffAddData } from '../../redux/MyLoginSlice';
 const AddUpTeacher = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  // const {myStaffData} = useSelector(state => state.myStaff)
-  // console.log(myStaffData,"staffData...")
   function handleBackButtonClick() {
     navigation.goBack();
     return true;

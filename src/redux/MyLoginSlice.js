@@ -14,7 +14,7 @@ export const MyLoginSlice = createSlice({
     },
 
     loginFetchDataForProfile: (state, action) => {
-      console.log(action.payload, " action.paluylod profile")
+      // console.log(action.payload, " action.paluylod profile")
       state.loginData = action.payload
     },
     loginFetchDataForProfile_token: (state, action) => {

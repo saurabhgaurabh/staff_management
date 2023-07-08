@@ -12,34 +12,40 @@ const AddTeacherList = () => {
   const navigation = useNavigation();
   const { myStaffData } = useSelector(state => state.login)
   console.log(myStaffData, "staffData...")
+  console.log(myStaffData.addTeacherData.address_teacher, "staffData...")
+
 
   return (
     <View>
       <CustomHeader name={'Listing of Added Staff'} color="#2da600" />
       {/* <Animatable.Text animation="zoomIn" delay={2} style={styles.profileHeading}>View All Details </Animatable.Text> */}
       <ScrollView showsHorizontalScrollIndicator={true}>
-        <View style={{ paddingTop: 20 }}>
-          <View style={{ flexDirection: 'column', backgroundColor: '#fdf4c9', height: '100%', width: '95%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 5, borderBottomWidth: 0.9, borderBottomColor: 'grey', opacity: 0.4, }}>
-            <View style={{ flexDirection: 'row', width: '100%', }}>
-              <View style={{ flexDirection: 'column', width: '50%', paddingHorizontal: 10 }}><Text style={styles.textCss}>Tech_ID</Text></View>
-              <View style={{ flexDirection: 'column', width: '50%', paddingLeft: 130 }}><Image style={{ height: 20, width: 10 }} source={imagePath.icMore} /></View>
-            </View>
-            <View style={{ flexDirection: 'row', paddingTop: 10 }}>
-              <View style={{ flexDirection: 'column', width: '35%', }}>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Image style={{ height: 90, width: '60%' }} source={imagePath.icDummyUser} /></View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>Username</Text></View>
+        {Array.isArray(myStaffData.addTeacherData) && myStaffData.addTeacherData?.map((item, index) => {
+          return (
+            <View key={index} style={{ paddingTop: 20 }}>
+              <View style={styles.BoxContainer}>
+                <View style={styles.img_Box}>
+                  <View style={styles.img_boxSchoolID}><Text style={styles.textCss}>{item.school_id}</Text></View>
+                  <View style={styles.img_box_Img}><Image style={{ height: 20, width: 10 }} source={imagePath.icMore} /></View>
+                </View>
+                <View style={styles.BoxContainer_data}>
+                  <View style={styles.leftContainer}>
+                    <View style={styles.leftContainer_Css}><Image style={{ height: 90, width: '60%' }} source={imagePath.icDummyUser} /></View>
+                    <View style={styles.leftContainer_Css}><Text style={styles.textCss}>{item.username_teacher}</Text></View>
+                  </View>
+                  <View style={styles.rightContainer}>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item.teacher_name}</Text></View>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item.age}</Text></View>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item.email_teacher}</Text></View>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item.mobile}</Text></View>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item.salary}</Text></View>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item.address_teacher}</Text></View>
+                  </View>
+                </View>
               </View>
-              <View style={{ flexDirection: 'column', width: '65%', }}>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>Teacher Name</Text></View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>Age 22</Text></View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>saurabhprajapati0792@gmail.com</Text></View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>Mobile 9259926746</Text></View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>Salary 29000</Text></View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center' }}><Text style={styles.textCss}>address</Text></View>
-              </View>
             </View>
-          </View>
-        </View>
+          )
+        })}
       </ScrollView>
     </View>
   )
