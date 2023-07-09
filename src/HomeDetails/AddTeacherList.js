@@ -8,18 +8,13 @@ import { ScrollView } from 'react-native-gesture-handler'
 import * as Animatable from 'react-native-animatable';
 import { useSelector } from 'react-redux'
 import LinearGradient from 'react-native-linear-gradient'
+import navigationStrings from '../constants/navigationStrings'
 
 const AddTeacherList = () => {
   const navigation = useNavigation();
+  const addStaff = () => { navigation.navigate(navigationStrings.AddUPTeacher) }
   const { myStaffData } = useSelector(state => state.login)
-  console.log(myStaffData, "staffData...---")
   console.log(myStaffData.data, "new staff Data - - -")
-  // console.log(myStaffData[0].addTeacherData, "staffData...---")
-  // console.log(myStaffData.addTeacherData.address_teacher, "staffData...")
-  const newArray = []
-  newArray.push(myStaffData)
-
-  // console.log(newArray[0].addTeacherData," new data of array")
 
 
 
@@ -28,15 +23,21 @@ const AddTeacherList = () => {
     <View>
       <CustomHeader name={'Existing Members'} color="#2da600" />
       {/* <Animatable.Text animation="zoomIn" delay={2} style={styles.profileHeading}>View All Details </Animatable.Text> */}
-      <View style={{ flexDirection: 'row', backgroundColor: 'red', justifyContent: 'space-between' }}>
-        <View style={{ flexDirection: 'column' , backgroundColor: 'green', borderRadius: 10}}>
-          <View style={{}}><Text>Add More</Text></View>
+      <View style={styles.teacherListAddMenu}>
+        <View style={styles.contanerBody}>
+          <LinearGradient colors={['#f9cc0a', '#f9b511']} style={styles.linearCss} >
+            <View style={styles.ContainerCss}>
+              <TouchableOpacity onPress={addStaff}>
+                <Text>Add More</Text>
+              </TouchableOpacity>
+            </View>
+          </LinearGradient>
         </View>
       </View>
-      <ScrollView showsHorizontalScrollIndicator={true} contentContainerStyle={{ flexGrow: 1, paddingBottom: 100 }}>
+      <ScrollView showsHorizontalScrollIndicator={true} contentContainerStyle={{ flexGrow: 1, paddingBottom: 110 }}>
         {myStaffData.data?.map((item, index) => {
           return (
-            <View style={{ paddingTop: 20 }} key={index}>
+            <Animatable.View animation={'fadeInUpBig'} delay={index * 500} duration={1000} style={{ paddingTop: 20 }} key={index}>
               <View style={styles.BoxContainer}>
                 <View style={styles.img_Box}>
                   <View style={styles.img_boxSchoolID}><Text style={styles.textCss}>{'ID: ' + item?.school_id}</Text></View>
@@ -48,7 +49,7 @@ const AddTeacherList = () => {
                     <View style={styles.leftContainer_Css}><Text style={styles.textCss}>{item?.username_teacher || 'Username'}</Text></View>
                   </View>
                   <View style={styles.rightContainer}>
-                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item?.teacher_name}</Text></View>
+                    <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item?.teacher_name.toUpperCase()}</Text></View>
                     <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{'Age: ' + item?.age}</Text></View>
                     <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{item?.email_teacher ? item?.email_teacher : 'example@gmail.com'}</Text></View>
                     <View style={styles.rightContainer_Css}><Text style={styles.textCss}>{'Mobile: ' + (item?.mobile || '*'.repeat(10))}</Text></View>
@@ -57,7 +58,7 @@ const AddTeacherList = () => {
                   </View>
                 </View>
               </View>
-            </View>
+            </Animatable.View>
           )
         })}
       </ScrollView>

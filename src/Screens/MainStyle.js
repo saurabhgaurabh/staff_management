@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: 10,
         margin: 15,
-        justifyContent: 'center'
     },
     input: {
         backgroundColor: '#fff',
@@ -358,10 +357,13 @@ const styles = StyleSheet.create({
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
+    teacherListAddMenu:{ flexDirection: 'row', justifyContent: 'flex-end', paddingTop: 5, paddingHorizontal: 10 },
+    contanerBody:{ flexDirection: 'column', backgroundColor: 'green', borderRadius: 10, width: '20%', height: 35, justifyContent: 'center', },
+    ContainerCss:{ alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', },
     BoxContainer: { flexDirection: 'column', backgroundColor: '#fdf4c9', height: 160, width: '95%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 5, borderBottomWidth: 0.9, borderBottomColor: 'grey', opacity: 0.6,  },
     img_Box: { flexDirection: 'row', width: '100%', },
     img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal: 10 },
-    img_box_Img:{ flexDirection: 'column', width: '50%', paddingLeft: 130 },
+    img_box_Img:{ flexDirection: 'column', width: '50%', paddingLeft: 140,  },
     BoxContainer_data: { flexDirection: 'row', paddingTop: 10 },
     leftContainer:{ flexDirection: 'column', width: '35%', },
     leftContainer_Css: { flexDirection: 'row', alignSelf: 'center' },
@@ -397,7 +399,7 @@ const styles = StyleSheet.create({
     profile_img_css: { flexDirection: 'row', width: '100%', height: '50%', borderTopRightRadius: 10, borderTopLeftRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center' },
     profile_info: { flexDirection: 'column', width: '100%', height: '50%', borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomEndRadius: 10, borderBottomStartRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center', },
     profile_info_css: { flexDirection: 'row', justifyContent: 'center' },
-    linearCss: { flex: 1, width: '100%', borderRadius: 10 },
+    linearCss: { flex: 1, width: '100%', borderRadius: 10, justifyContent: 'center',  },
     img_size: { height: '100%', width: '40%' },
     profileText: { fontStyle: 'italic', fontStyle: 'italic', fontWeight: 'bold', fontSize: 20, color: '#fff' },
     profile_menu: { flexDirection: 'column', width: '100%', height: 100, justifyContent: 'center', alignSelf: 'center', },
