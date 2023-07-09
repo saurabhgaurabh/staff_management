@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, BackHandler, TouchableOpacity, StyleSheet, ScrollView, Image, ImageBackground } from 'react-native'
+import { View, Text, BackHandler, TouchableOpacity, StyleSheet, ScrollView, Image, ImageBackground, ToastAndroid } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import imagePath from '../../constants/imagePath';
@@ -13,7 +13,7 @@ import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 // import { MyStaffReduceres } from '../../redux/MyStaffSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { MyStaffAddData } from '../../redux/MyLoginSlice';
-
+import navigationString from '../../constants/navigationStrings'
 
 
 
@@ -22,6 +22,7 @@ import { MyStaffAddData } from '../../redux/MyLoginSlice';
 const AddUpTeacher = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const listView = () => { navigation.navigate(navigationString.TEACHLIST) }
   function handleBackButtonClick() {
     navigation.goBack();
     return true;
@@ -114,6 +115,10 @@ const AddUpTeacher = () => {
           return alert("Duplicate data: Teacher with the same name and email already exists.");
         } else if (result.message === "Already Exist") {
           return alert("Duplicate data: Teacher with the same name and email already exists.");
+        }
+        else {
+          ToastAndroid.show('Inserted Successfully', ToastAndroid.SHORT);
+          navigation.navigate(navigationString.TEACHLIST)
         }
       }
     } catch (error) {
@@ -258,6 +263,7 @@ const AddUpTeacher = () => {
                     activeUnderlineColor="#0288D1"
                     activeOutlineColor="#2da600"
                     mode='outlined'
+                    // secureTextEntry={true}
                     outlineColor="green"
                     returnKeyLabel='next'
                     autoCapitalize='none'

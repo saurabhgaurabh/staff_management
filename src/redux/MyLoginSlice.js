@@ -10,7 +10,6 @@ export const MyLoginSlice = createSlice({
     MyStaffAddData: (state, action) => {
       console.log(action.payload, "mystaff payload...")
       state.myStaffData = action.payload
-      console.log(state.myStaffData,"myStaffData...")
     },
 
     loginFetchDataForProfile: (state, action) => {
