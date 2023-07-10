@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
     image_btn: { width: '100%' },
     Linearcontainer: {
         flex: 1,
-        // height: '100%'
+        height: '100%'
     },
     formContainer: {
         display: 'flex',
@@ -348,7 +348,7 @@ const styles = StyleSheet.create({
     },
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
     loginMiddleText: {
-        color: 'white',
+        color: '#6247AA',
         fontSize: 28,
         marginBottom: 10,
         fontStyle: 'italic',
@@ -412,7 +412,7 @@ const styles = StyleSheet.create({
 
     
     mainbackground: {
-        height: '100%'
+        // height: '100%'
     },
     list_mainstyle: {
         flexDirection: 'column',

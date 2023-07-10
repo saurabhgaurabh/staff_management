@@ -110,8 +110,7 @@ const LoginScreen = () => {
 
 
     return (
-        <ScrollView showsHorizontalScrollIndicator={true}>
-            <LinearGradient colors={['#8e9eab', '#eef2f3']}
+            <LinearGradient colors={['#fff', '#fff']}
                 style={styles.Linearcontainer}>
                 <View style={styles.mainbackground}>
                     <View>
@@ -119,7 +118,6 @@ const LoginScreen = () => {
                             <TouchableOpacity onPress={handleBackButtonClick} >
                                 <Image style={{ height: 25, width: 25 }} source={imagePath.icbackNoraml} />
                             </TouchableOpacity>
-                            {/* Notification Popup */}
                             {showNotification && (
                                 <View style={styles.notificationContainer}>
                                     <Text style={styles.notificationText}>Login Successful!</Text>
@@ -188,7 +186,6 @@ const LoginScreen = () => {
                     </Animatable.View>
                 </View>
             </LinearGradient>
-        </ScrollView>
     )
 }
 
