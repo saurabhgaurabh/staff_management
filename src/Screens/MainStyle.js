@@ -409,8 +409,10 @@ const styles = StyleSheet.create({
     profile_card_txt: { flexDirection: 'row', height: '50%', width: '100%', borderRadius: 10, justifyContent: 'center' },
     // profile screen css properties end...
 
-    mainbackground: {
 
+    
+    mainbackground: {
+        height: '100%'
     },
     list_mainstyle: {
         flexDirection: 'column',

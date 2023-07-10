@@ -1,10 +1,16 @@
 import React, { useState, useRef } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import navigationStrings from '../../constants/navigationStrings';
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const Onboarding = () => {
+  const navigation = useNavigation();
+  const goToLogin = () => {navigation.navigate(navigationStrings.LOGIN)}
+  const createAccount = () => { navigation.navigate(navigationStrings.SIGNUP)}
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollViewRef = useRef(null);
 
@@ -48,6 +54,7 @@ const Onboarding = () => {
 
   const handleNext = () => {
     if (currentIndex === images.length - 1) {
+      navigation.navigate(navigationStrings.LOGIN)
       // Handle completion of onboarding or next logic
     } else {
       const nextIndex = currentIndex + 1;
@@ -60,13 +67,13 @@ const Onboarding = () => {
   const imageHeight = imageWidth; // Make image height same as width
 
   return (
-    <View style={styles.container}>
+    <View style={styles.OnBoardcontainer}>
       <ScrollView
         ref={scrollViewRef}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        style={styles.scrollView}
+        style={styles.OnBoardscrollView}
         onScroll={handleScroll}
         scrollEventThrottle={16}
       >
@@ -82,29 +89,37 @@ const Onboarding = () => {
             </View>
           </View>
         ))}
+       
+        
+
       </ScrollView>
       {currentIndex !== images.length - 1 ? (
         <TouchableOpacity onPress={handleSkip} style={styles.skipButton}>
-          <Text style={styles.buttonText}>Skip</Text>
+          <Text style={styles.buttonText}>Next</Text>
         </TouchableOpacity>
       ) : null}
       {currentIndex === images.length - 1 ? (
         <TouchableOpacity onPress={handleNext} style={styles.nextButton}>
-          <Text style={styles.buttonText}>Next</Text>
+          <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       ) : null}
+       <View style={styles.subtitleContainer}>
+        <TouchableOpacity onPress={createAccount}>
+          <Text style={styles.subtitle}>Dont't have an account ? Create</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  OnBoardcontainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
   },
-  scrollView: {
+  OnBoardscrollView: {
     flex: 1,
     width: '100%',
   },
@@ -167,6 +182,21 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fff',
     fontWeight: 'bold'
+  },
+  subtitleContainer: {
+    position: 'absolute',
+    bottom: windowHeight * 0.02,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    // paddingHorizontal: 50
+    
+  },
+  subtitle: {
+    fontSize: 18,
+    color: '#7145f1',
+    textDecorationLine: 'underline',
+    fontWeight: 'bold',
+    textAlign: 'center'
   },
 });
 
