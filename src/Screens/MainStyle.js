@@ -246,6 +246,7 @@ const styles = StyleSheet.create({
         height: 180,
     },
     formbodycss: {
+        top: '40%'
     },
     FlexBoxOne: {
     },
@@ -303,7 +304,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignItems: 'center',
         alignSelf: 'center',
-        // height: '15%',
+        // height: 100,
         margin: 20,
         borderTopEndRadius: 5,
         borderTopStartRadius: 5,
@@ -324,9 +325,16 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: -20
     },
-    submitbuttontext: {
+    loginButton: {
+        paddingVertical: 15,
+        paddingHorizontal: '45%',
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    submitbuttonLogin: {
         color: '#fff',
-        fontSize: 14,
+        fontSize: 15,
         fontWeight: 'bold',
         textAlign: 'center',
         fontStyle: 'italic'

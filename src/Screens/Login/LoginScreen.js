@@ -125,9 +125,9 @@ const LoginScreen = () => {
                             )}
                         </SafeAreaView>
                     </View>
-                    <View style={{ justifyContent: 'center', alignItems: 'center', }}>
-                        <Image source={imagePath.icuser} style={styles.logoCss} />
-                        <Text style={styles.loginMiddleText}>Login</Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                        {/* <Image source={imagePath.icuser} style={styles.logoCss} /> */}
+                        <Text style={styles.loginMiddleText}>Admin Login</Text>
                     </View>
                     <Animatable.View animation={'zoomIn'} duration={1000} delay={100} style={styles.formbodycss}>
                         <View style={styles.form_field_container}>
@@ -172,13 +172,8 @@ const LoginScreen = () => {
                                         colors={['#A594F9', '#6247AA',]}
                                         start={{ x: 0, y: 0 }}
                                         end={{ x: 1, y: 0 }}
-                                        style={{
-                                            paddingVertical: 10,
-                                            paddingHorizontal: '45%',
-                                            borderRadius: 5,
-                                        }}
-                                    >
-                                        <Text style={styles.submitbuttontext}>Login</Text>
+                                        style={styles.loginButton}>
+                                        <Text style={styles.submitbuttonLogin}>Login</Text>
                                     </LinearGradient>
                                 </TouchableOpacity>
                             </View>
