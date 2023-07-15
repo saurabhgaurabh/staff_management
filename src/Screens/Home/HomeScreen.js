@@ -35,16 +35,20 @@ const HomeScreen = ({ navigation }) => {
     const teacherList = () => navigation.navigate(navigationStrings.TEACHLIST);
 
     const totalCount = myStaffData.data.length;
-        
 
 
-    // let data_array = [
-    //     { label: 'Ledger Balance', image: "https://www.leadchainsystems.com/images/client/peddleLogo.png", pressButton: addUpTeacher, money: '₹ ' + '8000.00' },
-    //     { label: 'Outstanding Receivable', image: "https://www.leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToOutstandingPatble, money: "₹ 8000.00" },
-    //     { label: 'Total Sale', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: goToTotalSale, money: "₹ 9652.00" },
-    //     { label: 'Target', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: gotTotarget, money: "₹ 4529.00" },
-    //     { label: 'Target', image: "https://leadchainsystems.com/images/client/peddleLogo.png", pressButton: gotTotarget, money: "₹ 4529.00" },
-    // ]
+
+    const cardItems = [
+        { title: 'Add up Teachers', image: imagePath.icStaff, count: totalCount ? totalCount : 0, onPress: AddUpTeacher, onViewMore: teacherList, },
+        { title: 'Teacher Route', image: imagePath.icRoute, count: totalCount ? totalCount : 0, onPress: TeacherRoute, onViewMore: teacherList, },
+        { title: 'Teacher Timeline', image: imagePath.icTimeline, count: totalCount ? totalCount : 0, onPress: TeacherTimeLine, onViewMore: teacherList, },
+        { title: 'Staff Salary', image: imagePath.icSalary, count: totalCount ? totalCount : 0, onPress: AddStaffSalary, onViewMore: teacherList, },
+        { title: 'Invoice generate', image: imagePath.icInvoice, count: totalCount ? totalCount : 0, onPress: AddInvoice, onViewMore: teacherList, },
+        { title: 'Add Joining', image: imagePath.icJoining, count: totalCount ? totalCount : 0, onPress: AddJoiningTeacher, onViewMore: teacherList, },
+        { title: 'Total Staff', image: imagePath.ictTotal_staff, count: totalCount ? totalCount : 0, onPress: AddSTotaltaff, onViewMore: teacherList, },
+        { title: 'Add Class', image: imagePath.icClass, count: totalCount ? totalCount : 0, onPress: AddSTotalClass, onViewMore: teacherList, },
+        { title: 'Add Book', image: imagePath.icBook, count: totalCount ? totalCount : 0, onPress: AddBooks, onViewMore: teacherList, },
+    ]
 
     return (
         <View style={{ height: '100%', paddingBottom: 55 }}>
@@ -53,39 +57,26 @@ const HomeScreen = ({ navigation }) => {
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
                         <ImageCarousel images={images} />
                     </View>
-
-                    {/* <View  style={styles.MomoHeaderContainer}>
-                    {data_array.map((cur, ind) => {
-                        const { label, image, pressButton, money } = cur
-                        return <Animatable.View animation={'pulse'} duration={1000} delay={ind * 100} style={styles.FlexBoxOne} key={ind}>
-                            <View style={styles.ledgerBalanceImage}>
-                                <Image source={{ uri: image }} style={{ width: 90, height: 65 }} alt="Loading" />
-                            </View>
-                            <View style={styles.ledgerBalanceContent}>
-                                <Text onPress={pressButton} style={styles.ledgerbalancetext}>{label}</Text>
-                                <Text style={styles.ledgerbalancetext}>{money}</Text>
-                            </View>
-                        </Animatable.View>
-                    })}
-                </View> */}
-
                     <View style={styles.heading_trending}><Animatable.Text style={styles.headingCss} animation="zoomIn" >Trending Now</Animatable.Text></View>
-                    <Animatable.View animation={'fadeInUp'} duration={1000} delay={100} style={styles.MainContainer}>
-                        <View style={styles.card_container}>
-                            <TouchableOpacity onPress={AddUpTeacher}>
+
+                    <Animatable.View animation={'fadeInRightBig'} duration={1000} delay={100} style={styles.MainContainer}>
+                        {cardItems.map((item, index) => (
+                            <View key={index} style={styles.card_container}>
                                 <View style={styles.card_main_style}>
                                     <View style={styles.card_decoration}>
                                         <View style={styles.card_inner_decoration}>
                                             <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icStaff} style={styles.image_style} />
+                                                <Image source={item.image} style={styles.image_style} />
                                             </View>
                                             <View style={styles.card_text_main_css}>
                                                 <View style={styles.card_main_css}>
-                                                    <Animatable.Text animation="zoomInUp" style={styles.textCss}>Add up Teachers</Animatable.Text>
+                                                    <TouchableOpacity onPress={item.onPress}>
+                                                        <Text style={styles.textCss}>{item.title}</Text>
+                                                    </TouchableOpacity>
                                                 </View>
                                                 <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>{totalCount ? totalCount: 0}</Text>
-                                                    <TouchableOpacity onPress={teacherList}>
+                                                    <Text style={styles.countCss}>{item.count}</Text>
+                                                    <TouchableOpacity onPress={item.onViewMore}>
                                                         <Text style={styles.textCss}>View More</Text>
                                                     </TouchableOpacity>
                                                 </View>
@@ -93,170 +84,10 @@ const HomeScreen = ({ navigation }) => {
                                         </View>
                                     </View>
                                 </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={TeacherRoute}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icRoute} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Teacher Route</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                    <Text style={styles.textCss}>View More</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.card_container}>
-                            <TouchableOpacity onPress={TeacherTimeLine}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icTimeline} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Teacher Timeline</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={AddStaffSalary}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icSalary} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Staff Salary</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.card_container}>
-                            <TouchableOpacity onPress={AddInvoice}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icInvoice} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Invoice generate</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={AddJoiningTeacher}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icJoining} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Add Joining</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.card_container}>
-                            <TouchableOpacity onPress={AddSTotaltaff}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.ictTotal_staff} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Total Staff</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={AddSTotalClass}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icClass} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Add Class</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.card_container}>
-                            <TouchableOpacity onPress={AddBooks}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={imagePath.icBook} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <Text style={styles.textCss}>Add Book</Text>
-                                                </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
-                                                </View>
-                                            </View>
-                                        </View>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
+                            </View>
+                        ))}
                     </Animatable.View>
+
                 </LinearGradient>
             </ScrollView>
         </View>

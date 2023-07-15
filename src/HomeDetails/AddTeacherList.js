@@ -37,7 +37,7 @@ const AddTeacherList = () => {
       <ScrollView showsHorizontalScrollIndicator={true} contentContainerStyle={{ flexGrow: 1, paddingBottom: 110 }}>
         {myStaffData.data?.map((item, index) => {
           return (
-            <Animatable.View animation={'fadeInUpBig'} delay={index * 500} duration={1000} style={{ paddingTop: 20 }} key={index}>
+            <Animatable.View animation={'fadeInLeftBig'} delay={index * 500} duration={1000} style={{ paddingTop: 20 }} key={index}>
               <View style={styles.BoxContainer}>
                 <View style={styles.img_Box}>
                   <View style={styles.img_boxSchoolID}><Text style={styles.textCss}>{'ID: ' + item?.school_id}</Text></View>
