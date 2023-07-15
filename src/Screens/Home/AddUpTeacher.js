@@ -152,7 +152,7 @@ const AddUpTeacher = () => {
           <LinearGradient colors={['#f9cc0a', '#f9b511']} style={styles.linearCss} >
             <View style={styles.ContainerCss}>
               <TouchableOpacity onPress={listView}>
-                <Text>View List</Text>
+                <Text style={styles.btn_txt}>List View</Text>
               </TouchableOpacity>
             </View>
           </LinearGradient>

@@ -1,7 +1,10 @@
 import { StyleSheet } from "react-native";
 import { BackgroundImage } from "react-native-elements/dist/config";
 import { responsiveHeight } from "react-native-responsive-dimensions";
+import { Dimensions } from 'react-native';
 
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     //////////////////////   intro page properties /  / /////////
@@ -276,6 +279,13 @@ const styles = StyleSheet.create({
         fontSize: 20
         // backgroundColor: 'red'
     },
+    textCsslist: {
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        color: 'black', 
+        fontSize: 16
+        // backgroundColor: 'red'
+    },
     countCss: {
         fontStyle: 'italic',
         fontWeight: 'bold',
@@ -374,17 +384,18 @@ const styles = StyleSheet.create({
 
     //////////  login page css  end /////////
     teacherListAddMenu:{ flexDirection: 'row', justifyContent: 'flex-end', paddingTop: 5, paddingHorizontal: 10 },
-    contanerBody:{ flexDirection: 'column', backgroundColor: 'green', borderRadius: 10, width: '20%', height: 35, justifyContent: 'center', },
+    contanerBody:{ flexDirection: 'column', backgroundColor: 'green', borderRadius: 10, width: '25%', height: screenHeight * 0.03, justifyContent: 'center', },
     ContainerCss:{ alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', },
-    BoxContainer: { flexDirection: 'column', backgroundColor: '#fdf4c9', height: 160, width: '95%', alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 5, borderBottomWidth: 0.9, borderBottomColor: 'grey', opacity: 0.6,  },
+    btn_txt:{ color: '#000'},
+    BoxContainer: { flexDirection: 'column', backgroundColor: '#fdf4c9', height: screenHeight * 0.25, width: screenWidth * 0.95, alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 5, borderBottomWidth: 0.9, borderBottomColor: 'grey', opacity: 0.6,  },
     img_Box: { flexDirection: 'row', width: '100%', },
-    img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal: 10 },
-    img_box_Img:{ flexDirection: 'column', width: '50%', paddingLeft: 140,  },
-    BoxContainer_data: { flexDirection: 'row', paddingTop: 10 },
+    img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal:  screenWidth * 0.03, },
+    img_box_Img:{ flexDirection: 'column', width: '50%', paddingLeft: screenWidth * 0.40,  },
+    BoxContainer_data: { flexDirection: 'row', paddingTop: screenHeight * 0.02, },
     leftContainer:{ flexDirection: 'column', width: '35%', },
     leftContainer_Css: { flexDirection: 'row', alignSelf: 'center' },
     rightContainer: { flexDirection: 'column', width: '65%', alignItems: 'flex-start' },
-    rightContainer_Css: { flexDirection: 'row', alignSelf: 'flex-start', paddingHorizontal: 5 },
+    rightContainer_Css: { flexDirection: 'row', alignSelf: 'flex-start', paddingHorizontal: screenWidth * 0.01, },
 
 
     //////////  Home Screen page css  start /////////
