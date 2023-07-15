@@ -16,7 +16,7 @@ const HomeScreen = ({ navigation }) => {
 
 
     const { ledgerBal } = useSelector(state => state.login)
-    const { outstanding } = useSelector(state => state.login)
+    const { myStaffData } = useSelector(state => state.login)
     const [refreshing, setRefreshing] = React.useState(false);
     const images = [
         { source: require('../../assets/images/pexels.webp'), text: 'Stydy is key of Success.' },
@@ -34,6 +34,8 @@ const HomeScreen = ({ navigation }) => {
     const AddBooks = () => navigation.navigate(navigationStrings.BOOKS);
     const teacherList = () => navigation.navigate(navigationStrings.TEACHLIST);
 
+    const totalCount = myStaffData.data.length;
+        
 
 
     // let data_array = [
@@ -47,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={{ height: '100%', paddingBottom: 55 }}>
             <ScrollView showsHorizontalScrollIndicator={true}>
-                <LinearGradient colors={['#9f9bd4', '#d6d3e8']} style={styles.Linearcontainer}>
+                <LinearGradient colors={['#fff', '#fff']} style={styles.Linearcontainer}>
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
                         <ImageCarousel images={images} />
                     </View>
@@ -82,7 +84,7 @@ const HomeScreen = ({ navigation }) => {
                                                     <Animatable.Text animation="zoomInUp" style={styles.textCss}>Add up Teachers</Animatable.Text>
                                                 </View>
                                                 <View style={styles.count_css}>
-                                                    <Text style={styles.textCss}>Count(0)</Text>
+                                                    <Text style={styles.textCss}>{totalCount ? totalCount: 0}</Text>
                                                     <TouchableOpacity onPress={teacherList}>
                                                         <Text style={styles.textCss}>View More</Text>
                                                     </TouchableOpacity>
