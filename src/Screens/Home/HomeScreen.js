@@ -36,6 +36,13 @@ const HomeScreen = ({ navigation }) => {
 
     const totalCount = myStaffData.data.length;
 
+    const onRefresh = () => {
+        setRefreshing(true);
+        setTimeout(() => {
+          setRefreshing(false);
+        }, 500);
+      };
+
 
 
     const cardItems = [
@@ -52,42 +59,44 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <View style={{ height: '100%', paddingBottom: 55 }}>
-            <ScrollView showsHorizontalScrollIndicator={true}>
+            <ScrollView showsHorizontalScrollIndicator={true}
+             refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
                 <LinearGradient colors={['#fff', '#fff']} style={styles.Linearcontainer}>
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 10, marginRight: 10, marginLeft: 10, }}>
                         <ImageCarousel images={images} />
                     </View>
                     <View style={styles.heading_trending}><Animatable.Text style={styles.headingCss} animation="zoomIn" >Trending Now</Animatable.Text></View>
 
-                    <Animatable.View animation={'fadeInRightBig'} duration={1000} delay={100} style={styles.MainContainer}>
-                        {cardItems.map((item, index) => (
-                            <View key={index} style={styles.card_container}>
-                                <View style={styles.card_main_style}>
-                                    <View style={styles.card_decoration}>
-                                        <View style={styles.card_inner_decoration}>
-                                            <View style={styles.image_main_css}>
-                                                <Image source={item.image} style={styles.image_style} />
-                                            </View>
-                                            <View style={styles.card_text_main_css}>
-                                                <View style={styles.card_main_css}>
-                                                    <TouchableOpacity onPress={item.onPress}>
-                                                        <Text style={styles.textCss}>{item.title}</Text>
-                                                    </TouchableOpacity>
+                    <View style={styles.MainContainer}>
+                        {cardItems.map((item, index) => {
+                            return (
+                                <Animatable.View animation={'fadeInRightBig'} delay={index * 500} duration={1000} key={index} style={styles.card_container}>
+                                    <View style={styles.card_main_style}>
+                                        <View style={styles.card_decoration}>
+                                            <View style={styles.card_inner_decoration}>
+                                                <View style={styles.image_main_css}>
+                                                    <Image source={item.image} style={styles.image_style} />
                                                 </View>
-                                                <View style={styles.count_css}>
-                                                    <Text style={styles.countCss}>{item.count}</Text>
-                                                    <TouchableOpacity onPress={item.onViewMore}>
-                                                        <Text style={styles.textCss}>View More</Text>
-                                                    </TouchableOpacity>
+                                                <View style={styles.card_text_main_css}>
+                                                    <View style={styles.count_css} onPress={onRefresh}>
+                                                        <Text style={styles.countCss}>{item.count}</Text>
+                                                        <TouchableOpacity  onPress={item.onViewMore}>
+                                                            <Text style={styles.textCss}>View More</Text>
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                    <View style={styles.card_main_css}>
+                                                        <TouchableOpacity onPress={item.onPress}>
+                                                            <Text style={styles.textCss}>{item.title}</Text>
+                                                        </TouchableOpacity>
+                                                    </View>
                                                 </View>
                                             </View>
                                         </View>
                                     </View>
-                                </View>
-                            </View>
-                        ))}
-                    </Animatable.View>
-
+                                </Animatable.View>
+                            )
+                        })}
+                    </View>
                 </LinearGradient>
             </ScrollView>
         </View>

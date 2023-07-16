@@ -31,7 +31,6 @@ const SplashRoute = () => {
     <NavigationContainer >
       <Stack.Navigator screenOptions={{presentation: 'modal', headerShown: false }}>
         <Stack.Screen name={navigationStrings.ONBOARD} component={Onboarding} />
-        {/* <Stack.Screen name={navigationStrings.FIRSTSCREEN} component={FirstScreen} /> */}
         <Stack.Screen name={navigationStrings.TEACHLIST} component={AddTeacherList} />
         <Stack.Screen name={navigationStrings.LOGIN} component={LoginScreen} />
         <Stack.Screen name={navigationStrings.Routes} component={Routes} />

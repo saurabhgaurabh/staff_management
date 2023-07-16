@@ -25,5 +25,5 @@ export {default as OrderStack} from '../Navigation/OrderStack';
 export {default as ProfileStack} from '../Navigation/ProfileStack';
 
 //SubScreen's of Home Page Start's from here
-export {default as FirstScreen} from './Login/FirstScreen';
+// export {default as FirstScreen} from './Login/FirstScreen';
 //SubScreen's of Home Page Ends's from here

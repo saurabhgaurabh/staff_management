@@ -21,7 +21,7 @@ const AddTeacherList = () => {
 
   return (
     <View>
-      <CustomHeader name={'Existing Members'} color="#2da600" />
+      <CustomHeader name={'Existing Members'} color="#fdf4c9" />
       {/* <Animatable.Text animation="zoomIn" delay={2} style={styles.profileHeading}>View All Details </Animatable.Text> */}
       <View style={styles.teacherListAddMenu}>
         <View style={styles.contanerBody}>
