@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, Text, TouchableOpacity, Image, BackHandler } from 'react-native'
+import { View, Text, TouchableOpacity, Image, BackHandler, RefreshControl  } from 'react-native'
 import CustomHeader from '../Components/CustomHeader'
 import styles from '../Screens/MainStyle'
 import imagePath from '../constants/imagePath'
@@ -17,7 +17,15 @@ const AddTeacherList = () => {
   console.log(myStaffData.data, "new staff Data - - -")
 
 
-
+  const [refreshing, setRefreshing] = React.useState(false);
+  const onRefresh = () => {
+    setRefreshing(true);
+    // Perform the refresh operation or any other logic you need
+  
+    // Once the refresh operation is complete, set refreshing to false
+    setRefreshing(false);
+  };
+  
 
   return (
     <View>
@@ -34,7 +42,8 @@ const AddTeacherList = () => {
           </LinearGradient>
         </View>
       </View>
-      <ScrollView showsHorizontalScrollIndicator={true} contentContainerStyle={{ flexGrow: 1, paddingBottom: 110 }}>
+      <ScrollView showsHorizontalScrollIndicator={true} contentContainerStyle={{ flexGrow: 1, paddingBottom: 110 }}
+       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
         {myStaffData.data?.map((item, index) => {
           return (
             <Animatable.View animation={'fadeInUpBig'} delay={index * 500} duration={1000} style={{ paddingTop: 20 }} key={index}>
