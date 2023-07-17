@@ -20,9 +20,6 @@ const AddTeacherList = () => {
   const [refreshing, setRefreshing] = React.useState(false);
   const onRefresh = () => {
     setRefreshing(true);
-    // Perform the refresh operation or any other logic you need
-  
-    // Once the refresh operation is complete, set refreshing to false
     setRefreshing(false);
   };
   
@@ -71,7 +68,6 @@ const AddTeacherList = () => {
           )
         })}
       </ScrollView>
-      {/* {myStaffData.addTeacherData?.map((item)=><Text>{item.age}</Text>)} */}
     </View>
   )
 }

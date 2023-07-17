@@ -47,7 +47,7 @@ const HomeScreen = ({ navigation }) => {
 
     const cardItems = [
         { title: 'Add up Teachers', image: imagePath.icStaff, count: totalCount ? totalCount : 0, onPress: AddUpTeacher, onViewMore: teacherList, },
-        { title: 'Teacher Route', image: imagePath.icRoute, count: totalCount ? totalCount : 0, onPress: TeacherRoute, onViewMore: teacherList, },
+        { title: 'Track Teachers', image: imagePath.icRoute, count: totalCount ? totalCount : 0, onPress: TeacherRoute, onViewMore: teacherList, },
         { title: 'Teacher Timeline', image: imagePath.icTimeline, count: totalCount ? totalCount : 0, onPress: TeacherTimeLine, onViewMore: teacherList, },
         { title: 'Staff Salary', image: imagePath.icSalary, count: totalCount ? totalCount : 0, onPress: AddStaffSalary, onViewMore: teacherList, },
         { title: 'Invoice generate', image: imagePath.icInvoice, count: totalCount ? totalCount : 0, onPress: AddInvoice, onViewMore: teacherList, },

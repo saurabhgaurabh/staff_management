@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         height: 60,
         width: '90%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
 
     },
     formContainer: {
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignSelf: 'center'
     },
-    signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center', },
+    signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center',},
     image_css: {
         width: '90%',
         alignContent: 'flex-start',
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     image_btn: { width: '100%' },
     Linearcontainer: {
         flex: 1,
-        height: '100%'
+        // height: '100%'
     },
     formContainer: {
         display: 'flex',
@@ -766,52 +766,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    // profile_information_image: {
-    //     paddingTop: 20,
-    //     flexDirection: 'column',
-    //     width: 50,
-    // },
-    // profile_information_Css: {
-    //     paddingTop: 20,
-    //     flexDirection: 'column',
-    //     alignItems: 'flex-start',
-    //     width: 200,
-    // },
-    // middle_Css: {
-    //     flexDirection: 'row',
-    //     alignContent: 'center',
-    //     paddingTop: 10
-    // },
-    input: {
-        height: 45,
-        margin: 12,
-        backgroundColor: 'white',
-        borderRadius: 10,
+    Maininput: {
+        height: 50,
+        backgroundColor: '#effcff',
         mode: 'outlined',
-        width: '100%'
+        width: '100%',
     },
-    // inputForProfile: {
-    //     // height: 45,
-    //     margin: 12,
-    //     backgroundColor: 'white',
-    //     borderRadius: 10,
-    //     mode: 'outlined',
-    //     width: 250,
-    //     borderColor: '#0288D1',
-
-    // },
-    // inputForIMage: {
-    //     // height: 45,
-    //     height: '12%',
-    //     margin: 12,
-    //     backgroundColor: 'white',
-    //     borderRadius: 10,
-    //     mode: 'outlined',
-    //     // width: 250,
-    //     borderColor: '#0288D1',
-    //     flexDirection: 'row',
-    //     width: '100%'
-    // },
     inputfields: {
         bottomTop: 10,
     },

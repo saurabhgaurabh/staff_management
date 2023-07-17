@@ -161,7 +161,7 @@ const AddUpTeacher = () => {
             <Animatable.View animation={'zoomIn'} style={{ flexDirection: 'column', paddingTop: 30 }}>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Username"
                     placeholder='Short Name'
                     activeUnderlineColor="#0288D1"
@@ -177,7 +177,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Teacher Name"
                     placeholder='Your Name'
                     activeUnderlineColor="#0288D1"
@@ -193,7 +193,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Teacher Age"
                     placeholder='**'
                     activeUnderlineColor="#0288D1"
@@ -210,7 +210,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="E-Mail"
                     placeholder='Example@gmail.com'
                     activeUnderlineColor="#0288D1"
@@ -226,7 +226,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Residence"
                     placeholder='Delhi, India'
                     activeUnderlineColor="#0288D1"
@@ -242,7 +242,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Previous Salary"
                     placeholder='*****'
                     activeUnderlineColor="#0288D1"
@@ -259,7 +259,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Mobile"
                     placeholder='0000000000'
                     activeUnderlineColor="#0288D1"
@@ -275,7 +275,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Password"
                     placeholder='**********'
                     activeUnderlineColor="#0288D1"
@@ -292,7 +292,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Confirm Password"
                     placeholder='**********'
                     activeUnderlineColor="#0288D1"
@@ -308,7 +308,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Eligibility"
                     placeholder='Qualification'
                     activeUnderlineColor="#0288D1"
@@ -324,7 +324,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="How many Degrees Do You Have"
                     placeholder='*'
                     activeUnderlineColor="#0288D1"
@@ -340,7 +340,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Your Experience"
                     placeholder='xyz years'
                     activeUnderlineColor="#0288D1"
@@ -356,7 +356,7 @@ const AddUpTeacher = () => {
               </View>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
-                  <TextInput style={styles.input}
+                  <TextInput style={styles.Maininput}
                     label="Your Position"
                     placeholder='Your Position'
                     activeUnderlineColor="#0288D1"
