@@ -18,6 +18,7 @@ import demoScreen from "../Screens/Customer/demoScreen";
 import Routes from "./Routes";
 import FinalOrder from "../Screens/Order/FinalOrder"
 import PaymentScreen from "../Screens/Order/PaymentScreen";
+import TrackTeacherList from "../HomeDetails/TrackTeacherList";
 
 export default function (Stack) {
 
@@ -121,6 +122,10 @@ export default function (Stack) {
             <Stack.Screen
                 name={navigationStrings.TEACHLIST}
                 component={AddTeacherList}
+            />
+            <Stack.Screen
+                name={navigationStrings.TRACKLIST}
+                component={TrackTeacherList}
             />
         </>
     )

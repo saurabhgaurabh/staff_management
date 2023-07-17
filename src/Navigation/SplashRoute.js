@@ -19,6 +19,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import TabRoutes from './TabRouts';
 import Onboarding from '../Screens/Login/Onboarding.js';
+import TrackTeacherList from '../HomeDetails/TrackTeacherList';
 
 
 const SplashRoute = () => {
@@ -32,6 +33,7 @@ const SplashRoute = () => {
       <Stack.Navigator screenOptions={{presentation: 'modal', headerShown: false }}>
         <Stack.Screen name={navigationStrings.ONBOARD} component={Onboarding} />
         <Stack.Screen name={navigationStrings.TEACHLIST} component={AddTeacherList} />
+        <Stack.Screen name={navigationStrings.TRACKLIST} component={TrackTeacherList} />
         <Stack.Screen name={navigationStrings.LOGIN} component={LoginScreen} />
         <Stack.Screen name={navigationStrings.Routes} component={Routes} />
         <Stack.Screen name={navigationStrings.TABROUTES} component={TabRoutes} />

@@ -32,7 +32,10 @@ const HomeScreen = ({ navigation }) => {
     const AddSTotaltaff = () => navigation.navigate(navigationStrings.TOTALSTAFF);
     const AddSTotalClass = () => navigation.navigate(navigationStrings.TOTALCLASS);
     const AddBooks = () => navigation.navigate(navigationStrings.BOOKS);
+
+    // list events of data
     const teacherList = () => navigation.navigate(navigationStrings.TEACHLIST);
+    const listTrackTeacher = () =>{ navigation.navigate(navigationStrings.TRACKLIST)}
 
     const totalCount = myStaffData.data.length;
 
@@ -47,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
 
     const cardItems = [
         { title: 'Add up Teachers', image: imagePath.icStaff, count: totalCount ? totalCount : 0, onPress: AddUpTeacher, onViewMore: teacherList, },
-        { title: 'Track Teachers', image: imagePath.icRoute, count: totalCount ? totalCount : 0, onPress: TeacherRoute, onViewMore: teacherList, },
+        { title: 'Track Teachers', image: imagePath.icRoute, count: totalCount ? totalCount : 0, onPress: TeacherRoute, onViewMore: listTrackTeacher, },
         { title: 'Teacher Timeline', image: imagePath.icTimeline, count: totalCount ? totalCount : 0, onPress: TeacherTimeLine, onViewMore: teacherList, },
         { title: 'Staff Salary', image: imagePath.icSalary, count: totalCount ? totalCount : 0, onPress: AddStaffSalary, onViewMore: teacherList, },
         { title: 'Invoice generate', image: imagePath.icInvoice, count: totalCount ? totalCount : 0, onPress: AddInvoice, onViewMore: teacherList, },

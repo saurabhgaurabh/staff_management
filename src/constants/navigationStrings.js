@@ -50,4 +50,5 @@ export default {
 
     // Home  Details Screens
     TEACHLIST: "AddTeacherList",
+    TRACKLIST: "TrackTeacherList",
 }

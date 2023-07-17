@@ -147,17 +147,17 @@ const AddUpTeacher = () => {
         <LinearGradient colors={['#fff', '#eef2f3']}
           style={styles.Linearcontainer}>
           <View style={{ display: 'flex' }}>
-          <View style={styles.teacherListAddMenu}>
-        <View style={styles.contanerBody}>
-          <LinearGradient colors={['#f9cc0a', '#f9b511']} style={styles.linearCss} >
-            <View style={styles.ContainerCss}>
-              <TouchableOpacity onPress={listView}>
-                <Text style={styles.btn_txt}>List View</Text>
-              </TouchableOpacity>
+            <View style={styles.teacherListAddMenu}>
+              <View style={styles.contanerBody}>
+                <LinearGradient colors={['#f9cc0a', '#f9b511']} style={styles.linearCss} >
+                  <View style={styles.ContainerCss}>
+                    <TouchableOpacity onPress={listView}>
+                      <Text style={styles.btn_txt}>List View</Text>
+                    </TouchableOpacity>
+                  </View>
+                </LinearGradient>
+              </View>
             </View>
-          </LinearGradient>
-        </View>
-      </View>
             <Animatable.View animation={'zoomIn'} style={{ flexDirection: 'column', paddingTop: 30 }}>
               <View style={styles.FormMainStyles}>
                 <View style={styles.signUp_input}>
