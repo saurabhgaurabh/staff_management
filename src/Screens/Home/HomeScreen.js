@@ -15,7 +15,7 @@ const HomeScreen = ({ navigation }) => {
     // const [scrollOffset, setScrollOffset] = useState(0);
 
 
-    const { ledgerBal } = useSelector(state => state.login)
+    // const { ledgerBal } = useSelector(state => state.login)
     const { myStaffData } = useSelector(state => state.login)
     const [refreshing, setRefreshing] = React.useState(false);
     const images = [
@@ -37,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
     const teacherList = () => navigation.navigate(navigationStrings.TEACHLIST);
     const listTrackTeacher = () =>{ navigation.navigate(navigationStrings.TRACKLIST)}
 
-    const totalCount = myStaffData.data.length;
+    const totalCount = myStaffData?.data?.length;
 
     const onRefresh = () => {
         setRefreshing(true);

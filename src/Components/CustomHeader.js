@@ -21,9 +21,9 @@ const CustomHeader = ({ name, color }) => {
     }, []);
 
     return (
-        <View style={[styles.headerContainer, { backgroundColor: '#9f9bd4' }]}>
+        <View style={[styles.headerContainer, { backgroundColor: '#c1b0f4' }]}>
             <TouchableOpacity onPress={handleBackButtonClick} style={styles.icon} >
-                <Image style={{ height: 25, width: 20 }} source={imagePath.icbackNoraml} />
+                <Image style={{ height: 26, width: 26, }} source={imagePath.icbackNoraml} />
             </TouchableOpacity>
             <Text style={styles.headerText}>{name}</Text>
         </View>
@@ -37,16 +37,23 @@ const styles = StyleSheet.create({
         height: 60,
         paddingHorizontal: 16,
         // position: 'absolute', 
-        top: 0
+        top: 0,
+        borderBottomWidth: 0.3,
+        borderColor: 'black'
     },
     headerText: {
         fontSize: 18,
         fontWeight: 'bold',
-        color: 'black',
+        color: '#fff',
         marginLeft: 10,
+    },
+    headerColor:{
+        
     },
     icon: {
         marginRight: 10,
+        backgroundColor: '#fff',
+        borderRadius: 15
     },
 });
 
