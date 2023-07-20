@@ -49,10 +49,11 @@ function TabRoutes() {
                         tabBarShowLabel: true,
                         headerTitleAlign: 'center',
                         headerTintColor: '#3CB371',
+                        position: 'absolute',
+                        bottom: 0,
                         tabBarShowLabel: true,
                         tabBarStyle: {
                             freezeOnBlur: true,
-                            position: 'absolute',
                             shadowColor: 'blue',
                             headerShown: true,
                             position: 'absolute',

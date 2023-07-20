@@ -7,13 +7,13 @@ import LinearGradient from 'react-native-linear-gradient';
 import { TextInput } from 'react-native-paper';
 import { ServerUrl } from '../../Helper/Helper';
 import navigationStrings from '../../constants/navigationStrings';
-
+import { launchImageLibrary } from 'react-native-image-picker';
 
 
 const TeacherRoute = () => {
 
     const navigation = useNavigation();
-    const listTrackTeacher = () =>{ navigation.navigate(navigationStrings.TRACKLIST)}
+    const listTrackTeacher = () => { navigation.navigate(navigationStrings.TRACKLIST) }
     function handleBackButtonClick() {
         navigation.goBack();
         return true;
@@ -26,22 +26,33 @@ const TeacherRoute = () => {
         };
     }, []);
 
-    
-    const initialState = {
-        teacher_name: "",
-        email: "",
-        mobile: "",
-        previous_organization: "",
-        experience: "",
-        qualification: "",
-        permanent_residence: "",
-        current_residence: "",
-        previous_position: "",
-        current_position: ""
-    };
+    // here we are selecting the files using array...
+    const fileUploadTypes = [
+        { name: 'Adhar Card', key: 'adhar_card' },
+        { name: 'Pan Card', key: 'pan_card' },
+        { name: '10th Document', key: 'document_10th' },
+        { name: 'Member Image', key: 'member_image' },
+    ];
 
-    // const [state, setState] = useState({ teacher_name: "", email: "", mobile: "", previous_organization: "", experience: "", qualification: "", permanent_residence: "", current_residence: "", previous_position: "", current_position: "" });
-    const [state, setState] = useState(initialState);
+    // const initialState = {
+    //     teacher_name: "",
+    //     email: "",
+    //     mobile: "",
+    //     previous_organization: "",
+    //     experience: "",
+    //     qualification: "",
+    //     permanent_residence: "",
+    //     current_residence: "",
+    //     previous_position: "",
+    //     current_position: "", 
+    //     fileName: "", 
+    //     base64File: ""
+    // };
+
+
+
+    // const [state, setState] = useState(initialState);
+    const [state, setState] = useState({ teacher_name: "", email: "", mobile: "", previous_organization: "", experience: "", qualification: "", permanent_residence: "", current_residence: "", previous_position: "", current_position: "", fileName: [], base64File: [] });
     const handleTeacher = (text) => { setState({ ...state, teacher_name: text }) }
     const handleEmail = (text) => { setState({ ...state, email: text }) }
     const handleMobile = (text) => { setState({ ...state, mobile: text }) }
@@ -53,8 +64,35 @@ const TeacherRoute = () => {
     const handlePosition = (text) => { setState({ ...state, previous_position: text }) }
     const handle_CurrentPosition = (text) => { setState({ ...state, current_position: text }) }
 
+    const openGallery = () => {
+        const options = {
+            title: 'Select Image',
+            type: 'library',
+            options: {
+                maxHeight: 200,
+                maxWidth: 200,
+                selectionLimit: 4,
+                mediaType: 'photo',
+                path: 'images'
+            },
+            includeBase64: true,
+        };
+        launchImageLibrary(options, response => {
+            if (response.didCancel) {
+            } else if (response.error) {
+            } else if (response.customButton) {
+            } else {
+                const selectedImages = response.assets;
+                const base64File = selectedImages.map(image => image.base64);
+                const fileNames = selectedImages.map(image => image.fileName);
+                console.log(response.assets[0].fileName, "response.assets for track teacher")
+                setState({ ...state, base64File: response.assets[0].base64, fileName: response.assets[0].fileName })
+            }
+        })
+    }
+
     const trackingTeacher = async () => {
-        const { teacher_name, email, mobile, previous_organization, experience, qualification, permanent_residence, current_residence, previous_position, current_position } = state
+        const { teacher_name, email, mobile, previous_organization, experience, qualification, permanent_residence, current_residence, previous_position, current_position, fileName, base64File } = state;
         if (!teacher_name) return alert("Teacher Name is Required.");
         if (!email) return alert("Email is Required.");
         if (!mobile) return alert("Mobile is Required.");
@@ -65,6 +103,7 @@ const TeacherRoute = () => {
         if (!current_residence) return alert("Current Address is Required.");
         if (!previous_position) return alert("Previous Position is Required.");
         if (!current_position) return alert("Current Position is Required.");
+        if (!fileName) return alert("Image is required.");
 
         try {
             const response = await fetch(`${ServerUrl()}track_teacher_management`, {
@@ -73,10 +112,26 @@ const TeacherRoute = () => {
                     'Accept': 'Application/json',
                     'Content-Type': 'Application/json',
                 },
-                body: JSON.stringify({ teacher_name, email, mobile, previous_organization, experience, qualification, permanent_residence, current_residence, previous_position, current_position })
+                body: JSON.stringify({
+                    teacher_name,
+                    email,
+                    mobile,
+                    previous_organization,
+                    experience,
+                    qualification,
+                    permanent_residence,
+                    current_residence,
+                    previous_position,
+                    current_position,
+                    adhar_card: fileName[0],
+                    pan_Card: fileName[1],
+                    img_highschool: fileName[2],
+                    teacher_img: [3],
+                    base64File
+                })
             });
             const result = await response.json();
-            setState(initialState);
+            // setState(initialState);
             console.log(result, "result of tracking...")
 
         } catch (error) {
@@ -265,15 +320,26 @@ const TeacherRoute = () => {
                                 />
                             </View>
                         </View>
-                        <View style={styles.signUpFileUpload}>
-                            <View style={{ flexDirection: 'column', width: '40%', }}><TouchableOpacity onPress={{}}>
-                                <Text style={styles.img_text} >Upload File</Text>
-                            </TouchableOpacity>
+
+                        {fileUploadTypes.map((type) => (
+                            <View style={styles.signUpFileUpload} key={type.key}>
+                                <View style={styles.fileUpldLeftCon}>
+                                    <TouchableOpacity onPress={openGallery}>
+                                        <Text style={styles.img_text}>{type.name}</Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={styles.fileUploadRightCon}>
+                                    {state.fileName ? (
+                                        <TouchableOpacity onPress={() => alert(state.fileName)}>
+                                            <Text style={styles.rightText}>File Upload Successful ✔</Text>
+                                        </TouchableOpacity>
+                                    ) : (
+                                        <Text style={{ color: 'red' }}>No File Selected</Text>
+                                    )}
+                                </View>
                             </View>
-                            <View style={{ flexDirection: 'column', width: '60%', alignItems: 'center' }}>
-                                {/* <Text>{state.fileName}</Text> */}
-                            </View>
-                        </View>
+                        ))}
+
                     </Animatable.View>
                 </View>
 

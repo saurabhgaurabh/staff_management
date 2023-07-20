@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 
     //////////  login page css  start //////
     headerComponent: { flexDirection: 'row', backgroundColor: '#f5f5f5', paddingVertical: 20, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: 'lightgrey', },
-    headerView: { flexDirection: 'row', backgroundColor: '#DCDCDC', paddingVertical: 5,paddingHorizontal: 1, borderBottomWidth: 1, borderBottomColor: '#c0c0c0', justifyContent: 'flex-end'},
+    headerView: { flexDirection: 'row', backgroundColor: '#DCDCDC', paddingVertical: 5, paddingHorizontal: 1, borderBottomWidth: 1, borderBottomColor: '#c0c0c0', justifyContent: 'flex-end' },
     header_tet_body: { flexDirection: 'column', width: '60%', justifyContent: 'center', alignItems: 'center' },
     headerText: { fontSize: 20, fontFamily: 'italic', color: 'black', fontWeight: 'bold' },
     summary_View: { justifyContent: 'center', paddingTop: 10, alignItems: 'center', alignSelf: 'center' },
@@ -102,19 +102,19 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-      },
-      image: {
+    },
+    image: {
         flex: 1,
         justifyContent: 'center',
-      },
-      text: {
+    },
+    text: {
         color: 'white',
         fontSize: 42,
         lineHeight: 84,
         fontWeight: 'bold',
         textAlign: 'center',
         backgroundColor: '#000000c0',
-      },
+    },
     header: {
         backgroundColor: '#f5f5f5',
         paddingVertical: 20,
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         alignSelf: 'center'
     },
-    signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center',},
+    signUp_input: { flexDirection: 'column', width: '100%', bottom: 20, justifyContent: 'center', alignItems: 'center', },
     image_css: {
         width: '90%',
         alignContent: 'flex-start',
@@ -221,8 +221,11 @@ const styles = StyleSheet.create({
         height: '7%',
         fontWeight: 'bold',
     },
-    img_text: { color: 'green', fontSize: 20, textAlign: 'center', margin: 5 },
-    signUpFileUpload: { flexDirection: 'row', justifyContent: 'center', width: '90%', borderWidth: 1, borderColor: '#2da600', alignSelf: 'center' },
+    signUpFileUpload: { flexDirection: 'row', justifyContent: 'center', width: '90%', borderWidth: 1, borderColor: '#2da600', alignSelf: 'center', margin: 5 },
+    fileUpldLeftCon: { flexDirection: 'column', width: '40%', justifyContent: 'center', alignSelf: 'flex-start' },
+    img_text: { color: 'green', fontSize: 18, textAlign: 'center', margin: 5 },
+    fileUploadRightCon: { flexDirection: 'column', width: '60%', alignItems: 'center', justifyContent: 'center' },
+    rightText: { color: '#63f880', fontSize: 15, fontWeight: 'bold' },
     image_btn: { width: '100%' },
     Linearcontainer: {
         flex: 1,
@@ -262,7 +265,7 @@ const styles = StyleSheet.create({
         // height: '100%'
     },
     heading_trending: { flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, padding: 10 },
-    headingCss: { fontSize: 22, fontWeight: 'bold', fontStyle: 'italic', textDecorationLine: 'Underline'},
+    headingCss: { fontSize: 22, fontWeight: 'bold', fontStyle: 'italic', textDecorationLine: 'Underline' },
     card_container: { flexDirection: 'row' },
     card_main_style: { flexDirection: 'column', justifyContent: 'space-between', alignContent: 'center', alignItems: 'center', },
     card_decoration: { height: 130, width: '95%', borderRadius: 10, margin: 5, borderWidth: 0.3, opacity: 5, shadowOpacity: 10, shadowRadius: 30.00, elevation: 10, },
@@ -275,14 +278,14 @@ const styles = StyleSheet.create({
     textCss: {
         fontStyle: 'italic',
         fontWeight: 'bold',
-        color: 'black', 
+        color: 'black',
         fontSize: 20
         // backgroundColor: 'red'
     },
     textCsslist: {
         fontStyle: 'italic',
         fontWeight: 'bold',
-        color: 'black', 
+        color: 'black',
         fontSize: 16
         // backgroundColor: 'red'
     },
@@ -290,7 +293,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontWeight: 'bold',
         color: 'skyblue',
-        fontSize: 35 
+        fontSize: 35
         // backgroundColor: 'red'
     },
     MomoHeaderContainer: {
@@ -349,7 +352,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-      },
+    },
     submitbuttonLogin: {
         color: '#fff',
         fontSize: 15,
@@ -383,17 +386,17 @@ const styles = StyleSheet.create({
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
-    teacherListAddMenu:{ flexDirection: 'row', justifyContent: 'flex-end', paddingTop: 10, paddingHorizontal: 10 },
-    contanerBody:{ flexDirection: 'column', backgroundColor: 'green', borderRadius: 10, width: '25%', height: screenHeight * 0.03, justifyContent: 'center', },
-    ContainerCss:{ alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', },
-    btn_txt:{ color: '#000'},
-    BoxContainer: { flexDirection: 'column', backgroundColor: '#f7fbe0', height: screenHeight * 0.25, width: screenWidth * 0.90, alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 10, borderBottomWidth: 5, borderBottomColor: '#bd75ec', opacity: 1,  },
+    teacherListAddMenu: { flexDirection: 'row', justifyContent: 'flex-end', paddingTop: 10, paddingHorizontal: 10 },
+    contanerBody: { flexDirection: 'column', backgroundColor: 'green', borderRadius: 10, width: '25%', height: screenHeight * 0.03, justifyContent: 'center', },
+    ContainerCss: { alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', },
+    btn_txt: { color: '#000' },
+    BoxContainer: { flexDirection: 'column', backgroundColor: '#f7fbe0', height: screenHeight * 0.25, width: screenWidth * 0.90, alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 10, borderBottomWidth: 5, borderBottomColor: '#bd75ec', opacity: 1, },
     img_Box: { flexDirection: 'row', width: '100%', },
-    img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal:  screenWidth * 0.03, },
-    img_box_Img:{ flexDirection: 'column', width: '50%', paddingLeft: screenWidth * 0.40,  },
+    img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal: screenWidth * 0.03, },
+    img_box_Img: { flexDirection: 'column', width: '50%', paddingLeft: screenWidth * 0.40, },
     BoxContainer_data: { flexDirection: 'row', paddingTop: screenHeight * 0.02, },
-    leftContainer:{ flexDirection: 'column', width: '35%', },
-    addTeachImgCss:{ height: screenHeight * 0.15, width: screenWidth * 0.30, borderRadius: 10/2 },
+    leftContainer: { flexDirection: 'column', width: '35%', },
+    addTeachImgCss: { height: screenHeight * 0.15, width: screenWidth * 0.30, borderRadius: 10 / 2 },
     leftContainer_Css: { flexDirection: 'row', alignSelf: 'center' },
     rightContainer: { flexDirection: 'column', width: '65%', alignItems: 'flex-start' },
     rightContainer_Css: { flexDirection: 'row', alignSelf: 'flex-start', paddingHorizontal: screenWidth * 0.01, },
@@ -427,7 +430,7 @@ const styles = StyleSheet.create({
     profile_img_css: { flexDirection: 'row', width: '100%', height: '50%', borderTopRightRadius: 10, borderTopLeftRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center' },
     profile_info: { flexDirection: 'column', width: '100%', height: '50%', borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomEndRadius: 10, borderBottomStartRadius: 10, justifyContent: 'center', alignSelf: 'center', alignContent: 'center', alignItems: 'center', },
     profile_info_css: { flexDirection: 'row', justifyContent: 'center' },
-    linearCss: { flex: 1, width: '100%', borderRadius: 10, justifyContent: 'center',  },
+    linearCss: { flex: 1, width: '100%', borderRadius: 10, justifyContent: 'center', },
     img_size: { height: '100%', width: '40%' },
     profileText: { fontStyle: 'italic', fontStyle: 'italic', fontWeight: 'bold', fontSize: 20, color: '#fff' },
     profile_menu: { flexDirection: 'column', width: '100%', height: 100, justifyContent: 'center', alignSelf: 'center', },
@@ -438,7 +441,7 @@ const styles = StyleSheet.create({
     // profile screen css properties end...
 
 
-    
+
     mainbackground: {
         // height: '100%'
     },

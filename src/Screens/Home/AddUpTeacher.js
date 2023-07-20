@@ -71,7 +71,7 @@ const AddUpTeacher = () => {
       } else if (response.error) {
       } else if (response.customButton) {
       } else {
-        console.log(response.assets[0].fileName, "response.assets[0]")
+        
         setState({ ...state, base64File: response.assets[0].base64, fileName: response.assets[0].fileName })
       }
     })
