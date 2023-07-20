@@ -20,7 +20,7 @@ const AddTeacherList = () => {
   const addStaff = () => { navigation.navigate(navigationStrings.AddUPTeacher) }
   const { myStaffData } = useSelector(state => state.login)
   console.log(myStaffData.data, "new staff Data - - -")
-  console.log(myStaffData.data.image, "new staff Data - - -")
+  // console.log(myStaffData.data.image, "new staff Data - - -")
 
 
   const [refreshing, setRefreshing] = React.useState(false);

@@ -1,4 +1,4 @@
-import { View, Text, BackHandler, ImageBackground, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, BackHandler, ImageBackground, StyleSheet, ScrollView, TouchableOpacity, ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import styles from '../MainStyle';
@@ -8,11 +8,14 @@ import { TextInput } from 'react-native-paper';
 import { ServerUrl } from '../../Helper/Helper';
 import navigationStrings from '../../constants/navigationStrings';
 import { launchImageLibrary } from 'react-native-image-picker';
+import { trackTeacherData } from '../../redux/MyLoginSlice';
+import { useDispatch } from 'react-redux';
 
 
 const TeacherRoute = () => {
 
     const navigation = useNavigation();
+    const dispatch = useDispatch();
     const listTrackTeacher = () => { navigation.navigate(navigationStrings.TRACKLIST) }
     function handleBackButtonClick() {
         navigation.goBack();
@@ -131,8 +134,11 @@ const TeacherRoute = () => {
                 })
             });
             const result = await response.json();
+            dispatch(trackTeacherData(result))
+            
             // setState(initialState);
             console.log(result, "result of tracking...")
+
 
         } catch (error) {
             alert(`Internal Client Error,'${error}'`);

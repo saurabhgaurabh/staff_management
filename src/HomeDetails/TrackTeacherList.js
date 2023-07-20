@@ -7,12 +7,16 @@ import LinearGradient from 'react-native-linear-gradient'
 import imagePath from '../constants/imagePath'
 import { useNavigation } from '@react-navigation/native'
 import navigationStrings from '../constants/navigationStrings'
+import { useSelector } from 'react-redux'
+import { ScrollView } from 'react-native-gesture-handler'
 
 
 const TrackTeacherList = () => {
 
     const navigation = useNavigation();
     const addRoute = ()=> { navigation.navigate(navigationStrings.TEACHEROUTE)}
+    const { myTrack_teach_data } = useSelector(state => state.login)
+    console.log(myTrack_teach_data.trackTeacherData," myTrack_teach_data ")
     const handleShare = () => {
         const message = 'Sharing this content.';
         Share.share({
@@ -39,6 +43,10 @@ const TrackTeacherList = () => {
                     </LinearGradient>
                 </View>
             </View>
+
+            <ScrollView showsHorizontalScrollIndicator={true}>
+                
+            </ScrollView>
         </View>
     )
 }
