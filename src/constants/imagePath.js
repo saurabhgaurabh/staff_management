@@ -32,7 +32,7 @@ export default{
     icbackForward: require('../assets/images/output-back.gif'),
     icbackNoraml: require('../assets/images/back.webp'),
     icback: require('../assets/images/output-back.gif'),
-    // icfirstss: require('../assets/images/background.jpg'),
+    icdmyList: require('../assets/images/images_dummy_bg.png'),
     icStaff: require('../assets/images/output-onlinegiftools-0.png'),
     icRoute: require('../assets/images/output-route-0.png'),
     icTimeline: require('../assets/images/output-timeline-0.png'),
@@ -47,4 +47,5 @@ export default{
     icIntroC: require('../assets/images/intro_c.png'),
     icBackground: require('../assets/images/background.jpg'),
     icMore: require('../assets/images/more.png'),
+    icbackInfo: require('../assets/images/colored-background.jpg'),
 }

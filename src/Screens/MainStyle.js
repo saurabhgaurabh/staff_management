@@ -279,29 +279,31 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         fontWeight: 'bold',
         color: 'black',
-        fontSize: 20
-        // backgroundColor: 'red'
+        fontSize: 20,
     },
     textCsslist: {
         fontStyle: 'italic',
         fontWeight: 'bold',
         color: 'black',
-        fontSize: 16
-        // backgroundColor: 'red'
+        fontSize: 16,
+    },
+    track_textCsslist: {
+        fontStyle: 'italic',
+        fontWeight: 'bold',
+        color: '#fff',
+        fontSize: 16,
     },
     countCss: {
         fontStyle: 'italic',
         fontWeight: 'bold',
         color: 'skyblue',
-        fontSize: 35
-        // backgroundColor: 'red'
+        fontSize: 35,
     },
     MomoHeaderContainer: {
         // top: 15
     },
     form_field_container: {
         width: '100%',
-        // backgroundColor: '#3d72b4',
         alignContent: 'center',
         alignItems: 'center',
         alignSelf: 'center'
