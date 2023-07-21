@@ -403,6 +403,24 @@ const styles = StyleSheet.create({
     rightContainer: { flexDirection: 'column', width: '65%', alignItems: 'flex-start' },
     rightContainer_Css: { flexDirection: 'row', alignSelf: 'flex-start', paddingHorizontal: screenWidth * 0.01, },
 
+    /// track teacher list css properties //
+    track_list_Container: { flexDirection: 'column', justifyContent: 'flex-start', height: screenHeight * 0.49, width: screenWidth * 0.97, alignContent: 'center', alignSelf: 'center', margin: '1.5%', alignItems: 'center', borderBottomWidth: 5, borderRadius: 10, borderBottomColor: '#bd75ec', borderWidth: 2, top: 1 },
+    track_fst_box: { flexDirection: 'row', height: screenHeight * 0.24, width: screenWidth * 0.96, },
+    backImg_track_list: { resizeMode: 'cover', flex: 1, opacity: 1 },
+    track_fst_row: { flexDirection: 'row', width: screenWidth * 0.96, },
+    track_fst_row_clm: { flexDirection: 'column', paddingHorizontal: screenWidth * 0.04, height: screenHeight * 0.03, width: screenWidth * 0.97, },
+    track_fst_row_clm_Css: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: screenWidth * 0.03 },
+    track_txt_head: { fontSize: 17, color: '#FFF' },
+    track_Snd_row: { flexDirection: 'row', height: screenHeight * 0.22, width: screenWidth * 0.96, justifyContent: 'center', top: 10 },
+    track_Snd_row_txt_css: { flexDirection: 'column', height: screenHeight * 0.2, width: screenWidth * 0.676, justifyContent: 'flex-start', alignContent: 'center', alignSelf: 'center', paddingTop: 20, paddingHorizontal: screenWidth * 0.033 },
+    track_Snd_row_img: { flexDirection: 'column', height: screenHeight * 0.20, width: screenWidth * 0.30, alignSelf: 'center', justifyContent: 'center', alignContent: 'center', alignItems: 'center', },
+    img_Dsg_Css: { height: screenHeight * 0.11, width: screenWidth * 0.25, top: 10, borderRadius: 20 / 2, },
+    track_snd_box: { flexDirection: 'row', height: screenHeight * 0.241, width: screenWidth * 0.958, borderRadius: 20 / 2 },
+    track_snd_Container: { flexDirection: 'column', backgroundColor: '#b6eae1', paddingHorizontal: 10, height: screenHeight * 0.241, width: screenWidth * 0.958 },
+    track_Snd_row_Css: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: screenWidth * 0.01 },
+    track_list_heading: { fontSize: 17, color: '#000', fontWeight: 'bold' },
+    track_list_data: { fontSize: 17, color: '#000', marginLeft: screenWidth * 0.02 },
+
 
     //////////  Home Screen page css  start /////////
 
