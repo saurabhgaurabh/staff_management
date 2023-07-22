@@ -1,5 +1,5 @@
-import { View, Text, TouchableOpacity, Image, Share, ImageBackground, } from 'react-native'
 import React from 'react'
+import { View, Text, TouchableOpacity, Image, Share, ImageBackground, Modal } from 'react-native'
 import CustomHeader from '../Components/CustomHeader'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import styles from '../Screens/MainStyle'
@@ -10,7 +10,7 @@ import navigationStrings from '../constants/navigationStrings'
 import { useSelector } from 'react-redux'
 import { ScrollView } from 'react-native-gesture-handler'
 import { ServerUrl } from '../Helper/Helper'
-
+import * as Animatable from 'react-native-animatable';
 
 const TrackTeacherList = () => {
     const dmImg = require('../assets/images/dummy_user.png');
@@ -49,13 +49,13 @@ const TrackTeacherList = () => {
             <ScrollView showsHorizontalScrollIndicator={true}>
                 {myTrack_teach_data?.trackTeacherData?.map((item, index) => {
                     return (
-                        <View style={styles.track_list_Container} key={index}>
+                        <Animatable.View animation={'fadeInRightBig'} delay={index * 500} duration={1000} style={styles.track_list_Container} key={index}>
                             <View style={styles.track_fst_box}>
                                 <ImageBackground style={styles.backImg_track_list} source={imagePath.icbackInfo}>
                                     <View style={styles.track_fst_row}>
                                         <View style={styles.track_fst_row_clm}>
                                             <View style={styles.track_fst_row_clm_Css}>
-                                                <Text style={styles.track_txt_head}>Hello,</Text>
+                                                <Text style={styles.track_txt_head}></Text>
                                                 <TouchableOpacity>
                                                     <Image source={imagePath.icMoreMore} style={{ width: 15, height: 20, }} />
                                                 </TouchableOpacity>
@@ -64,12 +64,11 @@ const TrackTeacherList = () => {
                                     </View>
                                     <View style={styles.track_Snd_row}>
                                         <View style={styles.track_Snd_row_txt_css}>
+                                            <Text style={styles.track_textCsslist}>Hi, </Text>
                                             <Text style={styles.track_textCsslist}>{item.teacher_name} </Text>
                                             <Text style={styles.track_textCsslist}>{item.email}</Text>
                                         </View>
-                                        {console.log(item.teacher_img, " img")}
                                         <View style={styles.track_Snd_row_img}>
-                                            {/* <Image source={imagePath.icDummyUser} style={styles.img_Dsg_Css} /> */}
                                             <Image source={item?.teacher_img ? { uri: `${ServerUrl()}${item?.teacher_img}` } : dmImg} style={styles.img_Dsg_Css} />
                                         </View>
                                     </View>
@@ -79,31 +78,31 @@ const TrackTeacherList = () => {
                                 <View style={styles.track_snd_Container}>
                                     <View style={styles.track_Snd_row_Css}>
                                         <Text style={styles.track_list_heading}>Organization:</Text>
-                                        <Text style={styles.track_list_data}>Gyan Lok Inter College</Text>
+                                        <Text style={styles.track_list_data}>{item?.current_organization.toUpperCase()}</Text>
                                     </View>
                                     <View style={styles.track_Snd_row_Css}>
                                         <Text style={styles.track_list_heading}>Contact:</Text>
-                                        <Text style={styles.track_list_data}>{item.mobile}</Text>
+                                        <Text style={styles.track_list_data}>{item?.mobile}</Text>
                                     </View>
                                     <View style={styles.track_Snd_row_Css}>
                                         <Text style={styles.track_list_heading}>Experience:</Text>
-                                        <Text style={styles.track_list_data}>{item.experience}</Text>
+                                        <Text style={styles.track_list_data}>{item?.experience.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</Text>
                                     </View>
                                     <View style={styles.track_Snd_row_Css}>
                                         <Text style={styles.track_list_heading}>Qualification:</Text>
-                                        <Text style={styles.track_list_data}>{item.qualification}</Text>
+                                        <Text style={styles.track_list_data}>{item?.qualification}</Text>
                                     </View>
                                     <View style={styles.track_Snd_row_Css}>
                                         <Text style={styles.track_list_heading}>Position:</Text>
-                                        <Text style={styles.track_list_data}>{item.current_position}</Text>
+                                        <Text style={styles.track_list_data}>{item?.current_position.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</Text>
                                     </View>
                                     <View style={styles.track_Snd_row_Css}>
                                         <Text style={styles.track_list_heading}>Residence:</Text>
-                                        <Text style={styles.track_list_data}>{item.current_residence}</Text>
+                                        <Text style={styles.track_list_data}>{item?.current_residence.replace(/(^|\s)\S/g, (match) => match.toUpperCase())}</Text>
                                     </View>
                                 </View>
                             </View>
-                        </View>
+                        </Animatable.View>
                     )
                 })}
             </ScrollView>

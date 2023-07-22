@@ -29,6 +29,8 @@ const TeacherRoute = () => {
         };
     }, []);
 
+   
+
     // here we are selecting the files using array...
     const fileUploadTypes = [
         { name: 'Adhar Card', key: 'adhar_card' },
@@ -55,10 +57,11 @@ const TeacherRoute = () => {
 
 
     // const [state, setState] = useState(initialState);
-    const [state, setState] = useState({ teacher_name: "", email: "", mobile: "", previous_organization: "", experience: "", qualification: "", permanent_residence: "", current_residence: "", previous_position: "", current_position: "", fileName: [], base64File: [] });
+    const [state, setState] = useState({ teacher_name: "", email: "", mobile: "", current_organization: "", previous_organization: "", experience: "", qualification: "", permanent_residence: "", current_residence: "", previous_position: "", current_position: "", fileName: [], base64File: [] });
     const handleTeacher = (text) => { setState({ ...state, teacher_name: text }) }
     const handleEmail = (text) => { setState({ ...state, email: text }) }
     const handleMobile = (text) => { setState({ ...state, mobile: text }) }
+    const handleCurrent = (text) => { setState({ ...state, current_organization: text }) }
     const handleOrganization = (text) => { setState({ ...state, previous_organization: text }) }
     const handleExperience = (text) => { setState({ ...state, experience: text }) }
     const handleQualification = (text) => { setState({ ...state, qualification: text }) }
@@ -95,10 +98,11 @@ const TeacherRoute = () => {
     }
 
     const trackingTeacher = async () => {
-        const { teacher_name, email, mobile, previous_organization, experience, qualification, permanent_residence, current_residence, previous_position, current_position, fileName, base64File } = state;
+        const { teacher_name, email, mobile, current_organization, previous_organization, experience, qualification, permanent_residence, current_residence, previous_position, current_position, fileName, base64File } = state;
         if (!teacher_name) return alert("Teacher Name is Required.");
         if (!email) return alert("Email is Required.");
         if (!mobile) return alert("Mobile is Required.");
+        if (!current_organization) return alert("Current Orgaization is Required.");
         if (!previous_organization) return alert("Previous Orgaization is Required.");
         if (!experience) return alert("Experience is Required.");
         if (!qualification) return alert("Qualification is Required.");
@@ -119,6 +123,7 @@ const TeacherRoute = () => {
                     teacher_name,
                     email,
                     mobile,
+                    current_organization,
                     previous_organization,
                     experience,
                     qualification,
@@ -212,6 +217,23 @@ const TeacherRoute = () => {
                                     onChangeText={handleMobile}
                                 />
                             </View>
+                        </View>
+                        <View style={styles.FormMainStyles}>
+                            <View style={styles.signUp_input}>
+                                <TextInput style={styles.Maininput}
+                                    label="Current Organization"
+                                    placeholder='Current Organization'
+                                    activeUnderlineColor="#0288D1"
+                                    activeOutlineColor="#2da600"
+                                    mode='outlined'
+                                    outlineColor="green"
+                                    returnKeyLabel='next'
+                                    placeholderTextColor='#000'
+                                    autoCapitalize='none'
+                                    onChangeText={handleCurrent}
+                                />
+                            </View>
+                            
                         </View>
                         <View style={styles.FormMainStyles}>
                             <View style={styles.signUp_input}>

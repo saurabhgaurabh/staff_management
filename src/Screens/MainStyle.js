@@ -388,10 +388,10 @@ const styles = StyleSheet.create({
     // formbodycss: { borderRightColor: '#A594F9', height: '55%', alignItems: 'center', width: '90%', alignContent: 'center', alignSelf: 'center' , borderRadius: 50,borderWidth: 2, borderColor: 'grey'},
 
     //////////  login page css  end /////////
-    teacherListAddMenu: { flexDirection: 'row', justifyContent: 'flex-end', paddingTop: 10, paddingHorizontal: 10 },
+    teacherListAddMenu: { flexDirection: 'row', justifyContent: 'flex-end', paddingBottom: 10, paddingHorizontal: 10 },
     contanerBody: { flexDirection: 'column', backgroundColor: 'green', borderRadius: 10, width: '25%', height: screenHeight * 0.03, justifyContent: 'center', },
-    ContainerCss: { alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center', },
-    btn_txt: { color: '#000' },
+    ContainerCss: { alignContent: 'center', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' },
+    btn_txt: { color: '#000', },
     BoxContainer: { flexDirection: 'column', backgroundColor: '#f7fbe0', height: screenHeight * 0.25, width: screenWidth * 0.90, alignContent: 'center', alignItems: 'center', alignSelf: 'center', borderRadius: 10, borderBottomWidth: 5, borderBottomColor: '#bd75ec', opacity: 1, },
     img_Box: { flexDirection: 'row', width: '100%', },
     img_boxSchoolID: { flexDirection: 'column', width: '50%', paddingHorizontal: screenWidth * 0.03, },
@@ -404,7 +404,7 @@ const styles = StyleSheet.create({
     rightContainer_Css: { flexDirection: 'row', alignSelf: 'flex-start', paddingHorizontal: screenWidth * 0.01, },
 
     /// track teacher list css properties //
-    track_list_Container: { flexDirection: 'column', justifyContent: 'flex-start', height: screenHeight * 0.49, width: screenWidth * 0.97, alignContent: 'center', alignSelf: 'center', margin: '1.5%', alignItems: 'center', borderBottomWidth: 5, borderRadius: 10, borderBottomColor: '#bd75ec', borderWidth: 2, top: 1 },
+    track_list_Container: { flexDirection: 'column', justifyContent: 'flex-start', height: screenHeight * 0.49, width: screenWidth * 0.97, alignContent: 'center', alignSelf: 'center', margin: '1.5%', alignItems: 'center', borderBottomWidth: 5, borderRadius: 10, borderBottomColor: '#bd75ec', borderWidth: 2, bottom: 10,  },
     track_fst_box: { flexDirection: 'row', height: screenHeight * 0.24, width: screenWidth * 0.96, },
     backImg_track_list: { resizeMode: 'cover', flex: 1, opacity: 1 },
     track_fst_row: { flexDirection: 'row', width: screenWidth * 0.96, },
@@ -414,13 +414,12 @@ const styles = StyleSheet.create({
     track_Snd_row: { flexDirection: 'row', height: screenHeight * 0.22, width: screenWidth * 0.96, justifyContent: 'center', top: 10 },
     track_Snd_row_txt_css: { flexDirection: 'column', height: screenHeight * 0.2, width: screenWidth * 0.676, justifyContent: 'flex-start', alignContent: 'center', alignSelf: 'center', paddingTop: 20, paddingHorizontal: screenWidth * 0.033 },
     track_Snd_row_img: { flexDirection: 'column', height: screenHeight * 0.20, width: screenWidth * 0.30, alignSelf: 'center', justifyContent: 'center', alignContent: 'center', alignItems: 'center', },
-    img_Dsg_Css: { height: screenHeight * 0.11, width: screenWidth * 0.25, top: 10, borderRadius: 20 / 2, },
+    img_Dsg_Css: { height: screenHeight * 0.10, width: screenWidth * 0.21, top: 10, borderRadius: 90 / 2, borderWidth: 3, borderColor: '#fff'},
     track_snd_box: { flexDirection: 'row', height: screenHeight * 0.241, width: screenWidth * 0.958, borderRadius: 20 / 2 },
-    track_snd_Container: { flexDirection: 'column', backgroundColor: '#b6eae1', paddingHorizontal: 10, height: screenHeight * 0.241, width: screenWidth * 0.958 },
+    track_snd_Container: { flexDirection: 'column', backgroundColor: '#f0f6fb', paddingHorizontal: 10, height: screenHeight * 0.241, width: screenWidth * 0.958 },
     track_Snd_row_Css: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: screenWidth * 0.01 },
     track_list_heading: { fontSize: 17, color: '#000', fontWeight: 'bold' },
     track_list_data: { fontSize: 17, color: '#000', marginLeft: screenWidth * 0.02 },
-
 
     //////////  Home Screen page css  start /////////
 

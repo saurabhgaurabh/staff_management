@@ -17,6 +17,7 @@ const HomeScreen = ({ navigation }) => {
 
     // const { ledgerBal } = useSelector(state => state.login)
     const { myStaffData } = useSelector(state => state.login)
+    const { myTrack_teach_data } = useSelector(state => state.login)
     const [refreshing, setRefreshing] = React.useState(false);
     const images = [
         { source: require('../../assets/images/pexels.webp'), text: 'Stydy is key of Success.' },
@@ -38,6 +39,7 @@ const HomeScreen = ({ navigation }) => {
     const listTrackTeacher = () =>{ navigation.navigate(navigationStrings.TRACKLIST)}
 
     const totalCount = myStaffData?.data?.length;
+    const total_of_Track = myTrack_teach_data?.trackTeacherData?.length;
 
     const onRefresh = () => {
         setRefreshing(true);
@@ -50,7 +52,7 @@ const HomeScreen = ({ navigation }) => {
 
     const cardItems = [
         { title: 'Add up Teachers', image: imagePath.icStaff, count: totalCount ? totalCount : 0, onPress: AddUpTeacher, onViewMore: teacherList, },
-        { title: 'Track Teachers', image: imagePath.icRoute, count: totalCount ? totalCount : 0, onPress: TeacherRoute, onViewMore: listTrackTeacher, },
+        { title: 'Track Teachers', image: imagePath.icRoute, count: total_of_Track ? total_of_Track : 0, onPress: TeacherRoute, onViewMore: listTrackTeacher, },
         { title: 'Teacher Timeline', image: imagePath.icTimeline, count: totalCount ? totalCount : 0, onPress: TeacherTimeLine, onViewMore: teacherList, },
         { title: 'Staff Salary', image: imagePath.icSalary, count: totalCount ? totalCount : 0, onPress: AddStaffSalary, onViewMore: teacherList, },
         { title: 'Invoice generate', image: imagePath.icInvoice, count: totalCount ? totalCount : 0, onPress: AddInvoice, onViewMore: teacherList, },
