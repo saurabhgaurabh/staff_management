@@ -57,6 +57,7 @@ const OTPScreen = (props) => {
             alert("Invalid UserID ");
         }
     }
+    
     function handleBackButtonClick() {
         navigation.goBack();
         return true;
@@ -89,7 +90,7 @@ const OTPScreen = (props) => {
                         <View style={styles.forgerInput}>
                             <View style={styles.FormMainStyles}>
                                 <View style={styles.signUp_input}>
-                                    <TextInput style={styles.input}
+                                    <TextInput style={styles.Maininput}
                                         label="Enter OTP"
                                         activeUnderlineColor="#0288D1"
                                         activeOutlineColor="#0288D1"

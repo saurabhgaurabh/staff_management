@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react';
 import { View, Text, TouchableOpacity, Image, Share, ImageBackground, Modal } from 'react-native'
 import CustomHeader from '../Components/CustomHeader'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import { ScrollView } from 'react-native-gesture-handler'
 import { ServerUrl } from '../Helper/Helper'
 import * as Animatable from 'react-native-animatable';
+import { Menu, MenuOptions, MenuOption, MenuContext, MenuProvider, MenuTrigger } from 'react-native-popup-menu';
 
 const TrackTeacherList = () => {
     const dmImg = require('../assets/images/dummy_user.png');
@@ -19,6 +20,8 @@ const TrackTeacherList = () => {
     const { myTrack_teach_data } = useSelector(state => state.login)
     console.log(myTrack_teach_data.trackTeacherData, " myTrack_teach_data ")
     console.log(myTrack_teach_data?.trackTeacherData?.teacher_img, " myTrack_teach_data ")
+
+    // to share anything
     const handleShare = () => {
         const message = 'Sharing this content.';
         Share.share({
@@ -27,6 +30,7 @@ const TrackTeacherList = () => {
             .then(result => console.log(result))
             .catch(error => console.log(error));
     };
+
 
     return (
         <View style={{ flex: 1 }}>
@@ -56,7 +60,7 @@ const TrackTeacherList = () => {
                                         <View style={styles.track_fst_row_clm}>
                                             <View style={styles.track_fst_row_clm_Css}>
                                                 <Text style={styles.track_txt_head}></Text>
-                                                <TouchableOpacity>
+                                                <TouchableOpacity >
                                                     <Image source={imagePath.icMoreMore} style={{ width: 15, height: 20, }} />
                                                 </TouchableOpacity>
                                             </View>

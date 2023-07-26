@@ -90,7 +90,7 @@ const ForgetPassword = () => {
                         <View style={styles.forgerInput}>
                             <View style={styles.FormMainStyles}>
                                 <View style={styles.signUp_input}>
-                                    <TextInput style={styles.input}
+                                    <TextInput style={styles.Maininput}
                                         label="E-Mail"
                                         activeUnderlineColor="#0288D1"
                                         activeOutlineColor="#0288D1"

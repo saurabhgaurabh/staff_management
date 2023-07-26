@@ -1,18 +1,70 @@
 import React, { useState, useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Dimensions } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, Dimensions, ToastAndroid, BackHandler } from 'react-native';
 import navigationStrings from '../../constants/navigationStrings';
+import { useDispatch } from 'react-redux';
+import { loginFetchDataForProfile } from '../../redux/MyLoginSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect } from 'react';
+
 
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
+
+
 const Onboarding = () => {
+
+  const dispatch = useDispatch()
+  const getMyObjectRemove = async () => {
+    dispatch(loginFetchDataForProfile(''))
+    let dd = await AsyncStorage.removeItem('tokenresult')
+    ToastAndroid.show('User Logged Out Successfully', ToastAndroid.SHORT);
+    navigation.navigate(dd ? navigationStrings.HOME : navigationStrings.LOGIN);
+  }
+
+
   const navigation = useNavigation();
-  const goToLogin = () => {navigation.navigate(navigationStrings.LOGIN)}
-  const createAccount = () => { navigation.navigate(navigationStrings.SIGNUP)}
+  const goToLogin = () => { navigation.navigate(navigationStrings.LOGIN) }
+  const createAccount = () => { navigation.navigate(navigationStrings.SIGNUP) }
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollViewRef = useRef(null);
+
+  const [hasToken, setHasToken] = useState(false);
+  const checkToken = async () => {
+    try {
+      const token = await AsyncStorage.getItem('tokenresult');
+      setHasToken(!!token); // Update the hasToken state to true if token is present, false otherwise
+    } catch (error) {
+      console.error('Error checking token:', error);
+    }
+  };
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
+  // useEffect(() => {
+  //   const backAction = () => {
+  //     Alert.alert("Hold on!", "Are you sure you want to Exit Login ?", [
+  //       {
+  //         text: "Cancel",
+  //         onPress: () => null,
+  //         style: "cancel"
+  //       },
+  //       { text: "YES", onPress: () => BackHandler.exitApp() }
+  //     ]);
+  //     return true;
+  //   };
+
+  //   const backHandler = BackHandler.addEventListener(
+  //     "hardwareBackPress",
+  //     backAction
+  //   );
+
+  //   return () => backHandler.remove();
+  // }, []);
 
   const images = [
     {
@@ -68,15 +120,15 @@ const Onboarding = () => {
 
   return (
     <View style={styles.OnBoardcontainer}>
-      <ScrollView
-        ref={scrollViewRef}
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        style={styles.OnBoardscrollView}
-        onScroll={handleScroll}
-        scrollEventThrottle={16}
-      >
+        <ScrollView
+          ref={scrollViewRef}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          style={styles.OnBoardscrollView}
+          onScroll={handleScroll}
+          scrollEventThrottle={16}
+        >
         {images.map((item, index) => (
           <View key={index} style={styles.slide}>
             <View style={styles.contentContainer}>
@@ -89,10 +141,10 @@ const Onboarding = () => {
             </View>
           </View>
         ))}
-       
-        
 
       </ScrollView>
+      
+
       {currentIndex !== images.length - 1 ? (
         <TouchableOpacity onPress={handleSkip} style={styles.skipButton}>
           <Text style={styles.buttonText}>Next</Text>
@@ -103,7 +155,7 @@ const Onboarding = () => {
           <Text style={styles.buttonText}>Get Started</Text>
         </TouchableOpacity>
       ) : null}
-       <View style={styles.subtitleContainer}>
+      <View style={styles.subtitleContainer}>
         <TouchableOpacity onPress={createAccount}>
           <Text style={styles.subtitle}>Dont't have an account ? Create</Text>
         </TouchableOpacity>
@@ -160,7 +212,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 20,
   },
- skipButton: {
+  skipButton: {
     position: 'absolute',
     top: windowHeight * 0.20,
     left: 20,
@@ -189,7 +241,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     // paddingHorizontal: 50
-    
+
   },
   subtitle: {
     fontSize: 18,

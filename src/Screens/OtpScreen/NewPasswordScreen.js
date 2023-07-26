@@ -86,7 +86,7 @@ const NewPasswordScreen = (props) => {
                         <View style={styles.forgerInput}>
                             <View style={styles.FormMainStyles}>
                                 <View style={styles.signUp_input}>
-                                    <TextInput style={styles.input}
+                                    <TextInput style={styles.Maininput}
                                         label="Choose New Password"
                                         activeUnderlineColor="#0288D1"
                                         activeOutlineColor="#0288D1"

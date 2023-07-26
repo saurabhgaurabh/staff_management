@@ -13,6 +13,7 @@ import 'react-native-gesture-handler';
 function CustomDrawer(props) {
     const { navigation } = props
     const dispatch = useDispatch()
+    
     const getMyObjectRemove = async () => {
         dispatch(loginFetchDataForProfile(''))
         let dd = await AsyncStorage.removeItem('tokenresult')

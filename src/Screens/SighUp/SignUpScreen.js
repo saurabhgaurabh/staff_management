@@ -161,7 +161,7 @@ const SignUpScreen = () => {
           <Animatable.View animation={'bounceInLeft'} delay={2} style={{ flexDirection: 'column', paddingTop: 40 }}>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
+                <TextInput style={styles.Maininput}
                   label="Username"
                   activeUnderlineColor="#0288D1"
                   activeOutlineColor="#2da600"
@@ -176,7 +176,7 @@ const SignUpScreen = () => {
             </View>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
+                <TextInput style={styles.Maininput}
                   label="E-Mail"
                   activeUnderlineColor="#0288D1"
                   activeOutlineColor="#2da600"
@@ -191,7 +191,7 @@ const SignUpScreen = () => {
             </View>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
+                <TextInput style={styles.Maininput}
                   label="Mobile"
                   activeUnderlineColor="#0288D1"
                   activeOutlineColor="#2da600"
@@ -206,7 +206,7 @@ const SignUpScreen = () => {
             </View>
             <View style={styles.FormMainStyles}>
               <View style={styles.signUp_input}>
-                <TextInput style={styles.input}
+                <TextInput style={styles.Maininput}
                   label="Password"
                   activeUnderlineColor="#0288D1"
                   activeOutlineColor="#2da600"
