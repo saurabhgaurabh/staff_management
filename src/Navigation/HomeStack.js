@@ -6,7 +6,6 @@ import { RoutePlan, TargetScreen } from "../Screens";
 import { TouchableOpacity, Image, useState, BackHandler, Alert } from "react-native";
 import imagePath from "../constants/imagePath";
 import OutstandingPayble from "../Screens/OutstandingPayble/OutstandingPayble";
-// import TotalSale from "../Screens/TotalSale/TotalSale";
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useSelector } from "react-redux";
 import AddUpTeacher from "../Screens/Home/AddUpTeacher";

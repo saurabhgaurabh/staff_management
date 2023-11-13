@@ -52,10 +52,6 @@ const LoginScreen = () => {
         return () => backHandler.remove();
     }, []);
 
-    function handleBackButtonClick() {
-        navigation.goBack();
-        return true;
-    }
     useEffect(() => {
         if (showNotification) {
             setTimeout(() => {
@@ -63,6 +59,11 @@ const LoginScreen = () => {
             }, 2000);
         }
     }, [showNotification]);
+
+    function handleBackButtonClick() {
+        navigation.goBack();
+        return true;
+    }
 
     React.useEffect(() => {
         BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
@@ -110,77 +111,77 @@ const LoginScreen = () => {
 
 
     return (
-            <LinearGradient colors={['#fff', '#fff']}
-                style={styles.Linearcontainer}>
-                <View style={styles.mainbackground}>
-                    <View>
-                        <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', }} >
-                            <TouchableOpacity onPress={handleBackButtonClick} >
-                                <Image style={{ height: 25, width: 25 }} source={imagePath.icbackNoraml} />
-                            </TouchableOpacity>
-                            {showNotification && (
-                                <View style={styles.notificationContainer}>
-                                    <Text style={styles.notificationText}>Login Successful!</Text>
-                                </View>
-                            )}
-                        </SafeAreaView>
-                    </View>
-                    <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                        {/* <Image source={imagePath.icuser} style={styles.logoCss} /> */}
-                        <Text style={styles.loginMiddleText}>Admin Login</Text>
-                    </View>
-                    <Animatable.View animation={'zoomIn'} duration={1000} delay={100} style={styles.formbodycss}>
-                        <View style={styles.form_field_container}>
-                            <View style={{ alignSelf: 'center', width: '95%', paddingTop: 20 }}>
-                                <TextInput style={styles.inputCss}
-                                    label="Email"
-                                    placeholder='example@gmail.com'
-                                    activeUnderlineColor="#0288D1"
-                                    activeOutlineColor="#A594F9"
-                                    mode='outlined'
-                                    outlineColor="#A594F9"
-                                    returnKeyLabel='next'
-                                    placeholderTextColor='#000'
-                                    autoCapitalize='none'
-                                    onChangeText={(text) => { handleEmail(text) }}
-                                />
-                                <TextInput style={styles.inputCss}
-                                    label="Password"
-                                    placeholder='**********'
-                                    activeUnderlineColor="#0288D1"
-                                    activeOutlineColor="#A594F9"
-                                    mode='outlined'
-                                    outlineColor="#A594F9"
-                                    returnKeyLabel='next'
-                                    placeholderTextColor='#000'
-                                    autoCapitalize='none'
-                                    secureTextEntry={!showPassword}
-                                    onChangeText={(text) => { handlePassword(text) }}
-                                />
-                                <TouchableOpacity onPress={togglePasswordVisibility} style={{ position: 'absolute', right: 10 }}>
-                                    <Image source={showPassword ? imagePath.icHide : imagePath.icShow} style={{ height: 25, width: 25 }} />
-                                </TouchableOpacity>
+        <LinearGradient colors={['#fff', '#fff']}
+            style={styles.Linearcontainer}>
+            <View style={styles.mainbackground}>
+                <View>
+                    <SafeAreaView style={{ paddingHorizontal: 15, paddingTop: 8, alignItems: 'flex-start', }} >
+                        <TouchableOpacity onPress={handleBackButtonClick} >
+                            <Image style={{ height: 25, width: 25 }} source={imagePath.icbackNoraml} />
+                        </TouchableOpacity>
+                        {showNotification && (
+                            <View style={styles.notificationContainer}>
+                                <Text style={styles.notificationText}>Login Successful!</Text>
                             </View>
-                        </View>
-                        <View style={styles.passwordContainer}>
-                            <View style={styles.forgerPasswordCss}><Text style={{ color: '#33cc5a', fontWeight: 'normal', fontSize: 14, fontStyle: 'italic' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
-                        </View>
-                        <View style={styles.loginCss}>
-                            <View style={{}}>
-                                <TouchableOpacity onPress={Redirect_To_Dashboard} activeOpacity={0.7}>
-                                    <LinearGradient
-                                        colors={['#A594F9', '#6247AA',]}
-                                        start={{ x: 0, y: 0 }}
-                                        end={{ x: 1, y: 0 }}
-                                        style={styles.loginButton}>
-                                        <Text style={styles.submitbuttonLogin}>Login</Text>
-                                    </LinearGradient>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </Animatable.View>
+                        )}
+                    </SafeAreaView>
                 </View>
-            </LinearGradient>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                    {/* <Image source={imagePath.icuser} style={styles.logoCss} /> */}
+                    <Text style={styles.loginMiddleText}>Admin Login</Text>
+                </View>
+                <Animatable.View animation={'zoomIn'} duration={1000} delay={100} style={styles.formbodycss}>
+                    <View style={styles.form_field_container}>
+                        <View style={{ alignSelf: 'center', width: '95%', paddingTop: 20 }}>
+                            <TextInput style={styles.inputCss}
+                                label="Email"
+                                placeholder='example@gmail.com'
+                                activeUnderlineColor="#0288D1"
+                                activeOutlineColor="#A594F9"
+                                mode='outlined'
+                                outlineColor="#A594F9"
+                                returnKeyLabel='next'
+                                placeholderTextColor='#000'
+                                autoCapitalize='none'
+                                onChangeText={(text) => { handleEmail(text) }}
+                            />
+                            <TextInput style={styles.inputCss}
+                                label="Password"
+                                placeholder='**********'
+                                activeUnderlineColor="#0288D1"
+                                activeOutlineColor="#A594F9"
+                                mode='outlined'
+                                outlineColor="#A594F9"
+                                returnKeyLabel='next'
+                                placeholderTextColor='#000'
+                                autoCapitalize='none'
+                                secureTextEntry={!showPassword}
+                                onChangeText={(text) => { handlePassword(text) }}
+                            />
+                            <TouchableOpacity onPress={togglePasswordVisibility} style={{ position: 'absolute', right: 10 }}>
+                                <Image source={showPassword ? imagePath.icHide : imagePath.icShow} style={{ height: 25, width: 25 }} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={styles.passwordContainer}>
+                        <View style={styles.forgerPasswordCss}><Text style={{ color: '#33cc5a', fontWeight: 'normal', fontSize: 14, fontStyle: 'italic' }} onPress={passwordforgetsubmit}>Forget Passsword ?</Text></View>
+                    </View>
+                    <View style={styles.loginCss}>
+                        <View style={{}}>
+                            <TouchableOpacity onPress={Redirect_To_Dashboard} activeOpacity={0.7}>
+                                <LinearGradient
+                                    colors={['#A594F9', '#6247AA',]}
+                                    start={{ x: 0, y: 0 }}
+                                    end={{ x: 1, y: 0 }}
+                                    style={styles.loginButton}>
+                                    <Text style={styles.submitbuttonLogin}>Login</Text>
+                                </LinearGradient>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Animatable.View>
+            </View>
+        </LinearGradient>
     )
 }
 

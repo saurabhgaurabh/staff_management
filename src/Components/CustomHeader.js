@@ -6,13 +6,12 @@ import imagePath from '../constants/imagePath';
 import { BackHandler } from 'react-native';
 
 const CustomHeader = ({ name, color }) => {
+    
     const navigation = useNavigation();
-
     function handleBackButtonClick() {
         navigation.goBack();
         return true;
     }
-
     React.useEffect(() => {
         BackHandler.addEventListener("hardwareBackPress", handleBackButtonClick);
         return () => {

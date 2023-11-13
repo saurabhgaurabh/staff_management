@@ -82,7 +82,9 @@ function TabRoutes() {
                             tabBarIcon: ({ focused }) => {
                                 return (
                                     <Image style={{ tintColor: focused ? '#c01fff' : 'black' }} source={imagePath.icNavHome} />)
-                            }, headerTintColor: 'skyblue', headerShown: false
+                            },
+                            headerTintColor: 'skyblue',
+                            headerShown: false
                         }} />
                     <Tab.Screen
                         name={navigationStrings.MAP} component={MapStack}

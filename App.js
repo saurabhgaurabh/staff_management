@@ -15,7 +15,7 @@ let persistor = persistStore(store);
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
-  }, [])
+  },[])
 
   
   return (

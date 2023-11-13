@@ -1,4 +1,4 @@
 
 export function ServerUrl(){
-    return 'http://192.168.50.233:8000/'  
+    return 'http://192.168.1.10:8000/'  
 }

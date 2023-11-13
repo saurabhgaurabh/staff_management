@@ -13,7 +13,7 @@ import 'react-native-gesture-handler';
 function CustomDrawer(props) {
     const { navigation } = props
     const dispatch = useDispatch()
-    
+
     const getMyObjectRemove = async () => {
         dispatch(loginFetchDataForProfile(''))
         let dd = await AsyncStorage.removeItem('tokenresult')
@@ -22,8 +22,7 @@ function CustomDrawer(props) {
     }
 
     return (
-        <DrawerContentScrollView style={{
-        }} {...props}>
+        <DrawerContentScrollView style={{}} {...props}>
             <View style={{
                 backgroundColor: '#0288D1',
                 alignItems: 'center',

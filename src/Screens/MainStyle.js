@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
     cont_with_new_acc: { flexDirection: 'column', height: 45, justifyContent: 'center', alignItems: 'center', width: '100%', },
     goole_properties: { height: '70%', width: '45%' },
     networking_container: { flexDirection: 'row', width: '100%', },
-    networking_txt: { fontSize: 17, color: '#fff', fontWeight: 'bold', fontStyle: 'italic', },
     ////////////// Intro Page Properties  end //////////////////////
+    networking_txt: { fontSize: 17, color: 'black', fontWeight: 'bold', fontStyle: 'italic' },
+    // networking_txt: { fontSize: 17, color: '#fff', fontWeight: 'bold', fontStyle: 'italic', },
 
 
 

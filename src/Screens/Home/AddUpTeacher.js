@@ -142,6 +142,7 @@ const AddUpTeacher = () => {
       </View> */}
 
       {/* <CustomHeader name="My Custom Header" color="#2da600" /> */}
+    
 
       <ScrollView showsVerticalScrollIndicator={true} style={styles.listsrcsytle}>
         <LinearGradient colors={['#fff', '#eef2f3']}
